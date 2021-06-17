@@ -43,7 +43,7 @@ public class DAO {
 	}
 
 //-------------------------------------------------------------------------------------------------------------------
-	
+
 	// 제품명 -> 설명(효능)
 
 	public DTO recom_sp(String sp_name) {
@@ -107,5 +107,35 @@ public class DAO {
 	}
 
 //-----------------------------------------------------------------------------------
+	// 성분조회 클릭 -> 효능, 하루권장량, 부작용, 함께 복용하면 좋은 성분
+	// 실제DB용 -> 수정하기
 
+//	public DTO comp(String component) {
+//
+//		try {
+//			conn();
+//
+//			String sql = "select sp_name, instruction, effect, sp_side from supp_test where component = ?";
+//
+//			psmt = conn.prepareStatement(sql);
+//
+//			psmt.setString(1, component);
+//
+//			rs = psmt.executeQuery();
+//			while (rs.next()) {
+//				String get_sp_name = rs.getString("sp_name");
+//				String get_instruction = rs.getString("instruction");
+//				String get_effect = rs.getString("effect");
+//				String get_sp_side = rs.getString("sp_side");
+//
+//				dto = new DTO(get_sp_name, get_instruction, get_effect, get_sp_side);
+//			}
+//		} catch (Exception e) {
+//			System.out.println("조회 실패");
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		return dto;
+//	}
 }
