@@ -26,6 +26,7 @@
 <style>
 .btn_comp {
 	width: 100px;
+	margin-left: 46%;
 }
 
 div.fo {
@@ -69,40 +70,49 @@ table {
 							</select></td>
 						</tr>
 						<tr>
-							<td rowspan="2" align="right"><h4>상태 & 증상</h4></td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="5">증상1</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="6">증상2</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="7">증상3</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="8">증상4</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="9">증상5</td>
+							<td rowspan="3" align="right"><h4>효능</h4></td>
+							<td><input type="checkbox" name="피로회복"
+								onclick="count_ck(this)" value="1">피로회복</td>
+							<td><input type="checkbox" name="관절"
+								onclick="count_ck(this)" value="1">관절/뼈</td>
+							<td><input type="checkbox" name="불면증"
+								onclick="count_ck(this)" value="1">불면증</td>
+							<td><input type="checkbox" name="피부건강"
+								onclick="count_ck(this)" value="1">피부건강</td>
+							<td><input type="checkbox" name="혈액순환개선"
+								onclick="count_ck(this)" value="1">혈액순환개선</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="10">증상6</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="11">증상7</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="12">증상8</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="13">증상9</td>
-							<td><input type="checkbox" name="chk"
-								onclick="count_ck(this)" value="14">증상10</td>
+			
+							<td><input type="checkbox" name="간건강"
+					
+								onclick="count_ck(this)" value="1">간건강</td>
+							<td><input type="checkbox" name="눈건강"
+								onclick="count_ck(this)" value="1">눈건강</td>
+							<td><input type="checkbox" name="긴장완화"
+								onclick="count_ck(this)" value="1">긴장완화</td>
+							<td><input type="checkbox" name="치아건강"
+								onclick="count_ck(this)" value="1">치아건강</td>
+							<td><input type="checkbox" name="근력개선"
+								onclick="count_ck(this)" value="1">근력개선</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="갱년기여성"
+								onclick="count_ck(this)" value="1">갱년기여성</td>
+							<td><input type="checkbox" name="갱년기남성"
+								onclick="count_ck(this)" value="1">갱년기남성</td>
+							<td><input type="checkbox" name="위건강/소화기능"
+								onclick="count_ck(this)" value="1">위건강/소화기능</td>
+							<td><input type="checkbox" name="남성 성기능"
+								onclick="count_ck(this)" value="1">남성 성기능</td>
+							<td><input type="checkbox" name="여성 컨디션"
+								onclick="count_ck(this)" value="1">여성 컨디션</td>
 						</tr>
 					</table>
-					<input type="submit" value="조회">
+					<br><input type="submit" class="btn btn-primary btn_comp" value="성분조회"> <br><br>
 				</form>
 			</div>
 
-			<br> <span style="margin-left: 40%"> <a href="#"
-				class="btn btn-primary btn_comp">성분 조회</a>
-			</span> <span style="margin-left: 50%"> <a href="page3.jsp"
-				class="btn btn-primary btn_user">제품 조회</a> <br> <br>
-			</span>
 
 
 			<%
@@ -126,9 +136,9 @@ table {
 				%>
 			</div>
 
-
-
-
+			<span> <a href="page3.jsp"
+				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
+			</span>
 
 			<%@ include file="footer.jsp"%>
 		</div>
@@ -153,14 +163,6 @@ table {
 				cnt--;
 			}
 		}
-
-		//for (let i = 0; i < 10; i++) {
-			if($("input[type=checkbox][name=chk]").is(":checked") ==  true){
-				$("input[type=checkbox][name=chk]").attr("value","1");
-			}else if($("input[type=checkbox][name=chk]").is(":checked") ==  false){
-				$("input[type=checkbox][name=chk]").attr("value","0");
-			}
-		//}
 	</script>
 
 
