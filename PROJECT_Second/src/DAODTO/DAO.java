@@ -45,40 +45,40 @@ public class DAO {
 //-------------------------------------------------------------------------------------------------------------------
 
 	// 제품 -> 설명
-	public DTO_SUPP supplement_view(String sp_name) {
-
-		try {
-			conn();
-
-			String sql = "select sp_name, rda, instruction, effect, component from supplement where sp_name = ?";
-
-			psmt = conn.prepareStatement(sql);
-
-			psmt.setString(1, sp_name);
-
-			rs = psmt.executeQuery();
-			while (rs.next()) {
-				String get_sp_name = rs.getString("sp_name");
-				String get_rda = rs.getString("rda");
-				String get_instruction = rs.getString("instruction");
-				String get_effect = rs.getString("effect");
-				String get_component = rs.getString("component");
-
-				dto_supp = new DTO_SUPP(get_sp_name, get_rda, get_instruction, get_effect, get_component);
-			}
-		} catch (Exception e) {
-			System.out.println("조회실패");
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return dto_supp;
-	}
+//	public DTO_SUPP supplement_view(String sp_name) {
+//
+//		try {
+//			conn();
+//
+//			String sql = "select sp_name, rda, instruction, effect, component from supplement where sp_name = ?";
+//
+//			psmt = conn.prepareStatement(sql);
+//
+//			psmt.setString(1, sp_name);
+//
+//			rs = psmt.executeQuery();
+//			while (rs.next()) {
+//				String get_sp_name = rs.getString("sp_name");
+//				String get_rda = rs.getString("rda");
+//				String get_instruction = rs.getString("instruction");
+//				String get_effect = rs.getString("effect");
+//				String get_component = rs.getString("component");
+//
+//				dto_supp = new DTO_SUPP(get_sp_name, get_rda, get_instruction, get_effect, get_component);
+//			}
+//		} catch (Exception e) {
+//			System.out.println("조회실패");
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		return dto_supp;
+//	}
 
 //-----------------------------------------------------------------------------------------
 
 	// 제품 -> 설명 (가데이터)
-	public DTO_SUPP recom_comp(String component) {
+	public DTO_SUPP recom_supp(String component) {
 
 		try {
 			conn();

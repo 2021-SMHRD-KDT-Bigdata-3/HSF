@@ -127,20 +127,16 @@ table {
 				for (int i = 0; i < arr.size(); i++) {
 				%>
 				<p class="comp">
-					<a href="page2.jsp?comp=" <%=arr.get(i)%>><%=arr.get(i)%></a>
+					<a href="page2.jsp?comp=<%=arr.get(i)%>"><%=arr.get(i)%></a>
 				</p>
 				<%
 				}
 				%>
 			</div>
-			<%
-			arr = null;
-			%>
 
 			<%
 			}
 			%>
-
 
 
 

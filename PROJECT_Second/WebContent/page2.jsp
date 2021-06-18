@@ -36,7 +36,8 @@ div#supp {
 	String comp = request.getParameter("comp");
 
 	DAO dao = new DAO();
-	DTO_SUPP dto = dao.recom_comp(comp);
+	DTO_SUPP dto_supp= null;
+	dto_supp = dao.recom_supp(comp);
 	%>
 
 
@@ -52,15 +53,11 @@ div#supp {
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
-						<p>
-							효능 :
-							<%=dto.getEffect()%></p>
+						<p><%=dto_supp.getEffect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>하루권장량</span>
-						<p>
-							권장량 :
-							<%=dto.getInstruction()%></p>
+						<p><%=dto_supp.getInstruction()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
@@ -78,7 +75,7 @@ div#supp {
 			<p>위 성분이 들어가있는 제품들</p>
 			<img src="images/product_01.png"> <img
 				src="images/product_02.png"> <img src="images/product_03.png">
-			<img src="images/product_04.png"> <br> <Strong><%=dto.getSp_name()%></Strong>
+			<img src="images/product_04.png"> <br> <Strong><%=dto_supp.getSp_name()%></Strong>
 		</div>
 
 		<%@ include file="footer.jsp"%>
