@@ -33,7 +33,9 @@ div.fo {
 table {
 	border-collapse: separate;
 	border-spacing: 40px;
-	border: 2px solid green;
+	border: 15px solid orange;
+	background-color:#FAFBDF;
+	background-image:url("images/122.png");
 }
 </style>
 </head>
@@ -54,9 +56,9 @@ table {
 			</div>
 
 
-			<div>
+			<div >
 				<form action="selectList" method="post">
-					<table align="center">
+					<table align="center" id="table">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"

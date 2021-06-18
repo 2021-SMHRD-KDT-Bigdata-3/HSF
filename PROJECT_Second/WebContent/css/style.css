@@ -248,7 +248,7 @@ a {
     padding-left: 0;
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active > a {
-      color: #75b239;
+      color: orange;
       position: relative; }
       .site-navbar .site-navigation .site-menu .active > a:before {
         content: "";
@@ -256,7 +256,7 @@ a {
         left: 10px;
         right: 10px;
         height: 2px;
-        background: #75b239;
+        background: orange;
         bottom: 0; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
@@ -513,13 +513,13 @@ a {
   .site-blocks-cover h1 {
     font-size: 40px;
     font-weight: 900;
-    color: #fff;
+    color: orange;
     margin-bottom: 30px; }
     @media (min-width: 768px) {
       .site-blocks-cover h1 {
         font-size: 70px; } }
   .site-blocks-cover p {
-    color: #fff;
+    color: black;
     font-size: 20px;
     line-height: 35px; }
   .site-blocks-cover .intro-text {
@@ -543,7 +543,7 @@ a {
     padding: 15px 25px;
     background: #fff;
     border-color: #fff;
-    color: #75b239;
+    color: orange;
     letter-spacing: .2rem;
     font-size: 14px;
     font-weight: bold; }
@@ -559,7 +559,7 @@ a {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.2); }
+      background: rgba(0, 0, 0,); }
 
 .site-blocks-1 {
   border-bottom: 1px solid #edf0f5; }
@@ -665,7 +665,7 @@ a {
       margin: 5px;
       background: #ccc; }
     .block-3 .owl-dots .owl-dot.active > span {
-      background: #75b239; }
+      background: orange; }
 
 .block-3 .product {
   border-right: none !important;
@@ -702,7 +702,7 @@ a {
     left: 0;
     font-size: 20px;
     line-height: 1;
-    color: #75b239; }
+    color: orange; }
   .block-5 ul li.address:before {
     content: "\e8b4"; }
   .block-5 ul li.email:before {
@@ -876,7 +876,7 @@ a {
     line-height: 20px;
     color: #fff;
     font-size: 12px;
-    background: #75b239;
+    background: orange;
     right: -5px; }
 
 .search-wrap {
@@ -925,7 +925,7 @@ a {
 
 .title-section h2 {
   display: inline-block;
-  color: #000;
+  color: orange;
   position: relative;
   padding-bottom: 30px; }
   .title-section h2:before {
@@ -933,7 +933,7 @@ a {
     bottom: 0;
     width: 70px;
     height: 4px;
-    background: #75b239;
+    background:orange;
     content: ""; }
 
 .title-section.text-center h2:before {
@@ -945,7 +945,7 @@ a {
   transform: translateX(-50%);
   width: 70px;
   height: 4px;
-  background: #75b239;
+  background: orange;
   content: ""; }
 
 .product-item {
@@ -1228,7 +1228,7 @@ a {
     right: 0;
     left: unset;
     color: #fff;
-    background: #75b249;
+    background: orange;
     font-size: 10px;
     padding: 4px 20px;
     text-transform: uppercase; }
