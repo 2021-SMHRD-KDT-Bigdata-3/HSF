@@ -12,6 +12,7 @@ public class DAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
+
 	DTO_SUPP dto_supp = null;
 	DTO_COMP dto_comp = null;
 
