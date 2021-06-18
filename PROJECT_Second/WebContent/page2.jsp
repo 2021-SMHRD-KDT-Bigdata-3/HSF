@@ -24,8 +24,8 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <style>
-div#supp{
-	color : black;
+div#supp {
+	color: black;
 }
 </style>
 </head>
@@ -33,10 +33,10 @@ div#supp{
 
 	<%
 	request.setCharacterEncoding("UTF-8");
-		String comp = request.getParameter("comp");
+	String comp = request.getParameter("comp");
 
-		DAO dao = new DAO();
-		DTO_SUPP dto = dao.recom_comp(comp);
+	DAO dao = new DAO();
+	DTO_SUPP dto = dao.recom_comp(comp);
 	%>
 
 
@@ -48,15 +48,19 @@ div#supp{
 				<div class="title-section">
 					<br> <br> <br>
 					<h2 class="mb-5">
-						추천성분 <strong class="text-primary"><%=comp %></strong>
+						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
-						<p>효능 : <%=dto.getEffect()%></p>
+						<p>
+							효능 :
+							<%=dto.getEffect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>하루권장량</span>
-						<p>권장량 : <%=dto.getInstruction()%></p>
+						<p>
+							권장량 :
+							<%=dto.getInstruction()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
@@ -72,12 +76,9 @@ div#supp{
 
 		<div id="supp" align="center">
 			<p>위 성분이 들어가있는 제품들</p>
-			<img src="images/product_01.png">
-			<img src="images/product_02.png">
-			<img src="images/product_03.png">
-			<img src="images/product_04.png">
-			<br>
-			<Strong><%=dto.getSp_name() %></Strong>
+			<img src="images/product_01.png"> <img
+				src="images/product_02.png"> <img src="images/product_03.png">
+			<img src="images/product_04.png"> <br> <Strong><%=dto.getSp_name()%></Strong>
 		</div>
 
 		<%@ include file="footer.jsp"%>

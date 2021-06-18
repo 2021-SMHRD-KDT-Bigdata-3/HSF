@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.HashSet"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -115,31 +118,33 @@ table {
 			</div>
 
 			<%
-			String[] comps_split = (String[]) session.getAttribute("comps_split");
-			if (comps_split != null) {
-				for (int i = 0; i < comps_split.length; i++) {
-					out.print(comps_split[i]+"\t");
-				}
-
-			}
+			ArrayList<String> arr = (ArrayList<String>) session.getAttribute("arr");
 			%>
-			
-
 
 			<%
-			//추천받은 성분들 예시라고 하면
-			//String[] str = {"비타민b1", "비타민b2", "비타민b3", "비타민c", "칼슘", "철분", "마그네슘"};
+			if (arr != null) {
+			%>
+			<div align="center" id="complist">
+				<%
+				for (int i = 0; i < arr.size(); i++) {
+				%>
+				<p class="comp">
+					<a href="page2.jsp?comp=" <%=arr.get(i)%>><%=arr.get(i)%></a>
+				</p>
+				<%
+				}
+				%>
+			</div>
+			<%
+			arr = null;
 			%>
 
-			<!--  <div align="center" id="complist">
+			<%
+			}
+			%>
 
-		//for (int i = 0; i < str.length; i++) {				%>
-		//String s = str[i];				%>
-				<p class="comp">
-					<a href="page2.jsp?comp="></a>
-				</p>
-		//}				%>
-			</div>-->
+
+
 
 			<span> <a href="page3.jsp"
 				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>

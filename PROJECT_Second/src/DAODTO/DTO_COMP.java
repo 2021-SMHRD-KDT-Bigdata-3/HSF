@@ -6,6 +6,8 @@ public class DTO_COMP {
 	private String state;
 	private String component;
 	
+	//
+	
 	public DTO_COMP(String state, String component) {
 		this.state = state;
 		this.component = component;

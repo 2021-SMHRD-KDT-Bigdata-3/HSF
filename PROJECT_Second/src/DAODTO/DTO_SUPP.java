@@ -12,6 +12,8 @@ public class DTO_SUPP {
 	private String effect;			//효능
 	private String component;		//성분
 	private int age;				//나이
+	
+	//model, img 추가
 
 
 	public DTO_SUPP(String sp_name, String brand, String rda, String instruction, String effect, String component, int age) {
