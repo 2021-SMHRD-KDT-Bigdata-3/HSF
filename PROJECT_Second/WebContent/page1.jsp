@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="java.util.HashSet"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -115,22 +116,30 @@ table {
 			</div>
 
 			<%
-			String[] comps_split = (String[]) session.getAttribute("comps_split");
-			//HashSet<String> hashSet = new HashSet<String>(Arrays.asList(comps_split));
-			//String[] resultArr = hashSet.toArray(new String[0]);
-			//System.out.println(Arrays.toString(resultArr));
+			ArrayList<String> arr = (ArrayList<String>) session.getAttribute("arr");
 			%>
-			
-			<%if (comps_split != null) {%>
-					<div align="center" id="complist">
-					<%for (int i = 0; i < comps_split.length; i++) {%>
-						<p class="comp">
-							<a href="page2.jsp?comp="<%=comps_split[i] %>><%=comps_split[i] %></a>
-						</p>
-					<%}%>
-					</div>
-					<%comps_split = null;%>
-			<%}%>
+
+			<%
+			if (arr != null) {
+			%>
+			<div align="center" id="complist">
+				<%
+				for (int i = 0; i < arr.size(); i++) {
+				%>
+				<p class="comp">
+					<a href="page2.jsp?comp=" <%=arr.get(i)%>><%=arr.get(i)%></a>
+				</p>
+				<%
+				}
+				%>
+			</div>
+			<%
+			arr = null;
+			%>
+
+			<%
+			}
+			%>
 
 
 
