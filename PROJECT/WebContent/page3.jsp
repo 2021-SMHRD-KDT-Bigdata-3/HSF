@@ -1,6 +1,4 @@
-<%@page import="DAODTO.DTO"%>
-<%@page import="DAODTO.DAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +18,7 @@
 <link rel="stylesheet" href="css/owl.carousel.min.css">
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

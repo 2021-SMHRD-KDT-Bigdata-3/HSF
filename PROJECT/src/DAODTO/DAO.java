@@ -12,10 +12,10 @@ public class DAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
-	DTO dto = null;
-	ArrayList<DTO> arr = new ArrayList<DTO>();
+	DTO_SUPP dto_supp = null;
+	DTO_COMP dto_comp = null;
 
-	// DBøÕ ø¨∞·
+	// DBÏó∞Í≤∞
 	public void conn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -29,7 +29,7 @@ public class DAO {
 
 	}
 
-	// DB ø¨∞·«ÿ¡¶
+	// DBÏó∞Í≤∞Ìï¥ÏßÄ
 	public void close() {
 		try {
 			if (rs != null) {
@@ -44,14 +44,13 @@ public class DAO {
 
 //-------------------------------------------------------------------------------------------------------------------
 
-	// ¡¶«∞∏Ì -> º≥∏Ì(»ø¥…)
-
-	public DTO recom_sp(String sp_name) {
+	// Ï†úÌíà -> ÏÑ§Î™Ö
+	public DTO_SUPP supplement_view(String sp_name) {
 
 		try {
 			conn();
 
-			String sql = "select sp_name, effect where sp_name = ?";
+			String sql = "select sp_name, rda, instruction, effect, component from supplement where sp_name = ?";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -60,29 +59,31 @@ public class DAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				String get_sp_name = rs.getString("sp_name");
+				String get_rda = rs.getString("rda");
+				String get_instruction = rs.getString("instruction");
 				String get_effect = rs.getString("effect");
+				String get_component = rs.getString("component");
 
-				dto = new DTO(get_sp_name, get_effect);
+				dto_supp = new DTO_SUPP(get_sp_name, get_rda, get_instruction, get_effect, get_component);
 			}
 		} catch (Exception e) {
-			System.out.println("¡∂»∏ Ω«∆–");
+			System.out.println("Ï°∞ÌöåÏã§Ìå®");
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return dto;
+		return dto_supp;
 	}
 
 //-----------------------------------------------------------------------------------------
 
-	// √ﬂ√µº∫∫– ≈¨∏Ø -> º≥∏Ì/»ø¥…, «œ∑Á±«¿Â∑Æ, ∫Œ¿€øÎ, «‘≤≤ ∫πøÎ«œ∏È ¡¡¿∫ º∫∫–(æ∆¡˜ æ¯æÓº≠ ¡¶«∞∏Ì ∫∏ø©¡‹)¿ª æÀ∑¡¡‡æﬂ«‘
-
-	public DTO recom_comp(String component) {
+	// Ï†úÌíà -> ÏÑ§Î™Ö (Í∞ÄÎç∞Ïù¥ÌÑ∞)
+	public DTO_SUPP recom_comp(String component) {
 
 		try {
 			conn();
 
-			String sql = "select sp_name, instruction, effect, sp_side from supp_test where component = ?";
+			String sql = "select sp_name, instruction, effect from supp_test where component = ?";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -93,49 +94,46 @@ public class DAO {
 				String get_sp_name = rs.getString("sp_name");
 				String get_instruction = rs.getString("instruction");
 				String get_effect = rs.getString("effect");
-				String get_sp_side = rs.getString("sp_side");
 
-				dto = new DTO(get_sp_name, get_instruction, get_effect, get_sp_side);
+				dto_supp = new DTO_SUPP(get_sp_name, get_instruction, get_effect);
 			}
 		} catch (Exception e) {
-			System.out.println("¡∂»∏ Ω«∆–");
+			System.out.println("Ï°∞ÌöåÏã§Ìå®");
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return dto;
+		return dto_supp;
 	}
 
 //-----------------------------------------------------------------------------------
-	// º∫∫–¡∂»∏ ≈¨∏Ø -> »ø¥…, «œ∑Á±«¿Â∑Æ, ∫Œ¿€øÎ, «‘≤≤ ∫πøÎ«œ∏È ¡¡¿∫ º∫∫–
-	// Ω«¡¶DBøÎ -> ºˆ¡§«œ±‚
+	
+	// ÏÑ±Î∂Ñ -> ÏÑ§Î™Ö (Í∞ÄÎç∞Ïù¥ÌÑ∞)
+	public DTO_COMP component_view(String state) {
 
-//	public DTO comp(String component) {
-//
-//		try {
-//			conn();
-//
-//			String sql = "select sp_name, instruction, effect, sp_side from supp_test where component = ?";
-//
-//			psmt = conn.prepareStatement(sql);
-//
-//			psmt.setString(1, component);
-//
-//			rs = psmt.executeQuery();
-//			while (rs.next()) {
-//				String get_sp_name = rs.getString("sp_name");
-//				String get_instruction = rs.getString("instruction");
-//				String get_effect = rs.getString("effect");
-//				String get_sp_side = rs.getString("sp_side");
-//
-//				dto = new DTO(get_sp_name, get_instruction, get_effect, get_sp_side);
-//			}
-//		} catch (Exception e) {
-//			System.out.println("¡∂»∏ Ω«∆–");
-//			e.printStackTrace();
-//		} finally {
-//			close();
-//		}
-//		return dto;
-//	}
+		try {
+			conn();
+
+			String sql = "select component from comp_test where state in(?,?,?)";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, state);
+			psmt.setString(2, state);
+			psmt.setString(3, state);
+
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				String get_component = rs.getString("component");
+
+				dto_comp = new DTO_COMP(get_component);
+			}
+		} catch (Exception e) {
+			System.out.println("Ï°∞ÌöåÏã§Ìå®");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return dto_comp;
+	}
 }

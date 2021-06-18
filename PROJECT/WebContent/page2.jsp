@@ -1,8 +1,8 @@
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@page import="DAODTO.DAO"%>
-<%@page import="DAODTO.DTO"%>
+<%@page import="DAODTO.DTO_SUPP"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +33,11 @@ div#supp{
 
 	<%
 	request.setCharacterEncoding("UTF-8");
-	String comp = request.getParameter("comp");
+		String comp = request.getParameter("comp");
 
-	DAO dao = new DAO();
-	DTO dto = dao.recom_comp(comp);
+		DAO dao = new DAO();
+		DTO_SUPP dto = dao.recom_comp(comp);
 	%>
-
 
 
 	<div class="site-wrap">
@@ -52,7 +51,7 @@ div#supp{
 						추천성분 <strong class="text-primary"><%=comp %></strong>
 					</h2>
 					<div class="step-number d-flex mb-4">
-						<span>설명/효능</span>
+						<span>효능</span>
 						<p>효능 : <%=dto.getEffect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
@@ -61,7 +60,7 @@ div#supp{
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
-						<p><%=dto.getSp_side() %></p>
+						<p>몰랑</p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>함께 복용</span>

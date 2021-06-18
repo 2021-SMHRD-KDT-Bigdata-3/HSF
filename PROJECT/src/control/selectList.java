@@ -1,7 +1,6 @@
 package control;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,30 +8,49 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAODTO.DAO;
+import DAODTO.DTO_COMP;
+
 @WebServlet("/selectList")
 public class selectList extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		//DBø° ≥÷¿ª ø¨∑… -> age
-		//10¥Î - 1
-		//20~30¥Î - 2
-		//40~50¥Î - 3
-		//60~70¥Î - 4
+		request.setCharacterEncoding("utf-8");
+		
+		//ÎÇòÏù¥(age)
+		//10ÎåÄ - 1
+		//20~30ÎåÄ - 2
+		//40~50ÎåÄ - 3
+		//60~70ÎåÄ - 4
 		int age = Integer.parseInt(request.getParameter("age")) ;
 		System.out.println(age);
 		
-		
-		//DBø° ≥÷¿ª ¡ıªÛ  -> chks
-		//º¯º≠¥Î∑Œ 5∫Œ≈Õ Ω√¿€
-		String[] chk = request.getParameterValues("chk");
-		int[] chks = Arrays.stream(chk).mapToInt(Integer::parseInt).toArray();
-		
-		for (int i = 0; i < chks.length; i++) {
-			System.out.println(chks[i]);
-		}
 
+		String[] chk = request.getParameterValues("chk1");
+		
+		DAO dao = new DAO();
+		DTO_COMP dto_comp = null;
+		
+//		ArrayList<String> arr = new ArrayList<String>();
+//		for (int i = 0; i < chk.length; i++) {
+//			dto_comp = dao.component_view(chk[i]);
+//			arr.add(dto_comp.getComponent());
+//		}
+//		System.out.println(arr);
+		
+		String comps = "";
+		for (int i = 0; i < chk.length; i++) {
+			dto_comp = dao.component_view(chk[i]);
+			comps += dto_comp.getComponent() +",";
+		}
+		//System.out.println(comps);
+		
+		String[] comps_split = comps.split(",");
+		for (int i = 0; i < comps_split.length; i++) {
+			System.out.println(comps_split[i]);
+		}
 		
 		
 	}
