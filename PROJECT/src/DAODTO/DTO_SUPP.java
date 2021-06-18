@@ -1,49 +1,49 @@
 package DAODTO;
 
-public class DTO {
+public class DTO_SUPP {
 	
-	private String sp_name;			//Á¦Ç°¸í
-	private String brand;			//È¸»ç
-	private String rda;				//À¯Åë±âÇÑ
-	private String instruction;		//º¹¿ë¹ı
-	private String effect;			//È¿´É
-	private String component;		//¼ººĞ
-	private String sp_side;			//ºÎÀÛ¿ë
 	
+	//supplement table
+	
+	private String sp_name;			//ì œí’ˆëª…
+	private String brand;			//ë¸Œëœë“œ
+	private String rda;				//ìœ í†µê¸°ê°„
+	private String instruction;		//ë³µìš©ë²•
+	private String effect;			//íš¨ëŠ¥
+	private String component;		//ì„±ë¶„
+	private int age;				//ë‚˜ì´
 
-	public DTO(String sp_name, String brand, String rda, String instruction, String effect, String component,
-			String sp_side) {
+
+	public DTO_SUPP(String sp_name, String brand, String rda, String instruction, String effect, String component, int age) {
 		this.sp_name = sp_name;
 		this.brand = brand;
 		this.rda = rda;
 		this.instruction = instruction;
 		this.effect = effect;
 		this.component = component;
-		this.sp_side = sp_side;
+		this.age = age;
 	}
 
 
-	public DTO(String sp_name, String instruction, String effect, String sp_side) {
+	public DTO_SUPP(String sp_name, String instruction, String effect) {
 		this.sp_name = sp_name;
 		this.instruction = instruction;
 		this.effect = effect;
-		this.sp_side = sp_side;
 	}
 
 
-	public DTO(String sp_name, String effect) {
+	public DTO_SUPP(String sp_name, String rda, String instruction, String effect, String component) {
+		this.sp_name = sp_name;
+		this.rda = rda;
+		this.instruction = instruction;
+		this.effect = effect;
+		this.component = component;
+	}
+
+
+	public DTO_SUPP(String sp_name, String effect) {
 		this.sp_name = sp_name;
 		this.effect = effect;
-	}
-
-
-	public String getSp_side() {
-		return sp_side;
-	}
-
-
-	public void setSp_side(String sp_side) {
-		this.sp_side = sp_side;
 	}
 
 
@@ -54,6 +54,16 @@ public class DTO {
 
 	public void setSp_name(String sp_name) {
 		this.sp_name = sp_name;
+	}
+
+
+	public int getAge() {
+		return age;
+	}
+
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 

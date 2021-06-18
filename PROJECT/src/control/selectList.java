@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.Arrays;
 
 import javax.servlet.ServletException;
@@ -15,17 +16,17 @@ public class selectList extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		//DB¿¡ ³ÖÀ» ¿¬·É -> age
-		//10´ë - 1
-		//20~30´ë - 2
-		//40~50´ë - 3
-		//60~70´ë - 4
+		//DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -> age
+		//10ï¿½ï¿½ - 1
+		//20~30ï¿½ï¿½ - 2
+		//40~50ï¿½ï¿½ - 3
+		//60~70ï¿½ï¿½ - 4
 		int age = Integer.parseInt(request.getParameter("age")) ;
 		System.out.println(age);
 		
 		
-		//DB¿¡ ³ÖÀ» Áõ»ó  -> chks
-		//¼ø¼­´ë·Î 5ºÎÅÍ ½ÃÀÛ
+		//DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  -> chks
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String[] chk = request.getParameterValues("chk");
 		int[] chks = Arrays.stream(chk).mapToInt(Integer::parseInt).toArray();
 		
@@ -33,6 +34,57 @@ public class selectList extends HttpServlet {
 			System.out.println(chks[i]);
 		}
 
+=======
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import DAODTO.DAO;
+import DAODTO.DTO_COMP;
+
+@WebServlet("/selectList")
+public class selectList extends HttpServlet {
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.setCharacterEncoding("utf-8");
+		
+		//ë‚˜ì´(age)
+		//10ëŒ€ - 1
+		//20~30ëŒ€ - 2
+		//40~50ëŒ€ - 3
+		//60~70ëŒ€ - 4
+		int age = Integer.parseInt(request.getParameter("age")) ;
+		System.out.println(age);
+		
+
+		String[] chk = request.getParameterValues("chk1");
+		
+		DAO dao = new DAO();
+		DTO_COMP dto_comp = null;
+		
+//		ArrayList<String> arr = new ArrayList<String>();
+//		for (int i = 0; i < chk.length; i++) {
+//			dto_comp = dao.component_view(chk[i]);
+//			arr.add(dto_comp.getComponent());
+//		}
+//		System.out.println(arr);
+		
+		String comps = "";
+		for (int i = 0; i < chk.length; i++) {
+			dto_comp = dao.component_view(chk[i]);
+			comps += dto_comp.getComponent() +",";
+		}
+		//System.out.println(comps);
+		
+		String[] comps_split = comps.split(",");
+		for (int i = 0; i < comps_split.length; i++) {
+			System.out.println(comps_split[i]);
+		}
 		
 		
 	}
