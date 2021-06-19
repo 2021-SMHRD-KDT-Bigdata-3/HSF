@@ -7,6 +7,7 @@
 <html lang="en">
 <head>
 <title>성분 추천</title>
+
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
 <meta charset="utf-8">
@@ -41,9 +42,10 @@ table {
 	border-spacing: 40px;
 	border: 3px solid orange;
 	background-color:#FAFBDF;
-	
 	background-image:url("images/r1.png");
 	
+	
+
 }
 
 
@@ -154,7 +156,12 @@ table {
 			}
 			%>
 
+<<<<<<< HEAD
 
+
+=======
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 
 			<%@ include file="footer.jsp"%>
 		</div>

@@ -7,6 +7,8 @@
 <html lang="en">
 <head>
 <title>추천성분 상세</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,6 +29,9 @@
 div#supp {
 	color: black;
 }
+#index{
+font-family: 'Noto Serif KR', serif;
+}
 </style>
 </head>
 <body>
@@ -34,6 +39,7 @@ div#supp {
 	<%
 	//request.setCharacterEncoding("UTF-8");
 	//String comp = request.getParameter("comp");
+
 
 	//DAO dao = new DAO();
 	//DTO_SUPP dto_supp= null;
@@ -48,7 +54,8 @@ div#supp {
 			String comp = request.getParameter("comp");
 			System.out.println(comp+"왜 안돼안이;ㅏㅁㄴ;이");
 		%>
-		<div align="center">
+		<div id="index" align="center">
+
 			<div class="col-lg-5">
 				<div class="title-section">
 					<br> <br> <br>
@@ -57,18 +64,22 @@ div#supp {
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
+
 						<p>효능 : ~~~~~</p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>하루권장량</span>
+
 						<p>권장량 : ~~~~~</p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
+
 						<p>몰랑~~~~~~~~~~</p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>함께 복용</span>
+
 						<p>이건아직 모름~~~~~~</p>
 					</div>
 				</div>
@@ -79,6 +90,7 @@ div#supp {
 			<p>위 성분이 들어가있는 제품들</p>
 			<img src="images/product_01.png"> <img
 				src="images/product_02.png"> <img src="images/product_03.png">
+
 			<img src="images/product_04.png"> <br> <Strong>제품명 ~~~~~</Strong>
 		</div>
 
