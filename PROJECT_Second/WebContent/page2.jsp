@@ -7,6 +7,8 @@
 <html lang="en">
 <head>
 <title>추천성분 상세</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,8 +40,10 @@ font-family: 'Noto Serif KR', serif;
 	//request.setCharacterEncoding("UTF-8");
 	//String comp = request.getParameter("comp");
 
-	//DAO dao = new DAO();
-	//DTO_SUPP dto = dao.recom_comp(comp);
+
+//	DAO dao = new DAO();
+//	DTO_SUPP dto_supp= null;
+//	dto_supp = dao.recom_supp();
 	%>
 
 
@@ -51,19 +55,15 @@ font-family: 'Noto Serif KR', serif;
 				<div class="title-section">
 					<br> <br> <br>
 					<h2 class="mb-5">
-						추천성분 <strong class="text-primary">성분명적을자리</strong>
+						Component <strong class="text-primary">Name</strong>
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
-						<p>
-							효능 : ~~~~~
-							</p>
+						<p><%//=dto_supp.getEffect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
-						<span>하루권장량</span>
-						<p>
-							권장량 : ~~~~~
-							</p>
+						<span>하루권장량효수닝</span>
+					<p><%//=dto_supp.getInstruction()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
@@ -81,7 +81,7 @@ font-family: 'Noto Serif KR', serif;
 			<p>위 성분이 들어가있는 제품들</p>
 			<img src="images/product_01.png"> <img
 				src="images/product_02.png"> <img src="images/product_03.png">
-			<img src="images/product_04.png"> <br> <Strong>제품이미지설명~~~~~</Strong>
+			<img src="images/product_04.png"> <br> <Strong><%//=dto_supp.getSp_name()%></Strong>
 		</div>
 
 		<%@ include file="footer.jsp"%>
