@@ -51,8 +51,7 @@
 							for (int i = 0; i < arr_supp.size(); i++) {
 							%>
 							<div class="text-center item mb-4 item-v2">
-								<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
-									src="img/<%=arr_supp.get(i).getImg()%>.jpg" alt="Image"></a>
+
 								<h3 class="text-dark">
 									<p>
 										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
