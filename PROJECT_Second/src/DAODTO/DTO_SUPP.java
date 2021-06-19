@@ -12,11 +12,16 @@ public class DTO_SUPP {
 	private String effect;			//효능
 	private String component;		//성분
 	private int model;				//모델명
-	//img 추가 예정
+	private String img;				//이미지이름
 	
 	
+	public DTO_SUPP(String sp_name, String img) {
+		this.sp_name = sp_name;
+		this.img = img;
+	}
+
 	public DTO_SUPP(String sp_name, String brand, String rda, String instruction, String effect, String component,
-			int model) {
+			int model, String img) {
 		this.sp_name = sp_name;
 		this.brand = brand;
 		this.rda = rda;
@@ -24,10 +29,7 @@ public class DTO_SUPP {
 		this.effect = effect;
 		this.component = component;
 		this.model = model;
-	}
-	
-	public DTO_SUPP(String sp_name) {
-		this.sp_name = sp_name;
+		this.img = img;
 	}
 
 	public String getSp_name() {
@@ -84,6 +86,14 @@ public class DTO_SUPP {
 
 	public void setModel(int model) {
 		this.model = model;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 

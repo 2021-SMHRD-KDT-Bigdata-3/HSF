@@ -51,7 +51,7 @@ public class DAO {
 		try {
 			conn();
 
-			String sql = "select sp_name from supplement_test where model = ?";
+			String sql = "select sp_name, img from supplement where model = ?";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -60,8 +60,9 @@ public class DAO {
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 				String get_sp_name = rs.getString("sp_name");
+				String get_img = rs.getString("img");
 
-				dto_supp = new DTO_SUPP(get_sp_name);
+				dto_supp = new DTO_SUPP(get_sp_name, get_img);
 				arr_supp.add(dto_supp);
 			}
 		} catch (Exception e) {
