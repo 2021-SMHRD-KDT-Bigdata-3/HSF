@@ -89,7 +89,7 @@ font-family: 'Noto Serif KR', serif;
 			<img src="images/product_01.png"> <img
 				src="images/product_02.png"> <img src="images/product_03.png">
 
-			<img src="images/product_04.png"> <br> <Strong>제품명 ~~~~~</Strong>
+			<img src="images/product_04.png"> <br> <Strong>제품명 ~</Strong>
 		</div>
 
 		<%@ include file="footer.jsp"%>
