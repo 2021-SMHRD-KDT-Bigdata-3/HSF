@@ -51,7 +51,7 @@ public class DAO_component {
 			try {
 				conn();
 				arr_comp = new ArrayList<DTO_component>();
-				String sql = "select component from component where component = ?";
+				String sql = "select * from component where component = ?";
 
 				psmt = conn.prepareStatement(sql);
 
@@ -61,12 +61,13 @@ public class DAO_component {
 				cnt=0;
 				while(rs.next()) {
 					String component = rs.getString("component");
-					String effect = rs.getString("effect");
+					String effect = rs.getString("EFFECT");
 					String side_effect = rs.getString("side_effect");
 					String together_eat = rs.getString("together_eat");
 
 					dto_component = new DTO_component(component,effect,side_effect,together_eat);
 					arr_comp.add(cnt, dto_component);
+					System.out.println("됐는디??...");
 				}
 			} catch (Exception e) {
 				System.out.println("조회실패");
