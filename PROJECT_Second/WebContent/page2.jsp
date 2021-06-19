@@ -1,3 +1,5 @@
+<%@page import="DAODTO.DAO_component"%>
+<%@page import="DAODTO.DTO_component"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
@@ -50,9 +52,10 @@ font-family: 'Noto Serif KR', serif;
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 		<%
-			request.setCharacterEncoding("UTF-8");
+			request.setCharacterEncoding("EUC-KR");
 			String comp = request.getParameter("comp");
-			System.out.println(comp+"왜 안돼안이;ㅏㅁㄴ;이");
+			DAO_component dao_comp = new DAO_component();
+			ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 		%>
 		<div id="index" align="center">
 
@@ -65,7 +68,7 @@ font-family: 'Noto Serif KR', serif;
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
 
-						<p>효능 : ~~~~~</p>
+						<p><%=arr_comp.get(0) %></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>하루권장량</span>

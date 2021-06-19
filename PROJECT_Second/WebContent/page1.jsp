@@ -144,8 +144,7 @@ table {
 				for (int i = 0; i < arr.size(); i++) {
 				%>
 				<p class="comp">
-					<a href="page2.jsp?comp='<%=arr.get(i)%>'"><%=arr.get(i)%></a>
-					<%System.out.println(arr.get(i)); %>
+					<a href="page2.jsp?comp=<%=arr.get(i)%>"><%=arr.get(i)%></a>
 				</p>
 				<%
 				}
@@ -155,13 +154,6 @@ table {
 			<%
 			}
 			%>
-
-<<<<<<< HEAD
-
-
-=======
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 
 			<%@ include file="footer.jsp"%>
 		</div>
