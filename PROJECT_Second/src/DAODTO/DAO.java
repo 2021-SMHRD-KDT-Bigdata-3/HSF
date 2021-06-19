@@ -15,6 +15,7 @@ public class DAO {
 	DTO_SUPP dto_supp = null;
 	DTO_COMP dto_comp = null;
 	ArrayList<DTO_SUPP> arr_supp = new ArrayList<DTO_SUPP>();
+	//ArrayList<DTO_SUPP> arr_supp_one = new ArrayList<DTO_SUPP>();
 	
 	// DB연결
 	public void conn() {
@@ -76,34 +77,38 @@ public class DAO {
 
 //-----------------------------------------------------------------------------------------
 
-	// 제품 -> 설명 (가데이터)
-//	public DTO_SUPP recom_supp(String component) {
-//
-//		try {
-//			conn();
-//
-//			String sql = "select sp_name, instruction, effect from supp_test where component = ?";
-//
-//			psmt = conn.prepareStatement(sql);
-//
-//			psmt.setString(1, component);
-//
-//			rs = psmt.executeQuery();
-//			while (rs.next()) {
-//				String get_sp_name = rs.getString("sp_name");
-//				String get_instruction = rs.getString("instruction");
-//				String get_effect = rs.getString("effect");
-//
-//				dto_supp = new DTO_SUPP(get_sp_name, get_instruction, get_effect);
-//			}
-//		} catch (Exception e) {
-//			System.out.println("조회실패");
-//			e.printStackTrace();
-//		} finally {
-//			close();
-//		}
-//		return dto_supp;
-//	}
+	// 제품하나 -> 설명 
+	public DTO_SUPP supp_view_one(String sp_name) {
+		System.out.println(sp_name);
+		try {
+			conn();
+
+			String sql = "select sp_name, brand, rda, instruction, effect, component, img from supplement where sp_name = ?";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, sp_name);
+
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				String get_sp_name = rs.getString("sp_name");
+				String get_brand = rs.getString("brand");
+				String get_rda = rs.getString("rda");
+				String get_instruction = rs.getString("instruction");
+				String get_effect = rs.getString("effect");
+				String get_component = rs.getString("component");
+				String get_img = rs.getString("img");
+
+				dto_supp = new DTO_SUPP(get_sp_name, get_brand, get_rda, get_instruction, get_effect, get_component, get_img);
+			}
+		} catch (Exception e) {
+			System.out.println("조회실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return dto_supp;
+	}
 
 //-----------------------------------------------------------------------------------
 	
