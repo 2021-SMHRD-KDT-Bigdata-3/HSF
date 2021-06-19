@@ -68,22 +68,17 @@ font-family: 'Noto Serif KR', serif;
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
 
-						<p><%=arr_comp.get(0) %></p>
-					</div>
-					<div class="step-number d-flex mb-4">
-						<span>하루권장량</span>
-
-						<p>권장량 : ~~~~~</p>
+						<p><%=arr_comp.get(0).getEffect() %></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
 
-						<p>몰랑~~~~~~~~~~</p>
+						<p><%=arr_comp.get(0).getSide_effect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>함께 복용</span>
 
-						<p>이건아직 모름~~~~~~</p>
+						<p><%=arr_comp.get(0).getTogether_eat()%></p>
 					</div>
 				</div>
 			</div>
