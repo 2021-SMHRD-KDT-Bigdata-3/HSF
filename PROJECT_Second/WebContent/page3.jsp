@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAODTO.DTO_SUPP"%>
+<%@page import="DAODTO.DAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -23,10 +26,11 @@
 </head>
 <body>
 	<%
-	
-	//DAO dao = new DAO();
-	//DTO dto = dao.recom_sp(sp_name);
+	DAO dao = new DAO();
+	int model = 20;
+	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
+
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 
@@ -43,17 +47,21 @@
 					<div class="col-md-12 block-3 products-wrap">
 						<div class="nonloop-block-3 owl-carousel">
 
+							<%
+							for (int i = 0; i < arr_supp.size(); i++) {
+							%>
 							<div class="text-center item mb-4 item-v2">
-								<span class="onsale">Sale</span> <a href="page4.jsp"> <img
-									src="images/product_03.png" alt="Image">
-								</a>
+								<a href="page4.jsp"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"
+									alt="Image"></a>
 								<h3 class="text-dark">
-									<a href="page4.jsp">제품명1</a>
+									<p><a href="page4.jsp"><%=arr_supp.get(i).getSp_name()%></a></p>
 								</h3>
-								<p class="price">가격1</p>
 							</div>
+							<%
+							}
+							%>
 
-							<div class="text-center item mb-4 item-v2">
+							<!--  <div class="text-center item mb-4 item-v2">
 								<a href="page4.jsp"> <img src="images/product_01.png"
 									alt="Image"></a>
 								<h3 class="text-dark">
@@ -79,7 +87,7 @@
 									<a href="page4.jsp">제품명4</a>
 								</h3>
 								<p class="price">가격4</p>
-							</div>
+							</div> -->
 
 						</div>
 					</div>

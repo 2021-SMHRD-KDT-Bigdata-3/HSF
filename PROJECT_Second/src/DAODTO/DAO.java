@@ -14,7 +14,8 @@ public class DAO {
 	ResultSet rs = null;
 	DTO_SUPP dto_supp = null;
 	DTO_COMP dto_comp = null;
-
+	ArrayList<DTO_SUPP> arr_supp = new ArrayList<DTO_SUPP>();
+	
 	// DB연결
 	public void conn() {
 		try {
@@ -44,27 +45,56 @@ public class DAO {
 
 //-------------------------------------------------------------------------------------------------------------------
 
-	// 제품 -> 설명
-//	public DTO_SUPP supplement_view(String sp_name) {
+	// (제품조회) model -> 제품 
+	public ArrayList<DTO_SUPP> supplement_view(int model) {
+
+		try {
+			conn();
+
+			String sql = "select sp_name, img from supplement where model = ?";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setInt(1, model);
+
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				String get_sp_name = rs.getString("sp_name");
+				String get_img = rs.getString("img");
+
+				dto_supp = new DTO_SUPP(get_sp_name, get_img);
+				arr_supp.add(dto_supp);
+			}
+		} catch (Exception e) {
+			System.out.println("조회실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return arr_supp;
+	}
+
+//-----------------------------------------------------------------------------------------
+
+	// 제품 -> 설명 (가데이터)
+//	public DTO_SUPP recom_supp(String component) {
 //
 //		try {
 //			conn();
 //
-//			String sql = "select sp_name, rda, instruction, effect, component from supplement where sp_name = ?";
+//			String sql = "select sp_name, instruction, effect from supp_test where component = ?";
 //
 //			psmt = conn.prepareStatement(sql);
 //
-//			psmt.setString(1, sp_name);
+//			psmt.setString(1, component);
 //
 //			rs = psmt.executeQuery();
 //			while (rs.next()) {
 //				String get_sp_name = rs.getString("sp_name");
-//				String get_rda = rs.getString("rda");
 //				String get_instruction = rs.getString("instruction");
 //				String get_effect = rs.getString("effect");
-//				String get_component = rs.getString("component");
 //
-//				dto_supp = new DTO_SUPP(get_sp_name, get_rda, get_instruction, get_effect, get_component);
+//				dto_supp = new DTO_SUPP(get_sp_name, get_instruction, get_effect);
 //			}
 //		} catch (Exception e) {
 //			System.out.println("조회실패");
@@ -75,40 +105,9 @@ public class DAO {
 //		return dto_supp;
 //	}
 
-//-----------------------------------------------------------------------------------------
-
-	// 제품 -> 설명 (가데이터)
-	public DTO_SUPP recom_supp(String component) {
-
-		try {
-			conn();
-
-			String sql = "select sp_name, instruction, effect from supp_test where component = ?";
-
-			psmt = conn.prepareStatement(sql);
-
-			psmt.setString(1, component);
-
-			rs = psmt.executeQuery();
-			while (rs.next()) {
-				String get_sp_name = rs.getString("sp_name");
-				String get_instruction = rs.getString("instruction");
-				String get_effect = rs.getString("effect");
-
-				dto_supp = new DTO_SUPP(get_sp_name, get_instruction, get_effect);
-			}
-		} catch (Exception e) {
-			System.out.println("조회실패");
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return dto_supp;
-	}
-
 //-----------------------------------------------------------------------------------
 	
-	// 성분 -> 설명 (가데이터)
+	// (성분조회) 증상체크 -> 성분리턴 (가데이터)
 	public DTO_COMP component_view(String state) {
 
 		try {

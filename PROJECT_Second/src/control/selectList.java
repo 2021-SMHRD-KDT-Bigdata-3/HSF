@@ -46,9 +46,6 @@ public class selectList extends HttpServlet {
 		}
 		// System.out.println(comps);
 
-//		HashSet<String> hashSet = new HashSet<String>(Arrays.asList(comps));
-//		String[] resultArr = hashSet.toArray(new String[0]);
-//		System.out.println(Arrays.toString(resultArr));
 
 		String[] comps_split = comps.split(",");
 		ArrayList<String> arr = new ArrayList<String>();
