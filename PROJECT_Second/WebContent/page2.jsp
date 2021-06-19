@@ -62,7 +62,7 @@ font-family: 'Noto Serif KR', serif;
 						<p><%//=dto_supp.getEffect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
-						<span>하루권장량효수닝</span>
+						<span>하루권장량</span>
 					<p><%//=dto_supp.getInstruction()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
