@@ -54,8 +54,9 @@
 
 								<h3 class="text-dark">
 									<p>
-										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
 									</p>
+										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a>
+										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
 								</h3>
 							</div>
 							<%
