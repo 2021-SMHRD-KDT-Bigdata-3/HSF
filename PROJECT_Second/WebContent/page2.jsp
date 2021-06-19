@@ -56,7 +56,7 @@ font-family: 'Noto Serif KR', serif;
 					<br> <br> <br>
 					<h2 class="mb-5">
 
-						추천성분 <strong class="text-primary">성분적을곳</strong>
+						Component <strong class="text-primary">Name</strong>
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>

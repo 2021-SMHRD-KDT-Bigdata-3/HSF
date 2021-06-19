@@ -52,7 +52,7 @@
 							%>
 							<div class="text-center item mb-4 item-v2">
 								<a href="page4.jsp"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"
-									alt="Image"></a>
+									alt="Image" style="width:440px; height:440px"></a>
 								<h3 class="text-dark">
 									<p><a href="page4.jsp"><%=arr_supp.get(i).getSp_name()%></a></p>
 								</h3>
