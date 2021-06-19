@@ -156,12 +156,7 @@ table {
 			}
 			%>
 
-<<<<<<< HEAD
 
-
-=======
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 
 			<%@ include file="footer.jsp"%>
 		</div>
