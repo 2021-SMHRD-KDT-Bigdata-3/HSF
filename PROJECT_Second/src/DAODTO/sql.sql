@@ -1,1 +1,2 @@
-select * from COMP_TEST
+desc component;
+select * from component
