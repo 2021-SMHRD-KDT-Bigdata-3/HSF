@@ -1,3 +1,6 @@
+<%@page import="DAODTO.DTO_SUPP"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAODTO.DAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -21,7 +24,12 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+	<%
+	String sp_name = request.getParameter("sp_name");
+	DAO dao = new DAO();
+	DTO_SUPP dto_supp = null;
+	dto_supp = dao.supp_view_one(sp_name);
+	%>
 
 
 	<div class="site-wrap">
@@ -38,11 +46,13 @@
 		<br> <br> <br>
 
 		<div class="step-number" align="center">
-			<img src="images/product_02.png">
-			<p>제품명</p>
-			<p>제품설명</p>
-			<p>같이 먹으면 좋은 제품 : ~~~ </p>
-
+			<p><img src="img/<%=dto_supp.getImg() %>.jpg"></p>
+			<p><%=dto_supp.getSp_name() %></p>
+			<p><%=dto_supp.getRda() %></p>
+			<p><%=dto_supp.getBrand() %></p>
+			<p><%=dto_supp.getComponent() %></p>
+			<p><%=dto_supp.getEffect() %></p>
+			<p><%=dto_supp.getInstruction() %></p>
 		</div>
 
 		<%@ include file="footer.jsp"%>
