@@ -1,3 +1,5 @@
+<%@page import="DAODTO.DAO_component"%>
+<%@page import="DAODTO.DTO_component"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
@@ -49,34 +51,33 @@ font-family: 'Noto Serif KR', serif;
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-
+		<%
+			request.setCharacterEncoding("EUC-KR");
+			String comp = request.getParameter("comp");
+			DAO_component dao_comp = new DAO_component();
+			ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
+		%>
 		<div id="index" align="center">
+
 			<div class="col-lg-5">
 				<div class="title-section">
 					<br> <br> <br>
 					<h2 class="mb-5">
-
-						Component <strong class="text-primary">Name</strong>
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
 
-						<p>효능 : ~~~~~</p>
-					</div>
-					<div class="step-number d-flex mb-4">
-						<span>하루권장량</span>
-
-						<p>권장량 : ~~~~~</p>
+						<p><%=arr_comp.get(0).getEffect() %></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
 
-						<p>몰랑~~~~~~~~~~</p>
+						<p><%=arr_comp.get(0).getSide_effect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>함께 복용</span>
 
-						<p>이건아직 모름~~~~~~</p>
+						<p><%=arr_comp.get(0).getTogether_eat()%></p>
 					</div>
 				</div>
 			</div>
@@ -87,7 +88,7 @@ font-family: 'Noto Serif KR', serif;
 			<img src="images/product_01.png"> <img
 				src="images/product_02.png"> <img src="images/product_03.png">
 
-			<img src="images/product_04.png"> <br> <Strong>제품명 ~~~~~</Strong>
+			<img src="images/product_04.png"> <br> <Strong>제품명 ~</Strong>
 		</div>
 
 		<%@ include file="footer.jsp"%>

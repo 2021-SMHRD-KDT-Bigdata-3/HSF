@@ -20,17 +20,18 @@ public class DTO_SUPP {
 		this.img = img;
 	}
 
+
 	public DTO_SUPP(String sp_name, String brand, String rda, String instruction, String effect, String component,
-			int model, String img) {
+			String img) {
 		this.sp_name = sp_name;
 		this.brand = brand;
 		this.rda = rda;
 		this.instruction = instruction;
 		this.effect = effect;
 		this.component = component;
-		this.model = model;
 		this.img = img;
 	}
+
 
 	public String getSp_name() {
 		return sp_name;
