@@ -43,13 +43,17 @@ div#supp {
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-
+		<%
+			request.setCharacterEncoding("UTF-8");
+			String comp = request.getParameter("comp");
+			System.out.println(comp+"왜 안돼안이;ㅏㅁㄴ;이");
+		%>
 		<div align="center">
 			<div class="col-lg-5">
 				<div class="title-section">
 					<br> <br> <br>
 					<h2 class="mb-5">
-						추천성분 <strong class="text-primary">성분적을곳</strong>
+						추천성분 <strong class="text-primary"><%=comp %></strong>
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
