@@ -1243,8 +1243,8 @@ a {
   width: 70px;
   margin-right: 20px;
   font-size: 4px;
-  background: #75b239;
-  color: #fff;
+  background: orange;
+  color: black;
   border-radius: 50%; }
 
 .step-number p {

@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <style>
-*{
+.mb-0{
 font-family: 'Single Day', cursive;
 }
 .ment{
