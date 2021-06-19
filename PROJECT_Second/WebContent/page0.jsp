@@ -52,7 +52,7 @@ font-family: 'Noto Serif KR', serif;
                     <p class="ment">연령대나 성별, 증상에 따라 결핍되어있거나 필요로 하는 영양소를 섭취할 수 있도록 건강보조식품을 추천해주는 서비스를 제공합니다.</p>
                   </div>
                 </div>
-                <p><a href="page1.jsp" class="btn btn-primary px-5 py-3">검색</a></p>
+                <p><a href="page1.jsp" class="btn btn-primary px-5 py-3">시작하기</a></p>
               </div>
             </div>
           </div>

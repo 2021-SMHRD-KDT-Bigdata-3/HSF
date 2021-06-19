@@ -7,6 +7,8 @@
 <html lang="en">
 <head>
 <title>성분 추천</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +28,8 @@
 <style>
 .btn_comp {
 	width: 100px;
-	margin-left: 46%;
+	margin-left:27%;
+	float : left;
 }
 
 div.fo {
@@ -36,10 +39,14 @@ div.fo {
 table {
 	border-collapse: separate;
 	border-spacing: 40px;
-	border: 15px solid orange;
+	border: 3px solid orange;
 	background-color:#FAFBDF;
-	background-image:url("images/122.png");
+	
+	background-image:url("images/r1.png");
+	
 }
+
+
 </style>
 </head>
 <body>
@@ -112,11 +119,17 @@ table {
 								onclick="count_ck(this)" value="여성 컨디션">여성 컨디션</td>
 						</tr>
 					</table>
-					<br> <input type="submit" class="btn btn-primary btn_comp"
-						value="성분조회"> <br> <br>
+					<br><br> <input type="submit" class="btn btn-primary btn_comp"
+						value="성분조회">
 				</form>
 			</div>
 
+			<span> <a href="page3.jsp"
+				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
+			</span>
+			
+			
+			
 			<%
 			ArrayList<String> arr = (ArrayList<String>) session.getAttribute("arr");
 			%>
@@ -146,9 +159,6 @@ table {
 
 
 
-			<span> <a href="page3.jsp"
-				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
-			</span>
 
 			<%@ include file="footer.jsp"%>
 		</div>

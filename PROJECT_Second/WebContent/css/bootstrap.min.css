@@ -2000,8 +2000,8 @@ fieldset:disabled a.btn {
   border-color: orange; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #629530;
-    border-color: #5c8b2d; }
+    background-color:orange;
+    border-color: orange; }
   .btn-primary:focus, .btn-primary.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(117, 178, 57, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(117, 178, 57, 0.5); }
