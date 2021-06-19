@@ -10,7 +10,9 @@
 <head>
 <title>추천성분 상세</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
+	rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,44 +33,34 @@
 div#supp {
 	color: black;
 }
-#index{
-font-family: 'Noto Serif KR', serif;
+
+#index {
+	font-family: 'Noto Serif KR', serif;
 }
 </style>
 </head>
 <body>
-
 	<%
-	//request.setCharacterEncoding("UTF-8");
-	//String comp = request.getParameter("comp");
-
-
-	//DAO dao = new DAO();
-	//DTO_SUPP dto_supp= null;
-	//dto_supp = dao.recom_supp(comp);
+	request.setCharacterEncoding("EUC-KR");
+	String comp = request.getParameter("comp");
+	DAO_component dao_comp = new DAO_component();
+	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 	%>
-
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-		<%
-			request.setCharacterEncoding("EUC-KR");
-			String comp = request.getParameter("comp");
-			DAO_component dao_comp = new DAO_component();
-			ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
-		%>
 		<div id="index" align="center">
 
 			<div class="col-lg-5">
 				<div class="title-section">
 					<br> <br> <br>
 					<h2 class="mb-5">
-						추천성분 <strong class="text-primary"><%=comp %></strong>
+						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
 					<div class="step-number d-flex mb-4">
 						<span>효능</span>
 
-						<p><%=arr_comp.get(0).getEffect() %></p>
+						<p><%=arr_comp.get(0).getEffect()%></p>
 					</div>
 					<div class="step-number d-flex mb-4">
 						<span>부작용</span>
@@ -82,14 +74,6 @@ font-family: 'Noto Serif KR', serif;
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div id="supp" align="center">
-			<p>위 성분이 들어가있는 제품들</p>
-			<img src="images/product_01.png"> <img
-				src="images/product_02.png"> <img src="images/product_03.png">
-
-			<img src="images/product_04.png"> <br> <Strong>제품명 ~</Strong>
 		</div>
 
 		<%@ include file="footer.jsp"%>
