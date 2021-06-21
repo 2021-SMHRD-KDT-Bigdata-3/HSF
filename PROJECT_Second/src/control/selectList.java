@@ -38,24 +38,16 @@ public class selectList extends HttpServlet {
 
 		DAO dao = new DAO();
 		DTO_COMP dto_comp = null;
-
+		ArrayList<DTO_COMP> arr_comp = new ArrayList<DTO_COMP>();;
 		String comps = "";
 		for (int i = 0; i < chk.length; i++) {
-			dto_comp = dao.component_view(chk[i]);
-			comps += dto_comp.getComponent() + ",";
+			arr_comp.add(i,dao.statecomp_view(chk[i]));
 		}
 		// System.out.println(comps);
 
-		String[] comps_split = comps.split(",");
-		ArrayList<String> arr = new ArrayList<String>();
-		for (String item : comps_split) {
-			if (!arr.contains(item))
-				arr.add(item);
-		}
-		System.out.println(arr);
 
 		HttpSession session = request.getSession();
-		session.setAttribute("arr", arr);
+		session.setAttribute("arr", arr_comp);
 		response.sendRedirect("page1.jsp");
 		
 		

@@ -45,8 +45,9 @@ p.list1{
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("EUC-KR");
+	request.setCharacterEncoding("UTF-8");
 	String comp = request.getParameter("comp");
+	//comp = new String(comp.getBytes("8859_1"),"UTF-8");
 	DAO_component dao_comp = new DAO_component();
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 	DAO dao_sup = new DAO();
@@ -55,7 +56,7 @@ p.list1{
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-		<div id="index" align="center">X
+		<div id="index" align="center">
 
 			<div class="col-lg-5">
 				<div class="title-section">
@@ -85,7 +86,7 @@ p.list1{
 			<%if(cnt==5){ cnt=0;%>
 			</tr><tr>
 			<%}cnt+=1;%>
-			<td><img width="200px" height="200px" src="img/<%=arr_supp.get(i).getImg() %>.jpg"></td>
+			<td><a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img width="200px" height="200px" src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a></td>
 			<%} %>
 			</tr></table>
 		</div>

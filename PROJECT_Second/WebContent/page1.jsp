@@ -1,3 +1,4 @@
+<%@page import="DAODTO.DTO_COMP"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="java.util.HashSet"%>
@@ -7,7 +8,6 @@
 <html lang="en">
 <head>
 <title>성분 추천</title>
-
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
@@ -45,6 +45,17 @@ table {
 	border: 3px solid orange;
 	background-color: #FAFBDF;
 	background-image: url("images/r1.png");
+	font-family: 'Noto Serif KR', serif;
+	font-size: 16px;
+}
+
+#complist {
+	font-family: 'Single Day', cursive;
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 30px;
 }
 </style>
 </head>
@@ -82,45 +93,44 @@ table {
 						<tr>
 							<td rowspan="3" align="right"><h4>효능</h4></td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="피로회복">피로회복</td>
+								onclick="count_ck(this)" value="피로회복"> 피로회복</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="관절/뼈">관절/뼈</td>
+								onclick="count_ck(this)" value="관절/뼈"> 관절/뼈</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="불면증">불면증</td>
+								onclick="count_ck(this)" value="불면증"> 불면증</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="피부건강">피부건강</td>
+								onclick="count_ck(this)" value="피부건강"> 피부건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="혈액순환개선">혈액순환개선</td>
+								onclick="count_ck(this)" value="혈액순환개선"> 혈액순환개선</td>
 						</tr>
 						<tr>
 
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="간건강">간건강</td>
+								onclick="count_ck(this)" value="간건강"> 간건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="눈건강">눈건강</td>
+								onclick="count_ck(this)" value="눈건강"> 눈건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="긴장완화">긴장완화</td>
+								onclick="count_ck(this)" value="긴장완화"> 긴장완화</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="치아건강">치아건강</td>
+								onclick="count_ck(this)" value="치아건강"> 치아건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="근력개선">근력개선</td>
+								onclick="count_ck(this)" value="근력개선"> 근력개선</td>
 						</tr>
 						<tr>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="갱년기여성">갱년기여성</td>
+								onclick="count_ck(this)" value="갱년기여성"> 갱년기여성</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="갱년기남성">갱년기남성</td>
+								onclick="count_ck(this)" value="갱년기남성"> 갱년기남성</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="위건강/소화기능">위건강/소화기능</td>
+								onclick="count_ck(this)" value="위건강/소화기능"> 위건강/소화기능</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="남성 성기능">남성 성기능</td>
+								onclick="count_ck(this)" value="남성 성기능"> 남성 성기능</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="여성 컨디션">여성 컨디션</td>
+								onclick="count_ck(this)" value="여성 컨디션"> 여성 컨디션</td>
 						</tr>
 					</table>
-					<br>
-					<br> <input type="submit" class="btn btn-primary btn_comp" id="comp"
-						value="성분조회">
+					<br> <br> <input type="submit"
+						class="btn btn-primary btn_comp" id="comp" value="성분조회">
 				</form>
 			</div>
 
@@ -131,74 +141,89 @@ table {
 
 
 			<%
-			ArrayList<String> arr = (ArrayList<String>) session.getAttribute("arr");
+			ArrayList<DTO_COMP> arr = (ArrayList<DTO_COMP>) session.getAttribute("arr");
 			%>
 
 			<%
 			if (arr != null) {
 			%>
 			<div align="center" id="complist">
-				<%
-				for (int i = 0; i < arr.size(); i++) {
-				%>
-				<p class="comp">
-					<a href="page2.jsp?comp=<%=arr.get(i)%>"><%=arr.get(i)%></a>
-				</p>
+				<table>
+					<%
+					for (int i = 0; i < arr.size(); i++) {
+					%>
+					<td><div align="center">
+							<%
+							System.out.println("=========================================");
+							%>
+							<span><h3><%=arr.get(i).getState()%></h3></span>
+							<%
+							String[] comp_list = arr.get(i).getComponent().split(",");
+							for (int j = 0; j < comp_list.length; j++) {
+							%>
+							<span class="comp"> <a
+								href="page2.jsp?comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
+							</span><br>
+							<%
+							}
+							%>
+						</div></td>
+					<%
+					}
+					%>
+					</div>
+				</table>
 				<%
 				}
 				%>
+
+
+
+
+				<%@ include file="footer.jsp"%>
 			</div>
-
-			<%
-			}
-			%>
-
-
-
-
-
-			<%@ include file="footer.jsp"%>
 		</div>
-	</div>
 
 
-	<script src='js/jquery-3.6.0.js'></script>
-	<script>
-		var maxChk = 3;
-		var cnt = 0;
+		<script src='js/jquery-3.6.0.js'></script>
+		<script>
+			var maxChk = 3;
+			var cnt = 0;
 
-		function count_ck(field) {
-			if (field.checked) {
-				cnt++;
-			} else {
-				cnt--;
+			function count_ck(field) {
+				if (field.checked) {
+					cnt++;
+				} else {
+					cnt--;
+				}
+
+				if (cnt > maxChk) {
+					alert("3개까지만 선택할 수 있습니다.");
+					field.checked = false;
+					cnt--;
+				} else if (cnt == 0) {
+					alert("증상을 선택해주세요");
+				}
 			}
+		</script>
 
-			if (cnt > maxChk) {
-				alert("3개까지만 선택할 수 있습니다.");
-				field.checked = false;
-				cnt--;
-			}
-		}
-	</script>
-	
-	<script>
-		//$('#comp').on('click', function() {
+		<script>
+			//$('#comp').on('click', function() {
 			//$.ajax({
-				//url : 'http://localhost:9000/',
-				//data : 'num1=hello&num2=bigdata',
-				//data : 'age_num=',
-				//success : function(res) {
-					//alert('요청성공!');
-					//alert(res);
-				//},
-				//error : function() {
-					//alert('요청실패');
-				//}
+			//url : 'http://localhost:9000/',
+			//data : 'num1=hello&num2=bigdata',
+			//data : 'age_num=',
+			//success : function(res) {
+			//alert('요청성공!');
+			//alert(res);
+			//},
+			//error : function() {
+			//alert('요청실패');
+			//}
 
 			//})
 
-		//})
-	</script>
+			//})
+		</script>
 </body>
 </html>
