@@ -46,7 +46,7 @@ font-family: 'Noto Serif KR', serif;
           <div class="row">
             <div class="col-lg-12 mx-auto align-self-center">
               <div class="site-block-cover-content text-center">
-               <h1 class="mb-0">건강 보조식품 <strong class="text-primary">추천</strong></h1>
+               <h1 class="mb-0">효순이네 <strong class="text-primary">약꾹><</strong></h1>
                 <div class="row justify-content-center mb-5">
                   <div class="col-lg-6 text-center"><br>
                     <p class="ment">연령대나 성별, 증상에 따라 결핍되어있거나 필요로 하는 영양소를 섭취할 수 있도록 건강보조식품을 추천해주는 서비스를 제공합니다.</p>

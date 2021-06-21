@@ -1234,21 +1234,12 @@ a {
     text-transform: uppercase; }
 
 .step-number > span {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 70px;
-  flex: 0 0 70px;
-  text-align: center;
-  line-height: 70px;
-  height: 70px;
-  width: 70px;
-  margin-right: 20px;
-  font-size: 4px;
-  background: #75b239;
-  color: #fff;
-  border-radius: 50%; }
-
-.step-number p {
-  color: #000; }
+	color : orange;
+}
+p.list1 {
+  color: orange;
+  font-size : 30px;
+   }
 
 .btn-outline-white {
   border-color: #fff;

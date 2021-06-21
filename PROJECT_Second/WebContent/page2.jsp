@@ -23,9 +23,14 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <style>
 div#supp {
 	color: black;
+}
+p.list1{
+	font-family: 'Gamja Flower', cursive;
 }
 </style>
 </head>
@@ -35,9 +40,9 @@ div#supp {
 	request.setCharacterEncoding("UTF-8");
 	String comp = request.getParameter("comp");
 
-	DAO dao = new DAO();
-	DTO_SUPP dto_supp= null;
-	dto_supp = dao.recom_supp(comp);
+//	DAO dao = new DAO();
+//	DTO_SUPP dto_supp= null;
+//	dto_supp = dao.recom_supp(comp);
 	%>
 
 
@@ -51,31 +56,25 @@ div#supp {
 					<h2 class="mb-5">
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
-					<div class="step-number d-flex mb-4">
-						<span>효능</span>
-						<p><%=dto_supp.getEffect()%></p>
-					</div>
-					<div class="step-number d-flex mb-4">
-						<span>하루권장량</span>
-						<p><%=dto_supp.getInstruction()%></p>
-					</div>
-					<div class="step-number d-flex mb-4">
-						<span>부작용</span>
-						<p>몰랑</p>
-					</div>
-					<div class="step-number d-flex mb-4">
-						<span>함께 복용</span>
-						<p>이건아직 모름</p>
-					</div>
+					<table width = "500" style="margin-right: 70px;">
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span"><p class="list1">효능</p></span></td><td><p><%//=dto_supp.getEffect()%></p></td></tr>
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">부작용</p></span></td><td><p>몰랑</p></td></tr>
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">함께 복용</p></span></td><td><p>이건아직 모름</p></td></tr>
+				<!--<div class="step-number d-flex mb-4">  </div> -->	
+					<!--<div class="step-number d-flex mb-4">  </div> -->		
+						<!--<div class="step-number d-flex mb-4">  </div> -->	
+					
+					</table>
 				</div>
 			</div>
 		</div>
-
+	<br>
+	<br>
 		<div id="supp" align="center">
-			<p>위 성분이 들어가있는 제품들</p>
+			<h4>위 성분이 들어가있는 제품들</h4>
 			<img src="images/product_01.png"> <img
 				src="images/product_02.png"> <img src="images/product_03.png">
-			<img src="images/product_04.png"> <br> <Strong><%=dto_supp.getSp_name()%></Strong>
+			<img src="images/product_04.png"> <br> <Strong><%//=dto_supp.getSp_name()%></Strong>
 		</div>
 
 		<%@ include file="footer.jsp"%>

@@ -155,13 +155,6 @@ table {
 
 
 
-<<<<<<< HEAD
-			<span> <a href="page3.jsp"
-				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
-			</span>
-=======
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 
 			<%@ include file="footer.jsp"%>
 		</div>
