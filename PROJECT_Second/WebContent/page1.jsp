@@ -46,11 +46,16 @@ table {
 	border: 3px solid orange;
 	background-color:#FAFBDF;
 	background-image:url("images/r1.png");
+	font-family: 'Noto Serif KR', serif;
+	font-size:16px;
 	
 }
 #complist{
 	font-family: 'Single Day', cursive;
 	font-size: 30px;
+}
+h4{
+font-size: 30px;
 }
 
 
@@ -90,40 +95,40 @@ table {
 						<tr>
 							<td rowspan="3" align="right"><h4>효능</h4></td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="피로회복">피로회복</td>
+								onclick="count_ck(this)" value="피로회복"> 피로회복</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="관절/뼈">관절/뼈</td>
+								onclick="count_ck(this)" value="관절/뼈"> 관절/뼈</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="불면증">불면증</td>
+								onclick="count_ck(this)" value="불면증"> 불면증</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="피부건강">피부건강</td>
+								onclick="count_ck(this)" value="피부건강"> 피부건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="혈액순환개선">혈액순환개선</td>
+								onclick="count_ck(this)" value="혈액순환개선"> 혈액순환개선</td>
 						</tr>
 						<tr>
 
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="간건강">간건강</td>
+								onclick="count_ck(this)" value="간건강"> 간건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="눈건강">눈건강</td>
+								onclick="count_ck(this)" value="눈건강"> 눈건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="긴장완화">긴장완화</td>
+								onclick="count_ck(this)" value="긴장완화"> 긴장완화</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="치아건강">치아건강</td>
+								onclick="count_ck(this)" value="치아건강"> 치아건강</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="근력개선">근력개선</td>
+								onclick="count_ck(this)" value="근력개선"> 근력개선</td>
 						</tr>
 						<tr>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="갱년기여성">갱년기여성</td>
+								onclick="count_ck(this)" value="갱년기여성"> 갱년기여성</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="갱년기남성">갱년기남성</td>
+								onclick="count_ck(this)" value="갱년기남성"> 갱년기남성</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="위건강/소화기능">위건강/소화기능</td>
+								onclick="count_ck(this)" value="위건강/소화기능"> 위건강/소화기능</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="남성 성기능">남성 성기능</td>
+								onclick="count_ck(this)" value="남성 성기능"> 남성 성기능</td>
 							<td><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="여성 컨디션">여성 컨디션</td>
+								onclick="count_ck(this)" value="여성 컨디션"> 여성 컨디션</td>
 						</tr>
 					</table>
 					<br><br> <input type="submit" class="btn btn-primary btn_comp"

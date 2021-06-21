@@ -59,7 +59,9 @@ public class DAO_component {
 
 				rs = psmt.executeQuery();
 				cnt=0;
+				System.out.println("내가볼때"+comp);
 				while(rs.next()) {
+					System.out.println("여긴가요");
 					String component = rs.getString("component");
 					String effect = rs.getString("effect");
 					String side_effect = rs.getString("side_effect");

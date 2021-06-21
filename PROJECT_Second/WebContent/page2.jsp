@@ -45,8 +45,9 @@ p.list1{
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("UTF-8");
 	String comp = request.getParameter("comp");
+	comp = new String();
 	DAO_component dao_comp = new DAO_component();
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 	DAO dao_sup = new DAO();
@@ -60,6 +61,7 @@ p.list1{
 			<div class="col-lg-5">
 				<div class="title-section">
 					<br> <br> <br>
+					<h1>왜 안되는거야</h1>
 					<h2 class="mb-5">
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
