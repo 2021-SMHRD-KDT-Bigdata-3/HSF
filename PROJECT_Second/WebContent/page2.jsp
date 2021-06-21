@@ -47,7 +47,7 @@ p.list1{
 	<%
 	request.setCharacterEncoding("UTF-8");
 	String comp = request.getParameter("comp");
-	comp = new String();
+	comp = new String(comp.getBytes("8859_1"),"UTF-8");
 	DAO_component dao_comp = new DAO_component();
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 	DAO dao_sup = new DAO();
@@ -56,7 +56,7 @@ p.list1{
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-		<div id="index" align="center">X
+		<div id="index" align="center">
 
 			<div class="col-lg-5">
 				<div class="title-section">
