@@ -130,14 +130,14 @@ h4 {
 						</tr>
 					</table>
 					<br> <br> <input type="submit"
-						class="btn btn-primary btn_comp" id="comp" value="성분조회">
+						class="btn btn-primary btn_comp" value="성분조회">
 				</form>
 			</div>
+
 
 			<span> <a href="page3.jsp"
 				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
 			</span>
-
 
 
 			<%
@@ -171,59 +171,42 @@ h4 {
 					<%
 					}
 					%>
-					</div>
+
 				</table>
-				<%
-				}
-				%>
-
-
-
-
-				<%@ include file="footer.jsp"%>
 			</div>
-		</div>
-
-
-		<script src='js/jquery-3.6.0.js'></script>
-		<script>
-			var maxChk = 3;
-			var cnt = 0;
-
-			function count_ck(field) {
-				if (field.checked) {
-					cnt++;
-				} else {
-					cnt--;
-				}
-
-				if (cnt > maxChk) {
-					alert("3개까지만 선택할 수 있습니다.");
-					field.checked = false;
-					cnt--;
-				} else if (cnt == 0) {
-					alert("증상을 선택해주세요");
-				}
+			<%
 			}
-		</script>
+			%>
 
-		<script>
-			//$('#comp').on('click', function() {
-			//$.ajax({
-			//url : 'http://localhost:9000/',
-			//data : 'num1=hello&num2=bigdata',
-			//data : 'age_num=',
-			//success : function(res) {
-			//alert('요청성공!');
-			//alert(res);
-			//},
-			//error : function() {
-			//alert('요청실패');
-			//}
 
-			//})
 
-			//})
-		</script>
+
+			<%@ include file="footer.jsp"%>
+		</div>
+	</div>
+
+
+	<script src='js/jquery-3.6.0.js'></script>
+	<script>
+		var maxChk = 3;
+		var cnt = 0;
+
+		function count_ck(field) {
+			if (field.checked) {
+				cnt++;
+			} else {
+				cnt--;
+			}
+
+			if (cnt > maxChk) {
+				alert("3개까지만 선택할 수 있습니다.");
+				field.checked = false;
+				cnt--;
+			} else if (cnt == 0) {
+				alert("증상을 선택해주세요");
+			}
+		}
+		
+	</script>
 </body>
 </html>
