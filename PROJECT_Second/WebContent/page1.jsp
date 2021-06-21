@@ -215,14 +215,14 @@ font-size: 30px;
 					check_dic[$(val_test[i]).val()] = '0';
 				}
 			}
-			alert(check_dic['긴장완화']);
 			$.ajax({
 				type : 'post',
 				url:'http://127.0.0.1:5000/',
 				data : check_dic,
 				dataType : 'json',
-				success : function(){
-	                    alert('요청 성공!');},
+				success : function(res){
+	                    alert('요청 성공!');
+	                    window.location.href = "page3.jsp?model="+res;},
 	            error : function(){
 	                    alert('요청 실패쓰');
 	                }

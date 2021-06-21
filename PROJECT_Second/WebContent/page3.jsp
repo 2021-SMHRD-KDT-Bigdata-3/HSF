@@ -26,8 +26,9 @@
 </head>
 <body>
 	<%
+	int model = Integer.parseInt(request.getParameter("model"));
+	System.out.println(model);
 	DAO dao = new DAO();
-	int model = 30;
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
