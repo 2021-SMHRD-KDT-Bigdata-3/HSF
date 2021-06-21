@@ -29,11 +29,15 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <style>
 div#supp {
 	color: black;
 }
-
+p.list1{
+	font-family: 'Gamja Flower', cursive;
+}
 #index {
 	font-family: 'Noto Serif KR', serif;
 }
@@ -45,11 +49,13 @@ div#supp {
 	String comp = request.getParameter("comp");
 	DAO_component dao_comp = new DAO_component();
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
+	DAO dao_sup = new DAO();
+	ArrayList<DTO_SUPP> arr_supp = dao_sup.suppleimg_view(comp);
 	%>
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-		<div id="index" align="center">
+		<div id="index" align="center">X
 
 			<div class="col-lg-5">
 				<div class="title-section">
@@ -57,23 +63,31 @@ div#supp {
 					<h2 class="mb-5">
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
-					<div class="step-number d-flex mb-4">
-						<span>효능</span>
-
-						<p><%=arr_comp.get(0).getEffect()%></p>
-					</div>
-					<div class="step-number d-flex mb-4">
-						<span>부작용</span>
-
-						<p><%=arr_comp.get(0).getSide_effect()%></p>
-					</div>
-					<div class="step-number d-flex mb-4">
-						<span>함께 복용</span>
-
-						<p><%=arr_comp.get(0).getTogether_eat()%></p>
-					</div>
+					<table width = "500" style="margin-right: 70px;">
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span"><p class="list1">효능</p></span></td><td><p><%=arr_comp.get(0).getEffect()%></p></td></tr>
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">부작용</p></span></td><td><p><%=arr_comp.get(0).getSide_effect()%></p></td></tr>
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">함께 복용</p></span></td><td><p><%=arr_comp.get(0).getTogether_eat()%></p></td></tr>
+				<!--<div class="step-number d-flex mb-4">  </div> -->	
+					<!--<div class="step-number d-flex mb-4">  </div> -->		
+						<!--<div class="step-number d-flex mb-4">  </div> -->	
+					
+					</table>
 				</div>
 			</div>
+		</div>
+	<br>
+	<br>
+		<div id="supp" align="center" width="1500px">
+			<h4>관련 제품</h4>
+			<table>
+			<tr>
+			<%int cnt=0;for(int i=0;i<arr_supp.size();i++){%>
+			<%if(cnt==5){ cnt=0;%>
+			</tr><tr>
+			<%}cnt+=1;%>
+			<td><img width="200px" height="200px" src="img/<%=arr_supp.get(i).getImg() %>.jpg"></td>
+			<%} %>
+			</tr></table>
 		</div>
 
 		<%@ include file="footer.jsp"%>
