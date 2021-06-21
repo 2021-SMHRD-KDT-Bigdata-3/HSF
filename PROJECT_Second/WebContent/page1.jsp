@@ -7,7 +7,10 @@
 <html lang="en">
 <head>
 <title>성분 추천</title>
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
+	rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
 <meta charset="utf-8">
@@ -44,8 +47,10 @@ table {
 	background-color:#FAFBDF;
 	background-image:url("images/r1.png");
 	
-	
-
+}
+#complist{
+	font-family: 'Single Day', cursive;
+	font-size: 30px;
 }
 
 
@@ -128,7 +133,7 @@ table {
 
 			<span> <a href="page3.jsp"
 				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
-			</span>
+			</span><br>
 			
 			
 			
@@ -143,9 +148,9 @@ table {
 				<%
 				for (int i = 0; i < arr.size(); i++) {
 				%>
-				<p class="comp">
-					<a href="page2.jsp?comp=<%=arr.get(i)%>"><%=arr.get(i)%></a>
-				</p>
+				<span class="comp">
+					<a href="page2.jsp?comp=<%=arr.get(i)%>"><%= arr.get(i) + "," +"\n" %></a>
+				</span>
 				<%
 				}
 				%>

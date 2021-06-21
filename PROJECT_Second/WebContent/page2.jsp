@@ -41,7 +41,7 @@ div#supp {
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("EUC-KR");
+	request.setCharacterEncoding("utf-8");
 	String comp = request.getParameter("comp");
 	DAO_component dao_comp = new DAO_component();
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
