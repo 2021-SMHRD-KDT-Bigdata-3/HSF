@@ -86,7 +86,7 @@ p.list1{
 			<%if(cnt==5){ cnt=0;%>
 			</tr><tr>
 			<%}cnt+=1;%>
-			<td><img width="200px" height="200px" src="img/<%=arr_supp.get(i).getImg() %>.jpg"></td>
+			<td><a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img width="200px" height="200px" src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a></td>
 			<%} %>
 			</tr></table>
 		</div>
