@@ -174,4 +174,33 @@ public class DAO {
 		}
 		return dto_comp;
 	}
+	
+	//-----------------------------------------------------------------------------------
+	
+		// (성분조회) 증상체크 -> 성분리턴 증상별 성분 조회하기 위한 메서드
+		// page.1 에서 form 태그 통해 보낸 값을 selectList 파일에서 조회, 해당 메서드는 이 파일에서 사용한다.
+		public DTO_COMP statecomp_view(String state) {
+
+			try {
+				conn();
+				
+				String sql = "select * from comp_test where state = ?";
+
+				psmt = conn.prepareStatement(sql);
+
+				psmt.setString(1, state);
+				rs = psmt.executeQuery();
+				if (rs.next()) {
+					String state_c = rs.getString("state");
+					String get_component = rs.getString("component");
+					dto_comp = new DTO_COMP(state_c, get_component);
+				}
+			} catch (Exception e) {
+				System.out.println("조회실패");
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return dto_comp;
+		}
 }

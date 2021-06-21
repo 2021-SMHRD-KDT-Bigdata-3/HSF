@@ -1,3 +1,4 @@
+<%@page import="DAODTO.DTO_COMP"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="java.util.HashSet"%>
@@ -143,24 +144,31 @@ font-size: 30px;
 			
 			
 			<%
-			ArrayList<String> arr = (ArrayList<String>) session.getAttribute("arr");
+			ArrayList<DTO_COMP> arr = (ArrayList<DTO_COMP>) session.getAttribute("arr");
 			%>
 
 			<%
 			if (arr != null) {
 			%>
 			<div align="center" id="complist">
+			<table>
 				<%
 				for (int i = 0; i < arr.size(); i++) {
 				%>
-				<span class="comp">
-					<a href="page2.jsp?comp=<%=arr.get(i)%>"><%= arr.get(i) + "," +"\n" %></a>
-				</span>
+					<td><div align="center">
+					<%System.out.println("========================================="); %>
+					<span><h3><%=arr.get(i).getState() %></h3></span>
+					<%String[] comp_list = arr.get(i).getComponent().split(",");
+					for(int j=0;j<comp_list.length;j++){%>
+					<span class="comp">
+						<a href="page2.jsp?comp=<%=comp_list[j]%>"><%= comp_list[j] %></a>
+					</span><br><%} %>
+					</div></td>
 				<%
 				}
 				%>
 			</div>
-
+</table>
 			<%
 			}
 			%>
@@ -190,6 +198,8 @@ font-size: 30px;
 				alert("3개까지만 선택할 수 있습니다.");
 				field.checked = false;
 				cnt--;
+			}else if(cnt==0){
+				alert("증상을 선택해주세요");
 			}
 		}
 	</script>
