@@ -172,10 +172,8 @@ font-size: 30px;
 				}
 				%>
 			</div>
-</table>
-			<%
-			}
-			%>
+			</table>
+			<%}%>
 
 
 

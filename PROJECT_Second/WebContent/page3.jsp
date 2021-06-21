@@ -34,6 +34,7 @@
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 
+
 		<div class="site-section bg-light">
 			<div class="container">
 				<div class="row">
@@ -72,5 +73,11 @@
 
 		<%@ include file="footer.jsp"%>
 	</div>
+	
+	<script type="text/javascript">
+	
+	</script>
+	
+	
 </body>
 </html>
