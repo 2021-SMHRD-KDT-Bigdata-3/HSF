@@ -75,6 +75,40 @@ public class DAO {
 		return arr_supp;
 	}
 
+	//-------------------------------------------------------------------------------------------------------------------
+
+		// (제품조회) model -> 제품 
+		public ArrayList<DTO_SUPP> suppleimg_view(String component) {
+
+			try {
+				conn();
+
+				String sql = "select * from supplement where component like '%"+component+"%'";
+
+				psmt = conn.prepareStatement(sql);
+
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					String get_sp_name = rs.getString("sp_name");
+					String get_brand = rs.getString("brand");
+					String get_rda = rs.getString("rda");
+					String get_instruction = rs.getString("instruction");
+					String get_effect = rs.getString("effect");
+					String get_component = rs.getString("component");
+					String get_img = rs.getString("img");
+
+					dto_supp = new DTO_SUPP(get_sp_name, get_brand, get_rda, get_instruction, get_effect, get_component, get_img);
+					arr_supp.add(dto_supp);
+				}
+			} catch (Exception e) {
+				System.out.println("조회실패");
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return arr_supp;
+		}
+		
 //-----------------------------------------------------------------------------------------
 
 	// 제품하나 -> 설명 

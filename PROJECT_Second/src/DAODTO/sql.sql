@@ -1,2 +1,2 @@
 desc component;
-select * from component
+select * from supplement

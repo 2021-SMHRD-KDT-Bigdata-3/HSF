@@ -35,14 +35,11 @@
 div#supp {
 	color: black;
 }
-<<<<<<< HEAD
 p.list1{
 	font-family: 'Gamja Flower', cursive;
-=======
-
+}
 #index {
 	font-family: 'Noto Serif KR', serif;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 }
 </style>
 </head>
@@ -52,11 +49,13 @@ p.list1{
 	String comp = request.getParameter("comp");
 	DAO_component dao_comp = new DAO_component();
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
+	DAO dao_sup = new DAO();
+	ArrayList<DTO_SUPP> arr_supp = dao_sup.suppleimg_view(comp);
 	%>
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-		<div id="index" align="center">
+		<div id="index" align="center">X
 
 			<div class="col-lg-5">
 				<div class="title-section">
@@ -78,11 +77,17 @@ p.list1{
 		</div>
 	<br>
 	<br>
-		<div id="supp" align="center">
-			<h4>위 성분이 들어가있는 제품들</h4>
-			<img src="images/product_01.png"> <img
-				src="images/product_02.png"> <img src="images/product_03.png">
-			<img src="images/product_04.png"> <br> <Strong><%//=dto_supp.getSp_name()%></Strong>
+		<div id="supp" align="center" width="1500px">
+			<h4>관련 제품</h4>
+			<table>
+			<tr>
+			<%int cnt=0;for(int i=0;i<arr_supp.size();i++){%>
+			<%if(cnt==5){ cnt=0;%>
+			</tr><tr>
+			<%}cnt+=1;%>
+			<td><img width="200px" height="200px" src="img/<%=arr_supp.get(i).getImg() %>.jpg"></td>
+			<%} %>
+			</tr></table>
 		</div>
 
 		<%@ include file="footer.jsp"%>
