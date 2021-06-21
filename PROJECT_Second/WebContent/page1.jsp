@@ -9,7 +9,9 @@
 <title>성분 추천</title>
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
+	rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,8 +31,8 @@
 <style>
 .btn_comp {
 	width: 100px;
-	margin-left:27%;
-	float : left;
+	margin-left: 27%;
+	float: left;
 }
 
 div.fo {
@@ -41,14 +43,9 @@ table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	background-color:#FAFBDF;
-	background-image:url("images/r1.png");
-	
-	
-
+	background-color: #FAFBDF;
+	background-image: url("images/r1.png");
 }
-
-
 </style>
 </head>
 <body>
@@ -68,7 +65,7 @@ table {
 			</div>
 
 
-			<div >
+			<div>
 				<form action="selectList" method="post">
 					<table align="center" id="table">
 						<tr>
@@ -121,7 +118,8 @@ table {
 								onclick="count_ck(this)" value="여성 컨디션">여성 컨디션</td>
 						</tr>
 					</table>
-					<br><br> <input type="submit" class="btn btn-primary btn_comp"
+					<br>
+					<br> <input type="submit" class="btn btn-primary btn_comp" id="comp"
 						value="성분조회">
 				</form>
 			</div>
@@ -129,9 +127,9 @@ table {
 			<span> <a href="page3.jsp"
 				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
 			</span>
-			
-			
-			
+
+
+
 			<%
 			ArrayList<String> arr = (ArrayList<String>) session.getAttribute("arr");
 			%>
@@ -183,7 +181,24 @@ table {
 			}
 		}
 	</script>
+	
+	<script>
+		//$('#comp').on('click', function() {
+			//$.ajax({
+				//url : 'http://localhost:9000/',
+				//data : 'num1=hello&num2=bigdata',
+				//data : 'age_num=',
+				//success : function(res) {
+					//alert('요청성공!');
+					//alert(res);
+				//},
+				//error : function() {
+					//alert('요청실패');
+				//}
 
+			//})
 
+		//})
+	</script>
 </body>
 </html>

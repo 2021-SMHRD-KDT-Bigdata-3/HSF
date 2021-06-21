@@ -46,7 +46,6 @@ public class selectList extends HttpServlet {
 		}
 		// System.out.println(comps);
 
-
 		String[] comps_split = comps.split(",");
 		ArrayList<String> arr = new ArrayList<String>();
 		for (String item : comps_split) {
@@ -55,10 +54,27 @@ public class selectList extends HttpServlet {
 		}
 		System.out.println(arr);
 
-
 		HttpSession session = request.getSession();
 		session.setAttribute("arr", arr);
 		response.sendRedirect("page1.jsp");
+		
+		
+		
+//		RequestDispatcher rd = request.getRequestDispatcher("http://localhost:9000/");
+//		rd.forward(request, response);
+		
+//		response.sendRedirect("http://localhost:9000/?age_num="+age);
+		
+//		
+//		String redirectUrl = request.getRequestURI();
+//		if(request.getRequestURI().contains("age")) {
+//		    redirectUrl = "http://localhost:9000/?age_num="+age;
+//		}
+//		 
+//		response.sendRedirect(redirectUrl);
+
+
+		
 	}
 
 }
