@@ -1241,6 +1241,9 @@ p.list1 {
   font-size : 30px;
    }
 
+.step-number p {
+  color: #000; }
+
 .btn-outline-white {
   border-color: #fff;
   color: #fff;

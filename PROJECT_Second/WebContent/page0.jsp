@@ -5,11 +5,12 @@
 <head>
 <title>메인</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
+	rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <link
 	href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
 	rel="stylesheet">
@@ -23,11 +24,12 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <style>
-*{
-font-family: 'Single Day', cursive;
+.mb-0 {
+	font-family: 'Single Day', cursive;
 }
-.ment{
-font-family: 'Noto Serif KR', serif;
+
+.ment {
+	font-family: 'Noto Serif KR', serif;
 }
 </style>
 </head>
@@ -38,8 +40,7 @@ font-family: 'Noto Serif KR', serif;
 		<%@ include file="header.jsp"%>
 
 
-		    <div class="owl-carousel owl-single px-0">
-    
+		<div class="owl-carousel owl-single px-0">
 
        <div class="site-blocks-cover overlay" style="background-image: url('images/purple4.jpg');">
         <div class="container">
@@ -59,7 +60,7 @@ font-family: 'Noto Serif KR', serif;
         </div>
       </div> 
 
-    </div>
+		</div>
 		<%@ include file="footer.jsp"%>
 	</div>
 </body>

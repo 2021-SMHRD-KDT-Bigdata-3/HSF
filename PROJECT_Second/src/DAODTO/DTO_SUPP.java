@@ -11,41 +11,25 @@ public class DTO_SUPP {
 	private String instruction;		//복용법
 	private String effect;			//효능
 	private String component;		//성분
-	private int age;				//나이
+	private int model;				//모델명
+	private String img;				//이미지이름
 	
-	//model, img 추가
+	
+	public DTO_SUPP(String sp_name, String img) {
+		this.sp_name = sp_name;
+		this.img = img;
+	}
 
 
-	public DTO_SUPP(String sp_name, String brand, String rda, String instruction, String effect, String component, int age) {
+	public DTO_SUPP(String sp_name, String brand, String rda, String instruction, String effect, String component,
+			String img) {
 		this.sp_name = sp_name;
 		this.brand = brand;
 		this.rda = rda;
 		this.instruction = instruction;
 		this.effect = effect;
 		this.component = component;
-		this.age = age;
-	}
-
-
-	public DTO_SUPP(String sp_name, String instruction, String effect) {
-		this.sp_name = sp_name;
-		this.instruction = instruction;
-		this.effect = effect;
-	}
-
-
-	public DTO_SUPP(String sp_name, String rda, String instruction, String effect, String component) {
-		this.sp_name = sp_name;
-		this.rda = rda;
-		this.instruction = instruction;
-		this.effect = effect;
-		this.component = component;
-	}
-
-
-	public DTO_SUPP(String sp_name, String effect) {
-		this.sp_name = sp_name;
-		this.effect = effect;
+		this.img = img;
 	}
 
 
@@ -53,71 +37,67 @@ public class DTO_SUPP {
 		return sp_name;
 	}
 
-
 	public void setSp_name(String sp_name) {
 		this.sp_name = sp_name;
 	}
-
-
-	public int getAge() {
-		return age;
-	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 
 	public String getBrand() {
 		return brand;
 	}
 
-
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-
 
 	public String getRda() {
 		return rda;
 	}
 
-
 	public void setRda(String rda) {
 		this.rda = rda;
 	}
-
 
 	public String getInstruction() {
 		return instruction;
 	}
 
-
 	public void setInstruction(String instruction) {
 		this.instruction = instruction;
 	}
-
 
 	public String getEffect() {
 		return effect;
 	}
 
-
 	public void setEffect(String effect) {
 		this.effect = effect;
 	}
-
 
 	public String getComponent() {
 		return component;
 	}
 
-
 	public void setComponent(String component) {
 		this.component = component;
 	}
-	
+
+	public int getModel() {
+		return model;
+	}
+
+	public void setModel(int model) {
+		this.model = model;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+
 	
 	
 	

@@ -1,3 +1,5 @@
+<%@page import="DAODTO.DAO_component"%>
+<%@page import="DAODTO.DTO_component"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
@@ -7,6 +9,10 @@
 <html lang="en">
 <head>
 <title>추천성분 상세</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
+	rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,27 +35,29 @@
 div#supp {
 	color: black;
 }
+<<<<<<< HEAD
 p.list1{
 	font-family: 'Gamja Flower', cursive;
+=======
+
+#index {
+	font-family: 'Noto Serif KR', serif;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 }
 </style>
 </head>
 <body>
-
 	<%
-	request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("EUC-KR");
 	String comp = request.getParameter("comp");
-
-//	DAO dao = new DAO();
-//	DTO_SUPP dto_supp= null;
-//	dto_supp = dao.recom_supp(comp);
+	DAO_component dao_comp = new DAO_component();
+	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 	%>
-
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
+		<div id="index" align="center">
 
-		<div align="center">
 			<div class="col-lg-5">
 				<div class="title-section">
 					<br> <br> <br>
@@ -57,9 +65,9 @@ p.list1{
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
 					<table width = "500" style="margin-right: 70px;">
-					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span"><p class="list1">효능</p></span></td><td><p><%//=dto_supp.getEffect()%></p></td></tr>
-					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">부작용</p></span></td><td><p>몰랑</p></td></tr>
-					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">함께 복용</p></span></td><td><p>이건아직 모름</p></td></tr>
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span"><p class="list1">효능</p></span></td><td><p><%=arr_comp.get(0).getEffect()%></p></td></tr>
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">부작용</p></span></td><td><p><%=arr_comp.get(0).getSide_effect()%></p></td></tr>
+					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">함께 복용</p></span></td><td><p><%=arr_comp.get(0).getTogether_eat()%></p></td></tr>
 				<!--<div class="step-number d-flex mb-4">  </div> -->	
 					<!--<div class="step-number d-flex mb-4">  </div> -->		
 						<!--<div class="step-number d-flex mb-4">  </div> -->	
