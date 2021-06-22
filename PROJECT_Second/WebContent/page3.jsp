@@ -26,20 +26,23 @@
 </head>
 <body>
 	<%
+	//int model = Integer.parseInt(request.getParameter("model"));
+	int model = 20;
+	System.out.println(model);
 	DAO dao = new DAO();
-	int model = 30;
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
-	
+
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 
-		
+
 		<div class="site-section bg-light">
 			<div class="container">
 				<div class="row">
 					<div class="title-section text-center col-12">
+
 						<h2>
 							Supplement <strong class="text-primary">Products</strong>
 						</h2>
@@ -55,10 +58,10 @@
 							<div class="text-center item mb-4 item-v2">
 
 								<h3 class="text-dark">
-									<p>
-									</p>
-										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a>
-										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
+									<p></p>
+									<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
+										src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a> <a
+										href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
 								</h3>
 							</div>
 							<%
@@ -74,11 +77,11 @@
 
 		<%@ include file="footer.jsp"%>
 	</div>
-	
+
 	<script type="text/javascript">
-	
+		
 	</script>
-	
-	
+
+
 </body>
 </html>
