@@ -35,14 +35,11 @@
 div#supp {
 	color: black;
 }
-<<<<<<< HEAD
 p.list1{
 	font-family: 'Gamja Flower', cursive;
-=======
-
+}
 #index {
 	font-family: 'Noto Serif KR', serif;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 }
 </style>
 </head>
