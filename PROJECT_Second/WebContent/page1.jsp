@@ -50,11 +50,16 @@ div.fo {
 	font-size:16px;
 }
 
-h4{
+h4 , .sym{
 font-size: 30px;
+color: orange;
 }
 
-
+#complist{
+	border: solid orange;
+	border-collapse: separate;
+	border-spacing: 40px;
+}
 </style>
 </head>
 <body>
@@ -77,7 +82,7 @@ font-size: 30px;
 
 			<div >
 				<form action="selectList" method="post" name="testform">
-					<table align="center" id="table">
+					<table align="center" id="table1">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"
@@ -151,20 +156,15 @@ font-size: 30px;
 			if (arr != null) {
 			%>
 			<div align="center" >
-			<table id="complist" >
+			 <table id="complist" >
 			
 				<%
 				for (int i = 0; i < arr.size(); i++){
 				%>
-			<tr><td></td><td></td><td></td></tr>
-			
-			
-			
-			
 			<td>
 				<div>
 					<%System.out.println("========================================="); %>
-					<span><h3><%=arr.get(i).getState()+ "\n" %></h3></span>
+					<span class="sym"><h3><%=arr.get(i).getState()+ "\n" %></h3></span>
 					
 					<%String[] comp_list = arr.get(i).getComponent().split(",");
 					for(int j=0;j<comp_list.length;j++){%>
@@ -176,7 +176,7 @@ font-size: 30px;
 			</td>
 				<%}
 				%>
-			</table>
+		    </table>
 			</div>
 			<%
 			}
