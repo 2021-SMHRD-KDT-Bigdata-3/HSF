@@ -75,6 +75,40 @@ public class DAO {
 		return arr_supp;
 	}
 
+	//-------------------------------------------------------------------------------------------------------------------
+
+		// (제품조회) model -> 제품 
+		public ArrayList<DTO_SUPP> suppleimg_view(String component) {
+
+			try {
+				conn();
+
+				String sql = "select * from supplement where component like '%"+component+"%'";
+
+				psmt = conn.prepareStatement(sql);
+
+				rs = psmt.executeQuery();
+				while(rs.next()) {
+					String get_sp_name = rs.getString("sp_name");
+					String get_brand = rs.getString("brand");
+					String get_rda = rs.getString("rda");
+					String get_instruction = rs.getString("instruction");
+					String get_effect = rs.getString("effect");
+					String get_component = rs.getString("component");
+					String get_img = rs.getString("img");
+
+					dto_supp = new DTO_SUPP(get_sp_name, get_brand, get_rda, get_instruction, get_effect, get_component, get_img);
+					arr_supp.add(dto_supp);
+				}
+			} catch (Exception e) {
+				System.out.println("조회실패");
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return arr_supp;
+		}
+		
 //-----------------------------------------------------------------------------------------
 
 	// 제품하나 -> 설명 
@@ -140,4 +174,33 @@ public class DAO {
 		}
 		return dto_comp;
 	}
+	
+	//-----------------------------------------------------------------------------------
+	
+		// (성분조회) 증상체크 -> 성분리턴 증상별 성분 조회하기 위한 메서드
+		// page.1 에서 form 태그 통해 보낸 값을 selectList 파일에서 조회, 해당 메서드는 이 파일에서 사용한다.
+		public DTO_COMP statecomp_view(String state) {
+
+			try {
+				conn();
+				
+				String sql = "select * from comp_test where state = ?";
+
+				psmt = conn.prepareStatement(sql);
+
+				psmt.setString(1, state);
+				rs = psmt.executeQuery();
+				if (rs.next()) {
+					String state_c = rs.getString("state");
+					String get_component = rs.getString("component");
+					dto_comp = new DTO_COMP(state_c, get_component);
+				}
+			} catch (Exception e) {
+				System.out.println("조회실패");
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			return dto_comp;
+		}
 }

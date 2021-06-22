@@ -40,13 +40,15 @@
 </style>
 <body>
 	<%
+	int model = Integer.parseInt(request.getParameter("model"));
+	System.out.println(model);
 	DAO dao = new DAO();
-	int model = 30;
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
 	<div> class="site-wrap"
 		<%@ include file="header.jsp"%>
+
 
 		<div class="site-section bg-light">
 			<div class="container">
@@ -97,5 +99,11 @@
 
 		<%@ include file="footer.jsp"%>
 	</div>
+	
+	<script type="text/javascript">
+	
+	</script>
+	
+	
 </body>
 </html>

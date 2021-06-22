@@ -1,2 +1,3 @@
 desc component;
-select * from component
+select * from supplement
+select * from comp_test;
