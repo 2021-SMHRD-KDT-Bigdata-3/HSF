@@ -71,70 +71,26 @@ img {
 					</div>
 				</div>
 				<div class="row">
-					<table id="supp_list" border=1
-						style="border-color: lightgrey; border-collapse: separate; border-spacing: 0 40px;">
-						<%
-						System.out.println(arr_supp.size());
-						for (int i = 0; i < arr_supp.size(); i += 4) {
-						%>
-						<div class="text-center item mb-4 item-v2">
-
-							<h3 class="text-dark">
-								<p></p>
-								<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
-									src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a> <a
-									href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
-							</h3>
-						</div>
-						<%
-						if (i + 3 >= arr_supp.size()) {
-							break;
-						}
-						%>
-						<tr>
-							<td
-								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
-								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
-									src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
-							<td
-								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
-								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 1).getSp_name()%>"><img
-									src="img/<%=arr_supp.get(i + 1).getImg()%>.jpg"></a></td>
-							<td
-								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
-								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 2).getSp_name()%>"><img
-									src="img/<%=arr_supp.get(i + 2).getImg()%>.jpg"></a></td>
-							<td
-								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
-								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 3).getSp_name()%>"><img
-									src="img/<%=arr_supp.get(i + 3).getImg()%>.jpg"></a></td>
-						</tr>
-						<tr>
-							<td
-								style="border-top: none; border-left: none; border-right: none;"><a
-								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a></td>
-							<td
-								style="border-top: none; border-left: none; border-right: none;"><a
-								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 1).getSp_name()%>"><%=arr_supp.get(i + 1).getSp_name()%></a></td>
-							<td
-								style="border-top: none; border-left: none; border-right: none;"><a
-								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 2).getSp_name()%>"><%=arr_supp.get(i + 2).getSp_name()%></a></td>
-							<td
-								style="border-top: none; border-left: none; border-right: none;"><a
-								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 3).getSp_name()%>"><%=arr_supp.get(i + 3).getSp_name()%></a></td>
-						</tr>
-						<%
-						}
-						%>
-					</table>
+					<table id = "supp_list" border = 1 style = "border-color : lightgrey; border-collapse: separate; border-spacing: 0 40px;" >
+                  <%
+                  System.out.println(arr_supp.size());
+                     for (int i = 0; i < arr_supp.size(); i+=4) {
+                     %>
+                        <%if(i+3>=arr_supp.size()){break;} %>
+                        <tr><td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a></td>
+                        <td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+1).getSp_name()%>"><img src="img/<%=arr_supp.get(i+1).getImg() %>.jpg"></a></td>
+                        <td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+2).getSp_name()%>"><img src="img/<%=arr_supp.get(i+2).getImg() %>.jpg"></a></td>
+                        <td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;"  width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+3).getSp_name()%>"><img src="img/<%=arr_supp.get(i+3).getImg() %>.jpg"></a></td>
+                        </tr>
+                        <tr><td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a></td>
+                        <td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+1).getSp_name()%>"><%=arr_supp.get(i+1).getSp_name()%></a></td>
+                        <td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+2).getSp_name()%>"><%=arr_supp.get(i+2).getSp_name()%></a></td>
+                        <td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+3).getSp_name()%>"><%=arr_supp.get(i+3).getSp_name()%></a></td>
+                        </tr>
+                        <%
+                     }
+                     %>
+               </table>
 
 				</div>
 			</div>
