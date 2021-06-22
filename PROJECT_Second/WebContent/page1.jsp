@@ -160,7 +160,7 @@ font-size: 30px;
 				<%
 				for (int i = 0; i < arr.size(); i++) {
 				%>
-					<td><div align="center">
+					<td style = "vertical-align:top"><div align="center">
 					<span><h3><%=arr.get(i).getState() %></h3></span>
 					<%String[] comp_list = arr.get(i).getComponent().split(",");
 					for(int j=0;j<comp_list.length;j++){%>
@@ -221,7 +221,7 @@ font-size: 30px;
 				data : check_dic,
 				dataType : 'json',
 				success : function(res){
-	                    alert('요청 성공!');
+	                    //alert('요청 성공!');
 	                    window.location.href = "page3.jsp?model="+res;},
 	            error : function(){
 	                    alert('요청 실패쓰');
