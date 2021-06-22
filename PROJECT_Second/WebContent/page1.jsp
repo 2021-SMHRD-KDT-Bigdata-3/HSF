@@ -59,6 +59,7 @@ font-size: 30px;
 </head>
 <body>
 
+	<script src='js/jquery-3.6.0.js'></script>
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 
@@ -75,8 +76,8 @@ font-size: 30px;
 
 
 			<div >
-				<form action="selectList" method="post">
-					<table align="center" id="table1">
+				<form action="selectList" method="post" name="testform">
+					<table align="center" id="table">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"
@@ -131,10 +132,14 @@ font-size: 30px;
 						value="성분조회">
 				</form>
 			</div>
-
-			<span> <a href="page3.jsp"
-				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
-			</span><br>
+			
+			<form action="http://127.0.0.1:5000/" method="post">
+				<script>
+				</script>
+				<span> <input type="button" class="btn btn-primary btn_comp btn_user" 
+				onclick="sum_chan()" value="제품 조회"> <br> <br>
+				</span>
+			</form><br>
 			
 			
 			
@@ -181,12 +186,12 @@ font-size: 30px;
 
 
 
+
 			<%@ include file="footer.jsp"%>
 		</div>
 	</div>
 
 
-	<script src='js/jquery-3.6.0.js'></script>
 	<script>
 		var maxChk = 3;
 		var cnt = 0;
@@ -205,6 +210,31 @@ font-size: 30px;
 			}else if(cnt==0){
 				alert("증상을 선택해주세요");
 			}
+		}
+		function sum_chan(){
+			var val_test = $('input:checkbox[name=chk1]');
+			let check_dic = {
+					"나이":$("select[name=age]").val()
+			};
+			for(let i=0;i<val_test.length;i++){
+				if($(val_test[i]).is(':checked')){
+					check_dic[$(val_test[i]).val()] = '1';
+				}else{
+					check_dic[$(val_test[i]).val()] = '0';
+				}
+			}
+			$.ajax({
+				type : 'post',
+				url:'http://127.0.0.1:5000/',
+				data : check_dic,
+				dataType : 'json',
+				success : function(res){
+	                    alert('요청 성공!');
+	                    window.location.href = "page3.jsp?model="+res;},
+	            error : function(){
+	                    alert('요청 실패쓰');
+	                }
+			})
 		}
 	</script>
 
