@@ -151,6 +151,11 @@ font-size: 30px;
 				<%
 				for (int i = 0; i < arr.size(); i++){
 				%>
+			<tr><td></td><td></td><td></td></tr>
+			
+			
+			
+			
 			<td>
 				<div>
 					<%System.out.println("========================================="); %>
