@@ -12,10 +12,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
 	rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
-	rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,10 +52,17 @@ table {
 #complist {
 	font-family: 'Single Day', cursive;
 	font-size: 30px;
+	#
+	table1
+	{
+	background-image
+	:
+	url("images/r1.png");
 }
 
 h4 {
-	font-size: 30px;
+	font-size: 30px; h4 { font-size : 30px;
+	color: orange;
 }
 </style>
 </head>
@@ -83,7 +86,7 @@ h4 {
 
 			<div>
 				<form action="selectList" method="post" name="testform">
-					<table align="center" id="table">
+					<table align="center" id="table1">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"
@@ -156,6 +159,7 @@ h4 {
 			<%
 			if (arr != null) {
 			%>
+
 			<div align="center" id="complist">
 				<table>
 					<%
@@ -186,8 +190,6 @@ h4 {
 			}
 			%>
 
-
-
 			<%@ include file="footer.jsp"%>
 		</div>
 
@@ -211,34 +213,41 @@ h4 {
 					alert("증상을 선택해주세요");
 				}
 			}
-
-			function sum_chan() {
-				var val_test = $('input:checkbox[name=chk1]');
-				let check_dic = {
-					"나이" : $("select[name=age]").val()
-				};
-				for (let i = 0; i < val_test.length; i++) {
-					if ($(val_test[i]).is(':checked')) {
-						check_dic[$(val_test[i]).val()] = '1';
-					} else {
-						check_dic[$(val_test[i]).val()] = '0';
-					}
-				}
-
-				$.ajax({
-					type : 'post',
-					url : 'http://127.0.0.1:5000/',
-					data : check_dic,
-					dataType : 'json',
-					success : function(res) {
-						alert('요청 성공!');
-						window.location.href = "page3.jsp?model=" + res;
-					},
-					error : function() {
-						alert('요청 실패쓰');
-					}
-				})
+			$.ajax({
+				type : 'post',
+				url:'http://127.0.0.1:5000/',
+				data : check_dic,
+				dataType : 'json',
+				success : function(res){
+	                    //alert('요청 성공!');
+	                    window.location.href = "page3.jsp?model="+res;},
+	            error : function(){
+	                    alert('요청 실패쓰');
+	                }
+			})
+		}
+		function sum_chan() {
+			var val_test = $('input:checkbox[name=chk1]');
+			let check_dic = { "나이" : $("select[name=age]").val()}; 
+		 for (let i = 0; i< val_test.length; i++) {
+			 if ($(val_test[i]).is(':checked')) {
+				 check_dic[$(val_test[i]).val()] = '1';
+		 	} else {
+				check_dic[$(val_test[i]).val()] = '0';
 			}
+		}
+		 $.ajax({ type : 'post',
+			 url : 'http://127.0.0.1:5000/',
+			 data : check_dic,
+			 dataType : 'json',
+			 success : function(res) {
+				 alert('요청 성공!');
+				 window.location.href = "page3.jsp?model=" + res;
+			 },
+		 	error : function() { alert('요청 실패쓰');}
+			 
+		})
+		}
 		</script>
 </body>
 </html>
