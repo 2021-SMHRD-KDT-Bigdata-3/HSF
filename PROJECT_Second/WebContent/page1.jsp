@@ -145,9 +145,9 @@ h4 {
 
 
 			<form action="http://127.0.0.1:5000/" method="post">
-				<span> <a href="page3.jsp"><input type="button"
+				<span><input type="button"
 						class="btn btn-primary btn_comp btn_user" onclick="sum_chan()"
-						value="제품 조회"></a>
+						value="제품 조회">
 				</span>
 			</form>
 			<br> <br> <br>
@@ -165,10 +165,7 @@ h4 {
 					<%
 					for (int i = 0; i < arr.size(); i++) {
 					%>
-					<td><div align="center">
-							<%
-							System.out.println("=========================================");
-							%>
+					<td style="vertical-align: top"><div align="center">
 							<span><h3><%=arr.get(i).getState()%></h3></span>
 							<%
 							String[] comp_list = arr.get(i).getComponent().split(",");
@@ -213,29 +210,16 @@ h4 {
 					alert("증상을 선택해주세요");
 				}
 			}
-			$.ajax({
-				type : 'post',
-				url:'http://127.0.0.1:5000/',
-				data : check_dic,
-				dataType : 'json',
-				success : function(res){
-	                    //alert('요청 성공!');
-	                    window.location.href = "page3.jsp?model="+res;},
-	            error : function(){
-	                    alert('요청 실패쓰');
-	                }
-			})
-		}
 		function sum_chan() {
 			var val_test = $('input:checkbox[name=chk1]');
 			let check_dic = { "나이" : $("select[name=age]").val()}; 
 		 for (let i = 0; i< val_test.length; i++) {
 			 if ($(val_test[i]).is(':checked')) {
 				 check_dic[$(val_test[i]).val()] = '1';
-		 	} else {
+		 		} else {
 				check_dic[$(val_test[i]).val()] = '0';
+				}
 			}
-		}
 		 $.ajax({ type : 'post',
 			 url : 'http://127.0.0.1:5000/',
 			 data : check_dic,
@@ -244,9 +228,10 @@ h4 {
 				 alert('요청 성공!');
 				 window.location.href = "page3.jsp?model=" + res;
 			 },
-		 	error : function() { alert('요청 실패쓰');}
-			 
-		})
+		 	error : function() { 
+		 		alert('요청 실패쓰');
+		 		}
+			})
 		}
 		</script>
 </body>
