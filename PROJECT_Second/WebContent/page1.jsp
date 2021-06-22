@@ -45,18 +45,18 @@ table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	background-color:#FAFBDF;
-	background-image:url("images/r1.png");
+	
 	font-family: 'Noto Serif KR', serif;
 	font-size:16px;
 	
 }
-#complist{
-	font-family: 'Single Day', cursive;
-	font-size: 30px;
+#table1{
+background-image:url("images/r1.png");
 }
+
 h4{
 font-size: 30px;
+color: orange;
 }
 
 
@@ -64,6 +64,7 @@ font-size: 30px;
 </head>
 <body>
 
+	<script src='js/jquery-3.6.0.js'></script>
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 
@@ -80,8 +81,8 @@ font-size: 30px;
 
 
 			<div >
-				<form action="selectList" method="post">
-					<table align="center" id="table">
+				<form action="selectList" method="post" name="testform">
+					<table align="center" id="table1">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"
@@ -136,10 +137,14 @@ font-size: 30px;
 						value="성분조회">
 				</form>
 			</div>
-
-			<span> <a href="page3.jsp"
-				class="btn btn-primary btn_comp btn_user">제품 조회</a> <br> <br>
-			</span><br>
+			
+			<form action="http://127.0.0.1:5000/" method="post">
+				<script>
+				</script>
+				<span> <input type="button" class="btn btn-primary btn_comp btn_user" 
+				onclick="sum_chan()" value="제품 조회"> <br> <br>
+				</span>
+			</form><br>
 			
 			
 			
@@ -150,13 +155,14 @@ font-size: 30px;
 			<%
 			if (arr != null) {
 			%>
+
 			<div align="center" id="complist">
 			<table>
 				<%
 				for (int i = 0; i < arr.size(); i++) {
 				%>
-					<td><div align="center">
-					<%System.out.println("========================================="); %>
+					<td style = "vertical-align:top"><div align="center">
+
 					<span><h3><%=arr.get(i).getState() %></h3></span>
 					<%String[] comp_list = arr.get(i).getComponent().split(",");
 					for(int j=0;j<comp_list.length;j++){%>
@@ -167,11 +173,10 @@ font-size: 30px;
 				<%
 				}
 				%>
+
 			</div>
-</table>
-			<%
-			}
-			%>
+			</table>
+			<%}%>
 
 
 
@@ -182,7 +187,6 @@ font-size: 30px;
 	</div>
 
 
-	<script src='js/jquery-3.6.0.js'></script>
 	<script>
 		var maxChk = 3;
 		var cnt = 0;
@@ -201,6 +205,31 @@ font-size: 30px;
 			}else if(cnt==0){
 				alert("증상을 선택해주세요");
 			}
+		}
+		function sum_chan(){
+			var val_test = $('input:checkbox[name=chk1]');
+			let check_dic = {
+					"나이":$("select[name=age]").val()
+			};
+			for(let i=0;i<val_test.length;i++){
+				if($(val_test[i]).is(':checked')){
+					check_dic[$(val_test[i]).val()] = '1';
+				}else{
+					check_dic[$(val_test[i]).val()] = '0';
+				}
+			}
+			$.ajax({
+				type : 'post',
+				url:'http://127.0.0.1:5000/',
+				data : check_dic,
+				dataType : 'json',
+				success : function(res){
+	                    //alert('요청 성공!');
+	                    window.location.href = "page3.jsp?model="+res;},
+	            error : function(){
+	                    alert('요청 실패쓰');
+	                }
+			})
 		}
 	</script>
 
