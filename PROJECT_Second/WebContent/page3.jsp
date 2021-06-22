@@ -26,10 +26,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 <style>
-	#pname{
-	font-family: 'Poor Story', cursive;
-	font-size: 20px;
-	color: black;
+#pname {
+   font-family: 'Poor Story', cursive;
+   font-size: 20px;
+   color: black;
 }
 	img{
 		width: 200px;
