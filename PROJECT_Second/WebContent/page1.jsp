@@ -188,10 +188,7 @@ h4 {
 					<%
 					for (int i = 0; i < arr.size(); i++) {
 					%>
-					<td><div align="center">
-							<%
-							System.out.println("=========================================");
-							%>
+					<td style="vertical-align: top"><div align="center">
 							<span><h3><%=arr.get(i).getState()%></h3></span>
 							<%
 							String[] comp_list = arr.get(i).getComponent().split(",");
@@ -273,6 +270,7 @@ h4 {
 
 			//})
 			//}
+
 		</script>
 </body>
 </html>

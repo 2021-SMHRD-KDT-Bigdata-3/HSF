@@ -21,42 +21,38 @@
 <link rel="stylesheet" href="css/owl.carousel.min.css">
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
-<link
-	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link
-	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 <style>
 #pname {
-	font-family: 'Poor Story', cursive;
-	font-size: 20px;
-	color: black;
+   font-family: 'Poor Story', cursive;
+   font-size: 20px;
+   color: black;
 }
-
-img {
-	width: 200px;
-	height: 200px;
-	object-fit: contain;
-}
-
-#supp_list {
-	border: 3px;
-}
+	img{
+		width: 200px;
+		height: 200px;
+		object-fit: contain;
+		
+	}
+	#supp_list{
+		border: 3px;
+		border-collapse: separate; 
+		border-spacing: 0 40px;
+	}
 </style>
 <body>
 	<%
+	System.out.println("======================================================================");
 	//int model = Integer.parseInt(request.getParameter("model"));
-	int model = 20;
-	System.out.println(model);
+	int model=10;
 	DAO dao = new DAO();
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
-
-	<div class="site-wrap">
+	<div> class="site-wrap"
 		<%@ include file="header.jsp"%>
 
 
@@ -64,7 +60,6 @@ img {
 			<div class="container">
 				<div class="row">
 					<div class="title-section text-center col-12">
-
 						<h2>
 							Supplement <strong class="text-primary">Products</strong>
 						</h2>
@@ -98,6 +93,11 @@ img {
 
 		<%@ include file="footer.jsp"%>
 	</div>
-
+	
+	<script type="text/javascript">
+	
+	</script>
+	
+	
 </body>
 </html>

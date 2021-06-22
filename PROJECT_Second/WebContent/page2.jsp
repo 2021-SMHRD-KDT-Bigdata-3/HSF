@@ -30,14 +30,18 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
+	rel="stylesheet">
 <style>
 div#supp {
 	color: black;
 }
-p.list1{
+
+p.list1 {
 	font-family: 'Gamja Flower', cursive;
 }
+
 #index {
 	font-family: 'Noto Serif KR', serif;
 }
@@ -56,11 +60,49 @@ p.list1{
 	<%
 	int age = Integer.parseInt(request.getParameter("age"));
 	String gender = request.getParameter("gender");
-	
 
-	
-	
-	
+	if (gender.equals("남자")) {
+		if (age >= 6) {
+
+		} else if (age >= 9) {
+
+		} else if (age >= 12) {
+
+		} else if (age >= 15) {
+
+		} else if (age >= 19) {
+
+		} else if (age >= 30) {
+
+		} else if (age >= 50) {
+
+		} else if (age >= 65) {
+
+		} else if (age >= 75) {
+
+		}
+
+	} else if (gender.equals("여자")) {
+		if (age >= 6) {
+
+		} else if (age >= 9) {
+
+		} else if (age >= 12) {
+
+		} else if (age >= 15) {
+
+		} else if (age >= 19) {
+
+		} else if (age >= 30) {
+
+		} else if (age >= 50) {
+
+		} else if (age >= 65) {
+
+		} else if (age >= 75) {
+
+		}
+	} 
 	%>
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
@@ -72,31 +114,111 @@ p.list1{
 					<h2 class="mb-5">
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
-					<table width = "500" style="margin-right: 70px;">
-					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span"><p class="list1">효능</p></span></td><td><p><%=arr_comp.get(0).getEffect()%></p></td></tr>
-					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">부작용</p></span></td><td><p><%=arr_comp.get(0).getSide_effect()%></p></td></tr>
-					<tr><td width="150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;"><span><p class="list1">함께 복용</p></span></td><td><p><%=arr_comp.get(0).getTogether_eat()%></p></td></tr>
-				<!--<div class="step-number d-flex mb-4">  </div> -->	
-					<!--<div class="step-number d-flex mb-4">  </div> -->		
-						<!--<div class="step-number d-flex mb-4">  </div> -->	
-					
+					<table width="500" style="margin-right: 70px;">
+						<tr>
+							<td width="150"><image src="images/list_logo.png"
+									width="40px" height="40px" style="float: left;"> <span"><p
+										class="list1">효능</p></span></td>
+							<td><p><%=arr_comp.get(0).getEffect()%></p></td>
+						</tr>
+						<tr>
+							<td width="150"><image src="images/list_logo.png"
+									width="40px" height="40px" style="float: left;"> <span><p
+										class="list1">부작용</p></span></td>
+							<td><p><%=arr_comp.get(0).getSide_effect()%></p></td>
+						</tr>
+						<tr>
+							<td width="150"><image src="images/list_logo.png"
+									width="40px" height="40px" style="float: left;"> <span><p
+										class="list1">함께 복용</p></span></td>
+							<td><p><%=arr_comp.get(0).getTogether_eat()%></p></td>
+						</tr>
+						<!--<div class="step-number d-flex mb-4">  </div> -->
+						<!--<div class="step-number d-flex mb-4">  </div> -->
+						<!--<div class="step-number d-flex mb-4">  </div> -->
+
 					</table>
 				</div>
 			</div>
 		</div>
-	<br>
-	<br>
+		<br> <br>
+		
+		<h3 align="center">하루 영양 섭취 기준</h3>
+		<br>
+		<table>
+			<tr>
+				<td rowspan="2">나이</td>
+				<td>단백질</td>
+				<td>식이섬유</td>
+				<td>수분</td>
+				<td>비타민C</td>
+				<td>티아민</td>
+				<td>리보플라민</td>
+				<td>니아신</td>
+				<td>비타민B6</td>
+				<td>엽산</td>
+				<td>비타민B12</td>
+				<td>판토텐산</td>
+				<td>비오틴</td>
+				<td>비타민A</td>
+				<td>비타민D</td>
+				<td>비타민E</td>
+				<td>비타민K</td>
+				<td>칼슘</td>
+				<td>인</td>
+				<td>나트륨</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>g</td>
+				<td>g</td>
+				<td>ml</td>
+				<td>mg</td>
+				<td>mg</td>
+				<td>mg</td>
+				<td>mg NE</td>
+				<td>mg</td>
+				<td>μg DFE</td>
+				<td>μg</td>
+				<td>mg</td>
+				<td>μg</td>
+				<td>μg RAE</td>
+				<td>μg</td>
+				<td>mg α-TE</td>
+				<td>μg</td>
+				<td>mg</td>
+				<td>mg</td>
+				<td>g</td>
+			</tr>
+			
+		</table>
 		<div id="supp" align="center" width="1500px">
 			<h4>관련 제품</h4>
 			<table>
-			<tr>
-			<%int cnt=0;for(int i=0;i<arr_supp.size();i++){%>
-			<%if(cnt==5){ cnt=0;%>
-			</tr><tr>
-			<%}cnt+=1;%>
-			<td><a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img width="200px" height="200px" src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a></td>
-			<%} %>
-			</tr></table>
+				<tr>
+					<%
+					int cnt = 0;
+					for (int i = 0; i < arr_supp.size(); i++) {
+					%>
+					<%
+					if (cnt == 5) {
+						cnt = 0;
+					%>
+				</tr>
+				<tr>
+					<%
+					}
+					cnt += 1;
+					%>
+					<td><a
+						href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
+							width="200px" height="200px"
+							src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
+					<%
+					}
+					%>
+				</tr>
+			</table>
 		</div>
 
 		<%@ include file="footer.jsp"%>
