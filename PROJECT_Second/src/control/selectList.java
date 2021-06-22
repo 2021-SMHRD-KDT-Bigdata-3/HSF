@@ -51,19 +51,7 @@ public class selectList extends HttpServlet {
 		response.sendRedirect("page1.jsp");
 		
 		
-		
-//		RequestDispatcher rd = request.getRequestDispatcher("http://localhost:9000/");
-//		rd.forward(request, response);
-		
-//		response.sendRedirect("http://localhost:9000/?age_num="+age);
-		
-//		
-//		String redirectUrl = request.getRequestURI();
-//		if(request.getRequestURI().contains("age")) {
-//		    redirectUrl = "http://localhost:9000/?age_num="+age;
-//		}
-//		 
-//		response.sendRedirect(redirectUrl);
+
 
 
 		

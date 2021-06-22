@@ -12,8 +12,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
 	rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,8 +31,8 @@
 <style>
 .btn_comp {
 	width: 100px;
-	margin-left:27%;
-	float : left;
+	margin-left: 27%;
+	float: left;
 }
 
 div.fo {
@@ -45,21 +43,27 @@ table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	background-color:#FAFBDF;
-	background-image:url("images/r1.png");
+	background-color: #FAFBDF;
+	background-image: url("images/r1.png");
 	font-family: 'Noto Serif KR', serif;
-	font-size:16px;
-	
+	font-size: 16px;
 }
-#complist{
+
+#complist {
 	font-family: 'Single Day', cursive;
 	font-size: 30px;
-}
-h4{
-font-size: 30px;
+	#
+	table1
+	{
+	background-image
+	:
+	url("images/r1.png");
 }
 
-
+h4 {
+	font-size: 30px; h4 { font-size : 30px;
+	color: orange;
+}
 </style>
 </head>
 <body>
@@ -80,9 +84,9 @@ font-size: 30px;
 			</div>
 
 
-			<div >
+			<div>
 				<form action="selectList" method="post" name="testform">
-					<table align="center" id="table">
+					<table align="center" id="table1">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"
@@ -133,21 +137,21 @@ font-size: 30px;
 								onclick="count_ck(this)" value="여성 컨디션"> 여성 컨디션</td>
 						</tr>
 					</table>
-					<br><br> <input type="submit" class="btn btn-primary btn_comp"
-						value="성분조회">
+
+					<br> <br> <input type="submit"
+						class="btn btn-primary btn_comp" value="성분조회">
 				</form>
 			</div>
-			
+
+
 			<form action="http://127.0.0.1:5000/" method="post">
-				<script>
-				</script>
-				<span> <input type="button" class="btn btn-primary btn_comp btn_user" 
-				onclick="sum_chan()" value="제품 조회"> <br> <br>
+				<span><input type="button"
+						class="btn btn-primary btn_comp btn_user" onclick="sum_chan()"
+						value="제품 조회">
 				</span>
-			</form><br>
-			
-			
-			
+			</form>
+			<br> <br> <br>
+
 			<%
 			ArrayList<DTO_COMP> arr = (ArrayList<DTO_COMP>) session.getAttribute("arr");
 			%>
@@ -155,81 +159,79 @@ font-size: 30px;
 			<%
 			if (arr != null) {
 			%>
+
 			<div align="center" id="complist">
-			<table>
-				<%
-				for (int i = 0; i < arr.size(); i++) {
-				%>
+				<table>
+					<%
+					for (int i = 0; i < arr.size(); i++) {
+					%>
 					<td><div align="center">
-					<span><h3><%=arr.get(i).getState() %></h3></span>
-					<%String[] comp_list = arr.get(i).getComponent().split(",");
-					for(int j=0;j<comp_list.length;j++){%>
-					<span class="comp">
-						<a href="page2.jsp?comp=<%=comp_list[j]%>"><%= comp_list[j] %></a>
-					</span><br><%} %>
-					</div></td>
-				<%
-				}
-				%>
+							<span><h3><%=arr.get(i).getState()%></h3></span>
+							<%
+							String[] comp_list = arr.get(i).getComponent().split(",");
+							for (int j = 0; j < comp_list.length; j++) {
+							%>
+							<span class="comp"> <a
+								href="page2.jsp?comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
+							</span><br>
+							<%
+							}
+							%>
+						</div></td>
+					<%
+					}
+					%>
+				</table>
 			</div>
-			</table>
-			<%}%>
-
-
-
-
+			<%
+			}
+			%>
 
 			<%@ include file="footer.jsp"%>
 		</div>
-	</div>
 
 
-	<script>
-		var maxChk = 3;
-		var cnt = 0;
+		<script>
+			var maxChk = 3;
+			var cnt = 0;
 
-		function count_ck(field) {
-			if (field.checked) {
-				cnt++;
-			} else {
-				cnt--;
-			}
+			function count_ck(field) {
+				if (field.checked) {
+					cnt++;
+				} else {
+					cnt--;
+				}
 
-			if (cnt > maxChk) {
-				alert("3개까지만 선택할 수 있습니다.");
-				field.checked = false;
-				cnt--;
-			}else if(cnt==0){
-				alert("증상을 선택해주세요");
-			}
-		}
-		function sum_chan(){
-			var val_test = $('input:checkbox[name=chk1]');
-			let check_dic = {
-					"나이":$("select[name=age]").val()
-			};
-			for(let i=0;i<val_test.length;i++){
-				if($(val_test[i]).is(':checked')){
-					check_dic[$(val_test[i]).val()] = '1';
-				}else{
-					check_dic[$(val_test[i]).val()] = '0';
+				if (cnt > maxChk) {
+					alert("3개까지만 선택할 수 있습니다.");
+					field.checked = false;
+					cnt--;
+				} else if (cnt == 0) {
+					alert("증상을 선택해주세요");
 				}
 			}
-			$.ajax({
-				type : 'post',
-				url:'http://127.0.0.1:5000/',
-				data : check_dic,
-				dataType : 'json',
-				success : function(res){
-	                    //alert('요청 성공!');
-	                    window.location.href = "page3.jsp?model="+res;},
-	            error : function(){
-	                    alert('요청 실패쓰');
-	                }
-			})
+		function sum_chan() {
+			var val_test = $('input:checkbox[name=chk1]');
+			let check_dic = { "나이" : $("select[name=age]").val()}; 
+		 for (let i = 0; i< val_test.length; i++) {
+			 if ($(val_test[i]).is(':checked')) {
+				 check_dic[$(val_test[i]).val()] = '1';
+		 	} else {
+				check_dic[$(val_test[i]).val()] = '0';
+			}
 		}
-	</script>
-
-
+		 $.ajax({ type : 'post',
+			 url : 'http://127.0.0.1:5000/',
+			 data : check_dic,
+			 dataType : 'json',
+			 success : function(res) {
+				 alert('요청 성공!');
+				 window.location.href = "page3.jsp?model=" + res;
+			 },
+		 	error : function() { alert('요청 실패쓰');}
+			 
+		})
+		}
+		</script>
 </body>
 </html>

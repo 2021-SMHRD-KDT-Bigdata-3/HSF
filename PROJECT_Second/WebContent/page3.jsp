@@ -21,7 +21,9 @@
 <link rel="stylesheet" href="css/owl.carousel.min.css">
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
-
+<link
+	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+	rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <link
@@ -34,22 +36,28 @@
    font-size: 20px;
    color: black;
 }
-	img{
-		width: 200px;
-		height: 200px;
-		object-fit: contain;
-		
-	}
+
+img {
+	width: 200px;
+	height: 200px;
+	object-fit: contain;
+}
+
+#supp_list {
+	border: 3px;
+}
 </style>
 <body>
 	<%
 	int model = Integer.parseInt(request.getParameter("model"));
+	/* //int model = 20; */
 	System.out.println(model);
 	DAO dao = new DAO();
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
-	<div> class="site-wrap"
+
+	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 
 
@@ -57,6 +65,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="title-section text-center col-12">
+
 						<h2>
 							Supplement <strong class="text-primary">Products</strong>
 						</h2>
@@ -89,11 +98,6 @@
 
 		<%@ include file="footer.jsp"%>
 	</div>
-	
-	<script type="text/javascript">
-	
-	</script>
-	
-	
+
 </body>
 </html>

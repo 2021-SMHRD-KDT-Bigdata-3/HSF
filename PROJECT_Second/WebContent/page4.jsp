@@ -1,3 +1,4 @@
+<%@page import="DAODTO.DTO_MEMBER"%>
 <%@page import="DAODTO.DTO_SUPP"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAODTO.DAO"%>
@@ -25,11 +26,10 @@
 </head>
 <body>
 	<%
-	
 	String sp_name = request.getParameter("sp_name");
 	DAO dao = new DAO();
-	DTO_SUPP dto_supp = null;
-	dto_supp = dao.supp_view_one(sp_name);
+	System.out.println(sp_name);
+	DTO_SUPP dto_supp = dao.supp_view_one(sp_name);
 	%>
 
 
@@ -47,14 +47,45 @@
 		<br> <br> <br>
 
 		<div class="step-number" align="center">
-			<p><img src="img/<%=dto_supp.getImg() %>.jpg"></p>
-			<p><%=dto_supp.getSp_name() %></p>
-			<p><%=dto_supp.getRda() %></p>
-			<p><%=dto_supp.getBrand() %></p>
-			<p><%=dto_supp.getComponent() %></p>
-			<p><%=dto_supp.getEffect() %></p>
-			<p><%=dto_supp.getInstruction() %></p>
+			<p>
+				<img src="img/<%=dto_supp.getImg()%>.jpg">
+			</p>
+			<p><%=dto_supp.getSp_name()%></p>
+			<p><%=dto_supp.getRda()%></p>
+			<p><%=dto_supp.getBrand()%></p>
+			<p><%=dto_supp.getComponent()%></p>
+			<p><%=dto_supp.getEffect()%></p>
+			<p><%=dto_supp.getInstruction()%></p>
 		</div>
+
+		<%
+		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view();
+		%>
+		<div id="board" align ="center" color="black">
+			<table id="list">
+				<tr>
+					<td>번호</td>
+					<td>제품명</td>
+					<td>아이디</td>
+					<td>댓글</td>
+				</tr>
+				<%
+				for (int i = 0; i < arr_comment.size(); i++) {
+				%>
+				<tr>
+					<td><%=i + 1%></td>
+					<td><%=arr_comment.get(i).getSupp_name() %></td>
+					<td><%=arr_comment.get(i).getMemb_id()%></td>
+					<td><%=arr_comment.get(i).getComments()%></td>
+				</tr>
+
+				<%
+				}
+				%>
+			</table>
+				<a href="writerBoard.jsp?sp_name=<%=dto_supp.getSp_name()%>"><button id="writer">작성하러가기</button></a>
+		</div>
+
 
 		<%@ include file="footer.jsp"%>
 	</div>
