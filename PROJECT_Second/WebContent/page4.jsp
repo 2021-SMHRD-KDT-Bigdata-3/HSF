@@ -26,7 +26,9 @@
 </head>
 <body>
 	<%
+	request.setCharacterEncoding("UTF-8");
 	String sp_name = request.getParameter("sp_name");
+	System.out.println(sp_name);
 	DAO dao = new DAO();
 	System.out.println(sp_name);
 	DTO_SUPP dto_supp = dao.supp_view_one(sp_name);
