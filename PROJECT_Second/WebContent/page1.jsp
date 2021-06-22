@@ -165,7 +165,7 @@ h4 {
 					<%
 					for (int i = 0; i < arr.size(); i++) {
 					%>
-					<td><div align="center">
+					<td stlye="vertical-align: top"><div align="center">
 							<%
 							System.out.println("=========================================");
 							%>
@@ -213,19 +213,6 @@ h4 {
 					alert("증상을 선택해주세요");
 				}
 			}
-			$.ajax({
-				type : 'post',
-				url:'http://127.0.0.1:5000/',
-				data : check_dic,
-				dataType : 'json',
-				success : function(res){
-	                    //alert('요청 성공!');
-	                    window.location.href = "page3.jsp?model="+res;},
-	            error : function(){
-	                    alert('요청 실패쓰');
-	                }
-			})
-		}
 		function sum_chan() {
 			var val_test = $('input:checkbox[name=chk1]');
 			let check_dic = { "나이" : $("select[name=age]").val()}; 
@@ -245,7 +232,7 @@ h4 {
 				 window.location.href = "page3.jsp?model=" + res;
 			 },
 		 	error : function() { alert('요청 실패쓰');}
-			 
+		 
 		})
 		}
 		</script>

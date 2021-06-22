@@ -44,7 +44,7 @@
 <body>
 	<%
 	int model = Integer.parseInt(request.getParameter("model"));
-	System.out.println(model);
+	System.out.println("======================================================================"+model);
 	DAO dao = new DAO();
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
@@ -63,7 +63,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<table id = "supp_list" border = 1 style = "border-color : lightgrey; border-collapse: separate; border-spacing: 0 40px;" >
+					<table id = "supp_list" border = 1 style = "border-color : lightgrey; border-spacing: 0 40px;" >
 						<%
 						System.out.println(arr_supp.size());
 							for (int i = 0; i < arr_supp.size(); i+=4) {
