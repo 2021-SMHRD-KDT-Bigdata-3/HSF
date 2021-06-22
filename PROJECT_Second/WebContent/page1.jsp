@@ -41,25 +41,25 @@ div.fo {
 	color: black !important;
 }
 
-#table1 {
+table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	background-image:url("images/r1.png");
+	
 	font-family: 'Noto Serif KR', serif;
 	font-size:16px;
+	
+}
+#table1{
+background-image:url("images/r1.png");
 }
 
-h4 , .sym{
+h4{
 font-size: 30px;
 color: orange;
 }
 
-#complist{
-	border: solid orange;
-	border-collapse: separate;
-	border-spacing: 40px;
-}
+
 </style>
 </head>
 <body>
@@ -155,33 +155,28 @@ color: orange;
 			<%
 			if (arr != null) {
 			%>
-			<div align="center" >
-			 <table id="complist" >
-			
+
+			<div align="center" id="complist">
+			<table>
 				<%
-				for (int i = 0; i < arr.size(); i++){
+				for (int i = 0; i < arr.size(); i++) {
 				%>
-			<td>
-				<div>
-					<%System.out.println("========================================="); %>
-					<span class="sym"><h3><%=arr.get(i).getState()+ "\n" %></h3></span>
-					
+
+					<td style="vertical-align: top;"><div align="center">
+					<span><h3><%=arr.get(i).getState() %></h3></span>
 					<%String[] comp_list = arr.get(i).getComponent().split(",");
 					for(int j=0;j<comp_list.length;j++){%>
 					<span class="comp">
 						<a href="page2.jsp?comp=<%=comp_list[j]%>"><%= comp_list[j] %></a>
-					</span><br>
-					<%} %>
-				</div>
-			</td>
-				<%}
+					</span><br><%} %>
+					</div></td>
+				<%
+				}
 				%>
-		    </table>
-			</div>
-			<%
-			}
-			%>
 
+			</div>
+			</table>
+			<%}%>
 
 
 

@@ -23,7 +23,21 @@
 <link rel="stylesheet" href="css/aos.css">
 
 <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
+<style>
+	#pname{
+	font-family: 'Gamja Flower', cursive;
+	font-size: 30px;
+	color: black;
+}
+	img{
+		width: 346px;
+		height: 346px;
+		object-fit: contain;
+		
+	}
+</style>
 <body>
 	<%
 	int model = Integer.parseInt(request.getParameter("model"));
@@ -32,7 +46,7 @@
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
-	<div class="site-wrap">
+	<div> class="site-wrap"
 		<%@ include file="header.jsp"%>
 
 
@@ -46,7 +60,18 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12 block-3 products-wrap">
+					<table>
+						<%
+							for (int i = 0; i < arr_supp.size(); i++) {
+							%>
+								<tr><td><a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a></td>
+								<td><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a></td>
+								</tr>
+								<%
+							}
+							%>
+					</table>
+					<!-- <div class="col-md-12 block-3 products-wrap">
 						<div class="nonloop-block-3 owl-carousel">
 
 							<%
@@ -58,7 +83,7 @@
 									<p>
 									</p>
 										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a>
-										<a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
+										<a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a>
 								</h3>
 							</div>
 							<%
@@ -67,7 +92,7 @@
 
 
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

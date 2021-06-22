@@ -1214,7 +1214,6 @@ a {
 
 .item-v2 {
   overflow: hidden;
-  background: #fff;
   position: relative; }
   .item-v2 .onsale {
     position: absolute;
@@ -1227,7 +1226,6 @@ a {
     top: 0;
     right: 0;
     left: unset;
-    color: #fff;
     background: orange;
     font-size: 10px;
     padding: 4px 20px;
