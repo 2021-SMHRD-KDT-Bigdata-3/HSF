@@ -50,12 +50,14 @@
 			<p>
 				<img src="img/<%=dto_supp.getImg()%>.jpg">
 			</p>
-			<p><%=dto_supp.getSp_name()%></p>
-			<p><%=dto_supp.getRda()%></p>
-			<p><%=dto_supp.getBrand()%></p>
-			<p><%=dto_supp.getComponent()%></p>
-			<p><%=dto_supp.getEffect()%></p>
-			<p><%=dto_supp.getInstruction()%></p>
+			<table width = 400>
+			<tr><td width = "100">제품명: </td><td><p><%=dto_supp.getSp_name()%></p></td>
+			<tr><td>유통기한: </td><td><p><%=dto_supp.getRda()%></p></td></tr>
+			<tr><td>회사: </td><td><p><%=dto_supp.getBrand()%></p></td>
+			<tr><td>성분: </td><td><p><%=dto_supp.getComponent()%></p></td>
+			<tr><td>효능: </td><td><p><%=dto_supp.getEffect()%></p></td></tr>
+			<tr><td>복용법: </td><td><p><%=dto_supp.getInstruction()%></p></td>
+			</table>
 		</div>
 
 		<%

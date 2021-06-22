@@ -16,7 +16,6 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <link
 	href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
 	rel="stylesheet">
@@ -30,13 +29,16 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <style>
 div#supp {
 	color: black;
 }
 p.list1{
-	font-family: 'Gamja Flower', cursive;
+   font-family: 'Poor Story', cursive;
+   font-size: 30px;
+   color: orange;
 }
 #index {
 	font-family: 'Noto Serif KR', serif;
