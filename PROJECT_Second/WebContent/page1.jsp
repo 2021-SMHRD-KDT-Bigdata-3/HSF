@@ -45,18 +45,18 @@ table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	background-color:#FAFBDF;
-	background-image:url("images/r1.png");
+	
 	font-family: 'Noto Serif KR', serif;
 	font-size:16px;
 	
 }
-#complist{
-	font-family: 'Single Day', cursive;
-	font-size: 30px;
+#table1{
+background-image:url("images/r1.png");
 }
+
 h4{
 font-size: 30px;
+color: orange;
 }
 
 
@@ -82,7 +82,7 @@ font-size: 30px;
 
 			<div >
 				<form action="selectList" method="post" name="testform">
-					<table align="center" id="table">
+					<table align="center" id="table1">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"
@@ -155,12 +155,14 @@ font-size: 30px;
 			<%
 			if (arr != null) {
 			%>
+
 			<div align="center" id="complist">
 			<table>
 				<%
 				for (int i = 0; i < arr.size(); i++) {
 				%>
 					<td style = "vertical-align:top"><div align="center">
+
 					<span><h3><%=arr.get(i).getState() %></h3></span>
 					<%String[] comp_list = arr.get(i).getComponent().split(",");
 					for(int j=0;j<comp_list.length;j++){%>
@@ -171,6 +173,7 @@ font-size: 30px;
 				<%
 				}
 				%>
+
 			</div>
 			</table>
 			<%}%>
