@@ -11,7 +11,7 @@ body {
   color: #fff; }
 
 ::selection {
-  background: #000;
+  background: orange;
   color: #fff; }
 
 a {

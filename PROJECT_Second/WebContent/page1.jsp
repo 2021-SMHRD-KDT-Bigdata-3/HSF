@@ -41,20 +41,15 @@ div.fo {
 	color: black !important;
 }
 
-table {
+#table1 {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	background-color:#FAFBDF;
 	background-image:url("images/r1.png");
 	font-family: 'Noto Serif KR', serif;
 	font-size:16px;
-	
 }
-#complist{
-	font-family: 'Single Day', cursive;
-	font-size: 30px;
-}
+
 h4{
 font-size: 30px;
 }
@@ -81,7 +76,7 @@ font-size: 30px;
 
 			<div >
 				<form action="selectList" method="post">
-					<table align="center" id="table">
+					<table align="center" id="table1">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><select name="age"
@@ -150,25 +145,29 @@ font-size: 30px;
 			<%
 			if (arr != null) {
 			%>
-			<div align="center" id="complist">
-			<table>
+			<div align="center" >
+			<table id="complist" >
+			
 				<%
-				for (int i = 0; i < arr.size(); i++) {
+				for (int i = 0; i < arr.size(); i++){
 				%>
-					<td><div align="center">
+			<td>
+				<div>
 					<%System.out.println("========================================="); %>
-					<span><h3><%=arr.get(i).getState() %></h3></span>
+					<span><h3><%=arr.get(i).getState()+ "\n" %></h3></span>
+					
 					<%String[] comp_list = arr.get(i).getComponent().split(",");
 					for(int j=0;j<comp_list.length;j++){%>
 					<span class="comp">
 						<a href="page2.jsp?comp=<%=comp_list[j]%>"><%= comp_list[j] %></a>
-					</span><br><%} %>
-					</div></td>
-				<%
-				}
+					</span><br>
+					<%} %>
+				</div>
+			</td>
+				<%}
 				%>
+			</table>
 			</div>
-</table>
 			<%
 			}
 			%>
