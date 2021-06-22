@@ -23,6 +23,22 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
+	rel="stylesheet">
+<style>
+	.pg4_data{
+		font-family: 'Noto Serif KR', serif;
+		color: #BDBDBD;	}
+	
+	.pg4{
+   font-family: 'Poor Story', cursive;
+   font-size: 20px;
+   color: orange;
+}
+</style>
 </head>
 <body>
 	<%
@@ -50,12 +66,14 @@
 			<p>
 				<img src="img/<%=dto_supp.getImg()%>.jpg">
 			</p>
-			<p><%=dto_supp.getSp_name()%></p>
-			<p><%=dto_supp.getRda()%></p>
-			<p><%=dto_supp.getBrand()%></p>
-			<p><%=dto_supp.getComponent()%></p>
-			<p><%=dto_supp.getEffect()%></p>
-			<p><%=dto_supp.getInstruction()%></p>
+			<table width = 400>
+			<tr><td class="pg4" width = "150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">제품명: </td><td><p class="pg4_data"><%=dto_supp.getSp_name()%></p></td>
+			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">유통기한: </td><td><p class="pg4_data"><%=dto_supp.getRda()%></p></td></tr>
+			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">제조회사: </td><td><p class="pg4_data"><%=dto_supp.getBrand()%></p></td>
+			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">성분: </td><td><p class="pg4_data"><%=dto_supp.getComponent()%></p></td>
+			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">효능: </td><td><p class="pg4_data"><%=dto_supp.getEffect()%></p></td></tr>
+			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">복용법: </td><td><p class="pg4_data"><%=dto_supp.getInstruction()%></p></td>
+			</table>
 		</div>
 
 		<%
