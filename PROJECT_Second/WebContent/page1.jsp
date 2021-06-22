@@ -41,7 +41,7 @@ div.fo {
 	color: black !important;
 }
 
-#table1 {
+#table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
