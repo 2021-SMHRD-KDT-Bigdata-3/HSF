@@ -15,9 +15,11 @@ public class DAO {
 	DTO_SUPP dto_supp = null;
 	DTO_COMP dto_comp = null;
 	DTO_MEMBER dto_member = null;
+	DTO_GEN_COMP dto_gen_comp = null;
 	ArrayList<DTO_SUPP> arr_supp = new ArrayList<DTO_SUPP>();
 	ArrayList<DTO_MEMBER> arr_comment = new ArrayList<DTO_MEMBER>();
-
+	ArrayList<DTO_GEN_COMP> arr_gen_comp = new ArrayList<DTO_GEN_COMP>();
+	
 	// DB연결
 	public void conn() {
 		try {
@@ -263,5 +265,57 @@ public class DAO {
 	}
 	
 //-------------------------------------------------------------------------------------------------	
+	
+	//성분을 불러와
+	public ArrayList<DTO_GEN_COMP> gen_comp_view() {
+
+		try {
+			conn();
+
+			String sql = "select * from gen_age_comp";
+
+			psmt = conn.prepareStatement(sql);
+
+			//psmt.setInt(1, model);
+
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				String get_age = rs.getString("age");
+				String get_danbek = rs.getString("danbek");
+				String get_subun = rs.getString("subun");
+				String get_sigi = rs.getString("sigi");
+				String get_bc = rs.getString("bc");
+				String get_tiamin = rs.getString("tiamin");
+				String get_libopla = rs.getString("libopla");
+				String get_niasin = rs.getString("niasin");
+				String get_b6 = rs.getString("b6");
+				String get_yapsan = rs.getString("yapsan");
+				String get_b12 = rs.getString("b12");
+				String get_panto = rs.getString("panto");
+				String get_biotin = rs.getString("biotin");
+				String get_ba = rs.getString("ba");
+				String get_bd = rs.getString("bd");
+				String get_be = rs.getString("be");
+				String get_bk = rs.getString("bk");
+				String get_calsum = rs.getString("calsum");
+				String get_inin = rs.getString("inin");
+				String get_natrume = rs.getString("natrume");
+
+				dto_gen_comp = new DTO_GEN_COMP(get_age, get_danbek, get_subun, get_sigi, get_bc, get_tiamin, get_libopla, get_niasin, get_b6, get_yapsan, get_b12, get_panto, get_biotin, get_ba, get_bd, get_be, get_bk, get_calsum, get_inin, get_natrume);
+				arr_gen_comp.add(dto_gen_comp);
+			}
+		} catch (Exception e) {
+			System.out.println("조회실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return arr_gen_comp;
+	}
+	
+	
+	
+	
+	
 	
 }

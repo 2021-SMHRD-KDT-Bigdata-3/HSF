@@ -1,3 +1,4 @@
+<%@page import="DAODTO.DTO_GEN_COMP"%>
 <%@page import="DAODTO.DAO_component"%>
 <%@page import="DAODTO.DTO_component"%>
 <%@page import="java.util.ArrayList"%>
@@ -29,17 +30,21 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
+	rel="stylesheet">
 <style>
 div#supp {
 	color: black;
 }
 
-p.list1{
-   font-family: 'Poor Story', cursive;
-   font-size: 30px;
-   color: orange;
+p.list1 {
+	font-family: 'Poor Story', cursive;
+	font-size: 30px;
+	color: orange;
 }
 
 #index {
@@ -56,54 +61,14 @@ p.list1{
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 	DAO dao_sup = new DAO();
 	ArrayList<DTO_SUPP> arr_supp = dao_sup.suppleimg_view(comp);
+	ArrayList<DTO_GEN_COMP> arr_gen_comp = dao_sup.gen_comp_view();
 	%>
+
 	<%
 	int age = Integer.parseInt(request.getParameter("age"));
 	String gender = request.getParameter("gender");
-
-	if (gender.equals("남자")) {
-		if (age >= 6) {
-
-		} else if (age >= 9) {
-
-		} else if (age >= 12) {
-
-		} else if (age >= 15) {
-
-		} else if (age >= 19) {
-
-		} else if (age >= 30) {
-
-		} else if (age >= 50) {
-
-		} else if (age >= 65) {
-
-		} else if (age >= 75) {
-
-		}
-
-	} else if (gender.equals("여자")) {
-		if (age >= 6) {
-
-		} else if (age >= 9) {
-
-		} else if (age >= 12) {
-
-		} else if (age >= 15) {
-
-		} else if (age >= 19) {
-
-		} else if (age >= 30) {
-
-		} else if (age >= 50) {
-
-		} else if (age >= 65) {
-
-		} else if (age >= 75) {
-
-		}
-	} 
 	%>
+
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 		<div id="index" align="center">
@@ -142,63 +107,159 @@ p.list1{
 			</div>
 		</div>
 		<br> <br>
+
+		<div align="center">
+			<h3>하루 영양 섭취 기준</h3>
+			<h6>
+				나이 :
+				<%=age%></h6>
+			<h6>
+				성별 :
+				<%=gender%></h6>
+			<br>
+
+			<table>
+				<tr>
+					<td>단백질</td>
+					<td>식이섬유</td>
+					<td>수분</td>
+					<td>비타민C</td>
+					<td>티아민</td>
+					<td>리보플라민</td>
+					<td>니아신</td>
+					<td>비타민B6</td>
+					<td>엽산</td>
+					<td>비타민B12</td>
+				</tr>
+				<tr>
+					<br>
+				</tr>
+				<tr>
+					<td>권장섭취량(g)</td>
+					<td>충분섭취량(g)</td>
+					<td>충분섭취량(ml)</td>
+					<td>권장섭취량(mg)</td>
+					<td>권장섭취량(mg)</td>
+					<td>권장섭취량(mg)</td>
+					<td>권장섭취량(mg NE)</td>
+					<td>권장섭취량(mg)</td>
+					<td>권장섭취량(μg DFE)</td>
+					<td>권장섭취량(μg)</td>
+				</tr>
+
+				<%
+				int i = 0;
+				%>
+				<%
+				if (gender.equals("남자")) {
+					if (age <= 8) {
+						i = 0;
+					} else if (age <= 11) {
+						i = 1;
+					} else if (age <= 14) {
+						i = 2;
+					} else if (age <= 18) {
+						i = 3;
+					} else if (age <= 29) {
+						i = 4;
+					} else if (age <= 49) {
+						i = 5;
+					} else if (age <= 64) {
+						i = 6;
+					} else if (age <= 74) {
+						i = 7;
+					} else if (age <= 1000) {
+						i = 8;
+					}
+
+				} else if (gender.equals("여자")) {
+					if (age <= 8) {
+						i = 9;
+					} else if (age <= 11) {
+						i = 10;
+					} else if (age <= 14) {
+						i = 11;
+					} else if (age <= 18) {
+						i = 12;
+					} else if (age <= 29) {
+						i = 13;
+					} else if (age <= 49) {
+						i = 14;
+					} else if (age <= 64) {
+						i = 15;
+					} else if (age <= 74) {
+						i = 16;
+					} else if (age <= 1000) {
+						i = 17;
+					}
+				}
+				%>
+				<tr>
+					<br>
+				</tr>
+				<tr>
+					<td><%=arr_gen_comp.get(i).getDanbek()%></td>
+					<td><%=arr_gen_comp.get(i).getSubun()%></td>
+					<td><%=arr_gen_comp.get(i).getSigi()%></td>
+					<td><%=arr_gen_comp.get(i).getBc()%></td>
+					<td><%=arr_gen_comp.get(i).getTiamin()%></td>
+					<td><%=arr_gen_comp.get(i).getLibopla()%></td>
+					<td><%=arr_gen_comp.get(i).getNiasin()%></td>
+					<td><%=arr_gen_comp.get(i).getB6()%></td>
+					<td><%=arr_gen_comp.get(i).getYapsan()%></td>
+					<td><%=arr_gen_comp.get(i).getB12()%></td>
+				</tr>
+				<tr>
+					<td>판토텐산</td>
+					<td>비오틴</td>
+					<td>비타민A</td>
+					<td>비타민D</td>
+					<td>비타민E</td>
+					<td>비타민K</td>
+					<td>칼슘</td>
+					<td>인</td>
+					<td>나트륨</td>
+				</tr>
+				<tr>
+					<br>
+				</tr>
+				<tr>
+					<td>충분섭취량(mg)</td>
+					<td>충분섭취량(μg)</td>
+					<td>권장섭취량(μg RAE)</td>
+					<td>충분섭취량(μg)</td>
+					<td>충분섭취량(mg α-TE)</td>
+					<td>충분섭취량(μg)</td>
+					<td>권장섭취량(mg)</td>
+					<td>권장섭취량(mg)</td>
+					<td>충분섭취량(g)</td>
+				</tr>
+				<tr>
+					<br>
+				</tr>
+				<tr>
+					<td><%=arr_gen_comp.get(i).getPanto()%></td>
+					<td><%=arr_gen_comp.get(i).getBiotin()%></td>
+					<td><%=arr_gen_comp.get(i).getBa()%></td>
+					<td><%=arr_gen_comp.get(i).getBd()%></td>
+					<td><%=arr_gen_comp.get(i).getBe()%></td>
+					<td><%=arr_gen_comp.get(i).getBk()%></td>
+					<td><%=arr_gen_comp.get(i).getCalsum()%></td>
+					<td><%=arr_gen_comp.get(i).getInin()%></td>
+					<td><%=arr_gen_comp.get(i).getNatrume()%></td>
+				</tr>
+			</table>
+		</div>
 		
-		<h3 align="center">하루 영양 섭취 기준</h3>
-		<br>
-		<table>
-			<tr>
-				<td rowspan="2">나이</td>
-				<td>단백질</td>
-				<td>식이섬유</td>
-				<td>수분</td>
-				<td>비타민C</td>
-				<td>티아민</td>
-				<td>리보플라민</td>
-				<td>니아신</td>
-				<td>비타민B6</td>
-				<td>엽산</td>
-				<td>비타민B12</td>
-				<td>판토텐산</td>
-				<td>비오틴</td>
-				<td>비타민A</td>
-				<td>비타민D</td>
-				<td>비타민E</td>
-				<td>비타민K</td>
-				<td>칼슘</td>
-				<td>인</td>
-				<td>나트륨</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>g</td>
-				<td>g</td>
-				<td>ml</td>
-				<td>mg</td>
-				<td>mg</td>
-				<td>mg</td>
-				<td>mg NE</td>
-				<td>mg</td>
-				<td>μg DFE</td>
-				<td>μg</td>
-				<td>mg</td>
-				<td>μg</td>
-				<td>μg RAE</td>
-				<td>μg</td>
-				<td>mg α-TE</td>
-				<td>μg</td>
-				<td>mg</td>
-				<td>mg</td>
-				<td>g</td>
-			</tr>
-			
-		</table>
+		
+		<br> <br>
 		<div id="supp" align="center" width="1500px">
 			<h4>관련 제품</h4>
 			<table>
 				<tr>
 					<%
 					int cnt = 0;
-					for (int i = 0; i < arr_supp.size(); i++) {
+					for (i = 0; i < arr_supp.size(); i++) {
 					%>
 					<%
 					if (cnt == 5) {
