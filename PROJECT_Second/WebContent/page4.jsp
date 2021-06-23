@@ -43,8 +43,10 @@
 <body>
 	<%
 	String sp_name = request.getParameter("sp_name");
+	if(sp_name==null){
+		sp_name = (String)request.getAttribute("sp_name");
+	}
 	DAO dao = new DAO();
-	System.out.println(sp_name);
 	DTO_SUPP dto_supp = dao.supp_view_one(sp_name);
 	%>
 
