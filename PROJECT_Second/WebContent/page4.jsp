@@ -66,7 +66,7 @@
 			<p>
 				<img src="img/<%=dto_supp.getImg()%>.jpg">
 			</p>
-			<table width = 400>
+			<table width = 800>
 			<tr><td class="pg4" width = "150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">제품명: </td><td><p class="pg4_data"><%=dto_supp.getSp_name()%></p></td>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">유통기한: </td><td><p class="pg4_data"><%=dto_supp.getRda()%></p></td></tr>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">제조회사: </td><td><p class="pg4_data"><%=dto_supp.getBrand()%></p></td>
