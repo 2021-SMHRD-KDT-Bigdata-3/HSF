@@ -48,7 +48,7 @@
           <div class="row">
             <div class="col-lg-12 mx-auto align-self-center">
               <div class="site-block-cover-content text-center">
-               <h1 class="mb-0">운비는 <strong class="text-primary"> 피곤해 </strong><h3>😆</h3></h1>
+               <h1 class="mb-0">운비는 <strong class="text-primary"> 피곤해 ><</strong></h1>
                 
                 <div class="row justify-content-center mb-5">
                   <div class="col-lg-6 text-center"><br>

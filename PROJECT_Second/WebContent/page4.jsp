@@ -82,7 +82,7 @@
 		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view();
 		%>
 		<div id="board" align ="center" color="black">
-			<table id="list">
+			<table id="list" >
 				<tr>
 					<td>번호</td>
 					<td>제품명</td>

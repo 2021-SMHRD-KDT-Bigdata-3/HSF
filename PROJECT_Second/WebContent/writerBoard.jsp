@@ -7,15 +7,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#board{
+width: 530px;
+hight: 830px;
+margin-top:5%;
+margin-left:35%; 
+font-size:20px;
+}
+h2{
+margin-left:35%;
+}
+</style>
 </head>
 <body>
 	<%
 	String sp_name = request.getParameter("sp_name");
 	%>
 
-	<form action="comment" method="post">
-		<div id="board">
-			<table id="list">
+	<form action="comment" method="post" >
+	
+		<div id="board" style="aligh:center">
+		<h2>댓글 작성하기</h2>
+			<table id="list" style="margin-left: auto; margin-right: auto;">
 				<tr>
 					<td>제품명</td>
 					<td><input type="text" name="title" value="<%=sp_name%>"> </td>
@@ -32,7 +46,7 @@
 					<td colspan="2">내용</td>
 				</tr>
 				<tr>
-					<td colspan="2"><textarea name="content" rows="10"
+					<td colspan="2"><textarea name="content" rows="10" cols="20px"
 							style="resize: none;"></textarea></td>
 				</tr>
 				<tr>
@@ -40,6 +54,6 @@
 				</tr>
 			</table>
 		</div>
-	</form>
+		
 </body>
 </html>
