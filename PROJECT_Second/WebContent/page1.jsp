@@ -89,14 +89,21 @@ h4 {
 					<table align="center" id="table1">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
-							<td colspan="5"><select name="age"
+							<td colspan="5"><input type="text" name="input_age"
+								placeholder="나이 입력" autofocus="autofocus"> <!--  <select name="age"
 								style="width: 300px; height: 60px;">
 									<option value="1">10대</option>
 									<option value="2">20~30대</option>
 									<option value="3">40~50대</option>
 									<option value="4">60~70대</option>
-							</select></td>
+							</select>--></td>
 						</tr>
+						<tr>
+							<td align="right"><h4>성별</h4></td>
+							<td><input type="radio" name="gender" value="남자">남자</td>
+							<td><input type="radio" name="gender" value="여자">여자</td>
+						</tr>
+
 
 						<tr>
 							<td rowspan="3" align="right"><h4>효능</h4></td>
@@ -138,16 +145,32 @@ h4 {
 						</tr>
 					</table>
 
-					<br> <br> <input type="submit"
-						class="btn btn-primary btn_comp" value="성분조회">
+					<%
+					int age;
+					String gender;
+					if(!(session.getAttribute("age")==null)){
+						age = (Integer) session.getAttribute("age");
+						gender = (String) session.getAttribute("gender");
+						
+						System.out.println(age);
+						System.out.println(gender);
+					}
+					else{
+						age=-1;
+						gender="gender";
+					}
+					%>
+					<br> <br>
+					<a href="page2.jsp?age=<%=age%>&gender=<%=gender %>"> <input type="submit"
+						class="btn btn-primary btn_comp" value="성분조회"></a>
 				</form>
 			</div>
 
 
 			<form action="http://127.0.0.1:5000/" method="post">
-				<span><input type="button"
-						class="btn btn-primary btn_comp btn_user" onclick="sum_chan()"
-						value="제품 조회">
+				<span> <a href="page3.jsp"><input type="button"
+						value="제품 조회" class="btn btn-primary btn_comp btn_user"
+						onclick="sum_chan()"></a>
 				</span>
 			</form>
 			<br> <br> <br>
@@ -172,7 +195,7 @@ h4 {
 							for (int j = 0; j < comp_list.length; j++) {
 							%>
 							<span class="comp"> <a
-								href="page2.jsp?comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
+								href="page2.jsp?age=<%=age%>&gender=<%=gender %>&comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
 							</span><br>
 							<%
 							}
@@ -190,7 +213,7 @@ h4 {
 			<%@ include file="footer.jsp"%>
 		</div>
 
-
+		<script src='js/jquery-3.6.0.js'></script>
 		<script>
 			var maxChk = 3;
 			var cnt = 0;
@@ -210,29 +233,44 @@ h4 {
 					alert("증상을 선택해주세요");
 				}
 			}
-		function sum_chan() {
-			var val_test = $('input:checkbox[name=chk1]');
-			let check_dic = { "나이" : $("select[name=age]").val()}; 
-		 for (let i = 0; i< val_test.length; i++) {
-			 if ($(val_test[i]).is(':checked')) {
-				 check_dic[$(val_test[i]).val()] = '1';
-		 		} else {
-				check_dic[$(val_test[i]).val()] = '0';
-				}
-			}
-		 $.ajax({ type : 'post',
-			 url : 'http://127.0.0.1:5000/',
-			 data : check_dic,
-			 dataType : 'json',
-			 success : function(res) {
-				 alert('요청 성공!');
-				 window.location.href = "page3.jsp?model=" + res;
-			 },
-		 	error : function() { 
-		 		alert('요청 실패쓰');
-		 		}
-			})
-		}
+			//$.ajax({
+			//type : 'post',
+			//url:'http://127.0.0.1:5000/',
+			//data : check_dic,
+			//dataType : 'json',
+			//success : function(res){
+			//alert('요청 성공!');
+			// window.location.href = "page3.jsp?model="+res;
+			// },
+			//error : function(){
+			//alert('요청 실패쓰');
+			//}
+			//})
+
+			//function sum_chan() {
+			//var val_test = $('input:checkbox[name=chk1]');
+			//let check_dic = { "나이" : $("select[name=age]").val()}; 
+			//for (let i = 0; i< val_test.length; i++) {
+			//if ($(val_test[i]).is(':checked')) {
+			//check_dic[$(val_test[i]).val()] = '1';
+			//} else {
+			//check_dic[$(val_test[i]).val()] = '0';
+			//}
+			//}
+
+			//$.ajax({ type : 'post',
+			// url : 'http://127.0.0.1:5000/',
+			// data : check_dic,
+			// dataType : 'json',
+			//success : function(res) {
+			// alert('요청 성공!');
+			// window.location.href = "page3.jsp?model=" + res;
+			//},
+			//error : function() { alert('요청 실패쓰');}
+
+			//})
+			//}
+
 		</script>
 </body>
 </html>

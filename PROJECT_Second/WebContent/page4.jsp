@@ -38,11 +38,27 @@
    font-size: 20px;
    color: orange;
 }
+	#buy{
+		color: black;
+		font-family: 'Poor Story', cursive;
+  		font-size: 25px;
+  		font-weight: bold;
+	}
+	#buy:hover{
+		color: orange;
+	}
+	
+	#product_img{
+		width: 300px;
+		height: 300px;
+		object-fit: contain;
+	}
 </style>
 </head>
 <body>
 	<%
 	String sp_name = request.getParameter("sp_name");
+	String model = request.getParameter("model");
 	if(sp_name==null){
 		sp_name = (String)request.getAttribute("sp_name");
 	}
@@ -50,12 +66,13 @@
 	DTO_SUPP dto_supp = dao.supp_view_one(sp_name);
 	%>
 
-
+	
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 		<div align="center">
 			<div class="title-section">
-				<br> <br> <br>
+			
+				<br><a href="page3.jsp?model=<%=model%>"><button>TEST입니당</button></a> <br> <br>
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
@@ -63,23 +80,23 @@
 		</div>
 
 		<br> <br> <br>
-
 		<div class="step-number" align="center">
 			<p>
-				<img src="img/<%=dto_supp.getImg()%>.jpg">
+				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
 			</p>
-			<table width = 400>
+			<table width = 800>
 			<tr><td class="pg4" width = "150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">제품명: </td><td><p class="pg4_data"><%=dto_supp.getSp_name()%></p></td>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">유통기한: </td><td><p class="pg4_data"><%=dto_supp.getRda()%></p></td></tr>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">제조회사: </td><td><p class="pg4_data"><%=dto_supp.getBrand()%></p></td>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">성분: </td><td><p class="pg4_data"><%=dto_supp.getComponent()%></p></td>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">효능: </td><td><p class="pg4_data"><%=dto_supp.getEffect()%></p></td></tr>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">복용법: </td><td><p class="pg4_data"><%=dto_supp.getInstruction()%></p></td>
+			<tr><td class="pg4" colspan="2" style="text-align: center;"><p class="pg4_data"><a id="buy" href="https://www.google.com/search?q=<%=dto_supp.getSp_name()%>&hl=ko&tbm=shop" target="_blank">구입하러가기</a></p></td>
 			</table>
 		</div>
 
 		<%
-		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view();
+		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view(sp_name);
 		%>
 		<div id="board" align ="center" color="black">
 			<table id="list" >

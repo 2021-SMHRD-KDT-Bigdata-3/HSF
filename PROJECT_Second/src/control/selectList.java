@@ -31,30 +31,31 @@ public class selectList extends HttpServlet {
 		// 20~30대 - 2
 		// 40~50대 - 3
 		// 60~70대 - 4
-		int age = Integer.parseInt(request.getParameter("age"));
-		System.out.println(age);
+		int age = Integer.parseInt(request.getParameter("input_age"));
+		String gender = request.getParameter("gender");
+
+		System.out.println("나이 :" + age);
+		System.out.println(gender);
 
 		String[] chk = request.getParameterValues("chk1");
 
 		DAO dao = new DAO();
 		DTO_COMP dto_comp = null;
-		ArrayList<DTO_COMP> arr_comp = new ArrayList<DTO_COMP>();;
+		ArrayList<DTO_COMP> arr_comp = new ArrayList<DTO_COMP>();
+		;
 		String comps = "";
 		for (int i = 0; i < chk.length; i++) {
-			arr_comp.add(i,dao.statecomp_view(chk[i]));
+			arr_comp.add(i, dao.statecomp_view(chk[i]));
 		}
 		// System.out.println(comps);
 
-
 		HttpSession session = request.getSession();
+		session.setAttribute("age", age);
+		session.setAttribute("gender", gender);
 		session.setAttribute("arr", arr_comp);
+		
 		response.sendRedirect("page1.jsp");
-		
-		
 
-
-
-		
 	}
 
 }
