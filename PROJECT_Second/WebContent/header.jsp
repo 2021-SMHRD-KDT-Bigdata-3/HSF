@@ -32,9 +32,10 @@
 				<div class="container">
 					<a href="#" class="search-close js-search-close"><span
 						class="icon-close2"></span></a>
-					<form action="#" method="post">
+					<form action="Search" method="post">
 						<input type="text" class="form-control"
 							placeholder="성분명 검색">
+							<% %>
 					</form>
 				</div>
 			</div>
