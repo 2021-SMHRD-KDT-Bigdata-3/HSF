@@ -77,16 +77,15 @@
 		<div align="center">
 			<div class="title-section">
 
-				<br>
-				<a href="page3.jsp?model=<%=model%>"><button>TEST입니당</button></a> <br>
-				<br>
+				<br> <a href="page3.jsp?model=<%=model%>"><button>TEST입니당</button></a>
+				<br> <br>
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
 			</div>
 		</div>
 
-		<br> <br> <br>
+		<br>
 		<div class="step-number" align="center">
 			<p>
 				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
@@ -131,6 +130,7 @@
 		<%
 		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view(sp_name);
 		%>
+		
 		<div id="board" align="center" color="black">
 			<table id="list">
 				<tr>
