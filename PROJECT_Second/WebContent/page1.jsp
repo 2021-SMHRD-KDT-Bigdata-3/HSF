@@ -43,8 +43,6 @@ table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	background-color: #FAFBDF;
-	background-image: url("images/r1.png");
 	font-family: 'Noto Serif KR', serif;
 	font-size: 16px;
 }
@@ -86,7 +84,7 @@ h4 {
 
 			<div>
 				<form action="selectList" method="post" name="testform">
-					<table align="center" id="table1">
+					<table align="center" id="table1" style = "background-image: url('images/r1.png');">
 						<tr>
 							<td align="right"><h4>나이</h4></td>
 							<td colspan="5"><input type="text" name="input_age"
@@ -186,7 +184,7 @@ h4 {
 					for (int i = 0; i < arr.size(); i++) {
 					%>
 					<td style="vertical-align: top"><div align="center">
-							<span><h3><%=arr.get(i).getState()%></h3></span>
+							<span><h3 style = "border-bottom:solid #666666;"><%=arr.get(i).getState()%></h3></span>
 							<%
 							String[] comp_list = arr.get(i).getComponent().split(",");
 							for (int j = 0; j < comp_list.length; j++) {
