@@ -38,6 +38,21 @@
    font-size: 20px;
    color: orange;
 }
+	#buy{
+		color: black;
+		font-family: 'Poor Story', cursive;
+  		font-size: 25px;
+  		font-weight: bold;
+	}
+	#buy:hover{
+		color: orange;
+	}
+	
+	#product_img{
+		width: 300px;
+		height: 300px;
+		object-fit: contain;
+	}
 </style>
 </head>
 <body>
@@ -66,7 +81,7 @@
 
 		<div class="step-number" align="center">
 			<p>
-				<img src="img/<%=dto_supp.getImg()%>.jpg">
+				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
 			</p>
 			<table width = 800>
 			<tr><td class="pg4" width = "150"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">제품명: </td><td><p class="pg4_data"><%=dto_supp.getSp_name()%></p></td>
@@ -75,6 +90,7 @@
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">성분: </td><td><p class="pg4_data"><%=dto_supp.getComponent()%></p></td>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">효능: </td><td><p class="pg4_data"><%=dto_supp.getEffect()%></p></td></tr>
 			<tr><td class="pg4"><image src="images/list_logo.png" width="40px" height="40px" style= "float: left;">복용법: </td><td><p class="pg4_data"><%=dto_supp.getInstruction()%></p></td>
+			<tr><td class="pg4" colspan="2" style="text-align: center;"><p class="pg4_data"><a id="buy" href="https://www.google.com/search?q=<%=dto_supp.getSp_name()%>&hl=ko&tbm=shop" target="_blank">구입하러가기</a></p></td>
 			</table>
 		</div>
 
