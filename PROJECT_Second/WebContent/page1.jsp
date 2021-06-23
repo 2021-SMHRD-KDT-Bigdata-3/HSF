@@ -152,8 +152,6 @@ h4 {
 						age = (Integer) session.getAttribute("age");
 						gender = (String) session.getAttribute("gender");
 						
-						System.out.println(age);
-						System.out.println(gender);
 					}
 					else{
 						age=-1;
@@ -168,9 +166,9 @@ h4 {
 
 
 			<form action="http://127.0.0.1:5000/" method="post">
-				<span> <a href="page3.jsp"><input type="button"
+				<span> <input type="button"
 						value="제품 조회" class="btn btn-primary btn_comp btn_user"
-						onclick="sum_chan()"></a>
+						onclick="sum_chan()">
 				</span>
 			</form>
 			<br> <br> <br>
@@ -197,22 +195,26 @@ h4 {
 							<span class="comp"> <a
 								href="page2.jsp?age=<%=age%>&gender=<%=gender %>&comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
 							</span><br>
-							<%
-							}
-							%>
+							<%}%>
 						</div></td>
-					<%
-					}
-					%>
-				</table>
-			</div>
-			<%
-			}
-			%>
+					<%}%>
+				</table></div>
+			<%}%>
 
 			<%@ include file="footer.jsp"%>
 		</div>
-
+		<%
+			int age_t = age;
+			if(age_t<=19){
+				age_t=1;
+			}else if(age_t<40){
+				age_t=2;
+			}else if(age_t<60){
+				age_t=3;
+			}else{
+				age_t=4;
+			}
+		%>
 		<script src='js/jquery-3.6.0.js'></script>
 		<script>
 			var maxChk = 3;
@@ -233,43 +235,30 @@ h4 {
 					alert("증상을 선택해주세요");
 				}
 			}
-			//$.ajax({
-			//type : 'post',
-			//url:'http://127.0.0.1:5000/',
-			//data : check_dic,
-			//dataType : 'json',
-			//success : function(res){
-			//alert('요청 성공!');
-			// window.location.href = "page3.jsp?model="+res;
-			// },
-			//error : function(){
-			//alert('요청 실패쓰');
-			//}
-			//})
 
-			//function sum_chan() {
-			//var val_test = $('input:checkbox[name=chk1]');
-			//let check_dic = { "나이" : $("select[name=age]").val()}; 
-			//for (let i = 0; i< val_test.length; i++) {
-			//if ($(val_test[i]).is(':checked')) {
-			//check_dic[$(val_test[i]).val()] = '1';
-			//} else {
-			//check_dic[$(val_test[i]).val()] = '0';
-			//}
-			//}
-
-			//$.ajax({ type : 'post',
-			// url : 'http://127.0.0.1:5000/',
-			// data : check_dic,
-			// dataType : 'json',
-			//success : function(res) {
-			// alert('요청 성공!');
-			// window.location.href = "page3.jsp?model=" + res;
-			//},
-			//error : function() { alert('요청 실패쓰');}
-
-			//})
-			//}
+			function sum_chan() {
+				var val_test = $('input:checkbox[name=chk1]');
+				let check_dic = { "나이" : <%=age_t%>}; 
+				for (let i = 0; i< val_test.length; i++) {
+					if ($(val_test[i]).is(':checked')) {
+						check_dic[$(val_test[i]).val()] = '1';
+					} else {
+						check_dic[$(val_test[i]).val()] = '0';
+					}
+				}
+	
+				$.ajax({ type : 'post',
+				 url : 'http://127.0.0.1:5000/',
+				 data : check_dic,
+				 dataType : 'json',
+				success : function(res) {
+				 alert('요청 성공!');
+				 window.location.href = "page3.jsp?model=" + res;
+				},
+				error : function() { alert('요청 실패쓰');}
+	
+				})
+			}
 
 		</script>
 </body>
