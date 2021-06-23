@@ -24,13 +24,12 @@ public class comment extends HttpServlet {
 		String pw = request.getParameter("pw");
 		String content = request.getParameter("content");
 		String title = request.getParameter("title");
-		System.out.println(title);
 		DAO dao = new DAO();
 		int cnt = dao.comment_insert(id, content, pw, title);
 		if (cnt != 0) {
 			System.out.println("작성완료");
 		}
-
+		request.setAttribute("sp_name", title);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("page4.jsp");
 		dispatcher.forward(request, response); 
 
