@@ -79,7 +79,7 @@
 			</div>
 		</div>
 
-		<br> <br> <br>
+		<br>
 		<div class="step-number" align="center">
 			<p>
 				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">

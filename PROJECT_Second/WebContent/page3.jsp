@@ -51,8 +51,8 @@ img {
 <body>
 	<%
 	System.out.println("======================================================================");
-	//int model = Integer.parseInt(request.getParameter("model"));
-	int model = 10;
+	int model = Integer.parseInt(request.getParameter("model"));
+	//int model = 10;
 	DAO dao = new DAO();
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
