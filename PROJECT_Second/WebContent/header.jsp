@@ -4,6 +4,8 @@
 <html lang="en">
 <head>
 <title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,8 +43,8 @@
 				<div class="d-flex align-items-center justify-content-between">
 					<div class="logo">
 						<div class="site-logo">
-							<a href="page0.jsp" class="js-logo-clone"><strong
-								class="text-primary">Pharma</strong>tive</a>
+							<a href="page0.jsp" class="js-logo-clone">
+							<strong class="text-primary">💊운비는 피곤해 💊‍</strong></a>
 						</div>
 					</div>
 					<div class="main-nav d-none d-lg-block">
