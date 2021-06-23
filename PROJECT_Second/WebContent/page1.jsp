@@ -217,9 +217,9 @@ h4 {
 			var maxChk = 3;
 			var cnt = 0;
 			function empty_dec() {
-				if($("input[name=input_age]").val() == ""){
-					alert("1234"+$("input[name=gender].is(':checked')").val()+"asdasd")
-					alert("나이를 입력해주세요.")
+				if($("input[name=input_age]").val() == "" || $("input[name=gender]:checked").is(':checked') == false
+			|| $('input:checkbox[name=chk1]').is(':checked') == false){
+					alert("입력한 정보를 확인하여 주십시오.");
 				}
 			}
 			function count_ck(field) {
