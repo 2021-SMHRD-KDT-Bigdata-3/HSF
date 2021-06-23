@@ -58,6 +58,7 @@
 <body>
 	<%
 	String sp_name = request.getParameter("sp_name");
+	String model = request.getParameter("model");
 	if(sp_name==null){
 		sp_name = (String)request.getAttribute("sp_name");
 	}
@@ -65,12 +66,13 @@
 	DTO_SUPP dto_supp = dao.supp_view_one(sp_name);
 	%>
 
-
+	
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
 		<div align="center">
 			<div class="title-section">
-				<br> <br> <br>
+			
+				<br><a href="page3.jsp?model=<%=model%>"><button>TEST입니당</button></a> <br> <br>
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
@@ -78,7 +80,6 @@
 		</div>
 
 		<br> <br> <br>
-
 		<div class="step-number" align="center">
 			<p>
 				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
@@ -95,7 +96,7 @@
 		</div>
 
 		<%
-		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view();
+		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view(sp_name);
 		%>
 		<div id="board" align ="center" color="black">
 			<table id="list">

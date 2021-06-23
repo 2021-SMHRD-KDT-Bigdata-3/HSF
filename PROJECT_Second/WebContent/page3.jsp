@@ -45,7 +45,6 @@
 </style>
 <body>
 	<%
-	System.out.println("======================================================================");
 	int model = Integer.parseInt(request.getParameter("model"));
 	DAO dao = new DAO();
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
@@ -71,15 +70,15 @@
 							for (int i = 0; i < arr_supp.size(); i+=4) {
 							%>
 								<%if(i+3>=arr_supp.size()){break;} %>
-								<tr><td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a></td>
-								<td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+1).getSp_name()%>"><img src="img/<%=arr_supp.get(i+1).getImg() %>.jpg"></a></td>
-								<td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+2).getSp_name()%>"><img src="img/<%=arr_supp.get(i+2).getImg() %>.jpg"></a></td>
-								<td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;"  width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+3).getSp_name()%>"><img src="img/<%=arr_supp.get(i+3).getImg() %>.jpg"></a></td>
+								<tr><td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>&model=<%=model%>"><img src="img/<%=arr_supp.get(i).getImg() %>.jpg"></a></td>
+								<td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+1).getSp_name()%>&model=<%=model%>"><img src="img/<%=arr_supp.get(i+1).getImg() %>.jpg"></a></td>
+								<td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;" width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+2).getSp_name()%>&model=<%=model%>"><img src="img/<%=arr_supp.get(i+2).getImg() %>.jpg"></a></td>
+								<td style = "border-top: none; border-left: none; border-right: none; border-bottom: none;"  width = 285px height = 203><a href="page4.jsp?sp_name=<%=arr_supp.get(i+3).getSp_name()%>&model=<%=model%>"><img src="img/<%=arr_supp.get(i+3).getImg() %>.jpg"></a></td>
 								</tr>
-								<tr><td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a></td>
-								<td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+1).getSp_name()%>"><%=arr_supp.get(i+1).getSp_name()%></a></td>
-								<td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+2).getSp_name()%>"><%=arr_supp.get(i+2).getSp_name()%></a></td>
-								<td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+3).getSp_name()%>"><%=arr_supp.get(i+3).getSp_name()%></a></td>
+								<tr><td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i).getSp_name()%></a></td>
+								<td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+1).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i+1).getSp_name()%></a></td>
+								<td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+2).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i+2).getSp_name()%></a></td>
+								<td style = "border-top: none; border-left: none; border-right: none;"><a id="pname" href="page4.jsp?sp_name=<%=arr_supp.get(i+3).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i+3).getSp_name()%></a></td>
 								</tr>
 								<%
 							}
