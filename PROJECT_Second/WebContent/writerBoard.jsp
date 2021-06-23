@@ -7,39 +7,64 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<style>
+#board{
+width: 530px;
+hight: 830px;
+margin-top:10%;
+margin-left:35%; 
+
+}
+#dat1{
+
+color: orange;
+font-size:32px;
+font-family: 'Noto Serif KR', serif;
+}
+#dat2{
+
+color: black;
+font-size:30px;
+}
+
+</style>
 </head>
 <body>
 	<%
 	String sp_name = request.getParameter("sp_name");
 	%>
-
-	<form action="comment" method="post">
-		<div id="board">
-			<table id="list">
+	<form action="comment" method="post" >
+	
+		<div id="board" align="center">
+		<strong id="dat1">댓글</strong><strong id="dat2">  작성하기</strong><br><br><br>
+			<table id="list" style="margin-left: auto; margin-right: auto;">
 				<tr>
-					<td>제품명</td>
-					<td><input type="text" name="title" value="<%=sp_name%>"> </td>
+					<td width="30%" align ="right">제품명</td>
+					<td width="70%" align ="center"><input type="text" name="title" value="<%=sp_name%>"></td>
 				</tr>
 				<tr>
-					<td>작성자</td>
-					<td><input type="text" name="id"></td>
+					<td width="30%" align ="right">작성자</td>
+					<td width="70" align ="center"><input type="text" name="id"></td>
 				</tr>
 				<tr>
-					<td>비밀번호</td>
-					<td><input type="password" name="pw"></td>
+					<td width="30%" align ="right">비밀번호</td>
+					<td width="70%" align ="center"><input type="password" name="pw"></td>
+				</tr>
+				<tr><td>⭐</td></tr>
+				<tr>
+					<td colspan="2" align="center">내용</td>
 				</tr>
 				<tr>
-					<td colspan="2">내용</td>
-				</tr>
-				<tr>
-					<td colspan="2"><textarea name="content" rows="10"
+					<td colspan="2"><textarea name="content" rows="20" cols="70px"
 							style="resize: none;"></textarea></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="작성하기"></td>
+					<td colspan="2" align="center"><input type="submit" value="작성하기"></td>
 				</tr>
 			</table>
 		</div>
-	</form>
+		
 </body>
 </html>

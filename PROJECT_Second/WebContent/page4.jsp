@@ -91,7 +91,7 @@ p.info {
 			</div>
 		</div>
 
-		<br> <br> <br>
+		<br>
 		<div class="step-number" align="center">
 			<p>
 				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
@@ -111,7 +111,7 @@ p.info {
 		ArrayList<DTO_MEMBER> arr_comment = dao.comment_view(sp_name);
 		%>
 		<div id="board" align ="center" color="black">
-			<table id="list">
+			<table id="list" >
 				<tr>
 					<td>번호</td>
 					<td>제품명</td>
