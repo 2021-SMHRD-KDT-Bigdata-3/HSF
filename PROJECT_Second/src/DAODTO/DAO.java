@@ -211,14 +211,15 @@ public class DAO {
 //-----------------------------------------------------------------------------------------------
 
 	// 댓글기능 - 조회
-	public ArrayList<DTO_MEMBER> comment_view() {
+	public ArrayList<DTO_MEMBER> comment_view(String supp) {
 
 		try {
 			conn();
 
-			String sql = "select memb_id, comments, supp_name from memb_comment";
+			String sql = "select memb_id, comments, supp_name from memb_comment where supp_name= ?";
 
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, supp);
 
 			rs = psmt.executeQuery();
 			while (rs.next()) {

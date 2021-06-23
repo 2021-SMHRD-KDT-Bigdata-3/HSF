@@ -36,7 +36,7 @@
 							style="resize: none;"></textarea></td>
 				</tr>
 				<tr>
-					<td colspan="2"><a href="comment?sp_name=<%=sp_name%>"><input type="submit" value="작성하기"></a></td>
+					<td colspan="2"><input type="submit" value="작성하기"></td>
 				</tr>
 			</table>
 		</div>
