@@ -32,7 +32,7 @@
 						class="icon-close2"></span></a>
 					<form action="#" method="post">
 						<input type="text" class="form-control"
-							placeholder="Search keyword and hit enter...">
+							placeholder="성분명 검색">
 					</form>
 				</div>
 			</div>

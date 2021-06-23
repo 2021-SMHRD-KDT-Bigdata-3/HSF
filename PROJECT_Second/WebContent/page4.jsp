@@ -23,6 +23,16 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
+<<<<<<< HEAD
+<style>
+h5 {
+   color: black;
+}
+p.info {
+	 : 830px;
+}
+
+=======
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 <link
@@ -53,10 +63,12 @@
 		height: 300px;
 		object-fit: contain;
 	}
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/HSF.git
 </style>
 </head>
 <body>
 	<%
+	request.setCharacterEncoding("UTF-8");
 	String sp_name = request.getParameter("sp_name");
 	String model = request.getParameter("model");
 	if(sp_name==null){
