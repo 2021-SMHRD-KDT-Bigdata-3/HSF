@@ -100,7 +100,7 @@
 <script>
 	$(function ccc(){
 	$('#head_title').css('font-size','1px').animate({'font-size':'25px'}
-	, 500, ccc)
+	, 500)
 	//$('#head_title').css('font-size','25px').animate({'font-size':'1px'}, 500,ccc);
 	//});
 	});

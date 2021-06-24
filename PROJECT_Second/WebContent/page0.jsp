@@ -51,7 +51,8 @@ font-size:20px;
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto align-self-center">
-              <div style="position:absolute; width:200px; height:200px; top:-225px; left:470px;"><img src="images/unbi_image.jpg" style= "width: '200px'; height: '200px'; object-fit: contain;">
+            <br><br>
+              <div style="position:absolute; width:200px; height:200px; top:-175px; left:470px;"><img src="images/unbi_image.jpg" style= "width: '200px'; height: '200px'; object-fit: contain;">
               </div>
               <div class="site-block-cover-content text-center">
                <h1 class="mb-0"> 운비는 <strong class="text-primary"> 피곤해>.<</strong></h1>
