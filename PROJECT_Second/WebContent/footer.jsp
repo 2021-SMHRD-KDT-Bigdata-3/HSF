@@ -29,11 +29,9 @@
 
 					<div class="block-7">
 						<h3 class="footer-heading mb-4">
-							About <strong class="text-primary">Pharmative</strong>
+							About <strong class="text-primary">도연이는 못말려~😉</strong>
 						</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Eius quae reiciendis distinctio voluptates sed dolorum excepturi
-							iure eaque, aut unde.</p>
+						<p>This project was produced as the 2nd core convergence project course of the Big Data Analysis Service Developer Course (ncs).</p>
 					</div>
 
 				</div>
@@ -49,9 +47,9 @@
 
 				<div class="col-md-6 col-lg-3">
 					<div class="block-5 mb-5">
-						<h3 class="footer-heading mb-4">Contact Info</h3>
+						<strong><h3 class="footer-heading mb-4">Members Info</h3></strong>
 						<ul class="list-unstyled">
-							<li class="address">떼욱이집><
+							<li class="address">Unbi_class
 								</li>
 							<li class="phone"><a href="tel://23923929210">+2 392
 									3929 210</a></li>
