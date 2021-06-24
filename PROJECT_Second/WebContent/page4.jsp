@@ -36,6 +36,12 @@
 	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
 	rel="stylesheet">
 <style>
+
+	.pg4 {
+		font-family: 'Poor Story', cursive;
+		font-size: 18px;
+		color: orange;
+	}
 .pg4_data {
 	font-family: 'Noto Serif KR', serif;
 	color: #BDBDBD;
@@ -134,6 +140,8 @@
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
+				<div style="position:absolute; width:200px; height:200px; top:420px; left:920px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>
 			</div>
 		</div>
 
@@ -142,7 +150,7 @@
 			<p>
 				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
 			</p>
-			<table width=800>
+			<table width=800 style="border-bottom: solid 3px rgb(255, 127, 0, .3); border-top: solid 3px rgb(255, 127, 0, .3);">
 				<tr>
 					<td class="pg4" width="150"><image src="images/list_logo.png"
 							width="40px" height="40px" style="float: left;">제품명: </td>

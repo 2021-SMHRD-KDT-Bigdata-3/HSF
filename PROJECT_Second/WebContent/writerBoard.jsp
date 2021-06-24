@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+		<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,8 +44,8 @@
 }
 
 .index1 {
-color:orange;
-font-size: 20px;
+color:black;
+font-size: 18px;
 }
 </style>
 </head>
@@ -60,25 +60,28 @@ font-size: 20px;
 		<form action="comment" method="post">
 
 			<div id="board" align="center">
-				<strong id="dat1">댓글</strong><strong id="dat2"> 작성하기</strong><br>
+				<strong id="dat1">댓글</strong><strong id="dat2"> 작성하기</strong>
+				<div style="position:absolute; width:200px; height:200px; top:295px; right:300px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>
+				<br>
 				<br> <br>
 				<table id="list" style="margin-left: auto; margin-right: auto;">
 					<tr>
 						<td class="index1" width="30%" align="left"><image src="images/pill.png"
-									width="40px" height="40px" style="float: left;">제품명</td>
-						<td width="70%" align="center"><input type="text"
-							name="title" value="<%=sp_name%>"></td>
+									width="40px" height="40px" style="float: left; padding: 10px"> 제품명</td>
+						<td width="70%" align="left"><input type="text"
+							name="title" style="width: 260px;" value="<%=sp_name%>"></td>
 					</tr>
 					<tr>
 						<td class="index1" width="30%" align="left"><image src="images/pill.png"
-									width="40px" height="40px" style="float: left;">작성자</td>
-						<td width="70" align="center"><input type="text" name="id"></td>
+									width="40px" height="40px" style="float: left; padding: 10px"> 작성자</td>
+						<td width="70" align="left"><input type="text" style="width: 260px;" name="id"></td>
 					</tr>
 					<tr>
 						<td class="index1" width="30%" align="left"><image src="images/pill.png"
-									width="40px" height="40px" style="float: left;">비밀번호</td>
-						<td width="70%" align="center"><input type="password"
-							name="pw"></td>
+									width="40px" height="40px" style="float: left; padding: 10px"> 비밀번호</td>
+						<td width="70%" align="left"><input type="password"
+							style="width: 260px;" name="pw"></td>
 					</tr>
 					<tr>
 						<td><br></td>
