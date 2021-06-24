@@ -55,8 +55,8 @@
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
-	<div>
-		class="site-wrap"
+	<div class="site-wrap">
+		
 		<%@ include file="header.jsp"%>
 
 
