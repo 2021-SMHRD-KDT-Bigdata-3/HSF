@@ -50,6 +50,13 @@ p.list1 {
 #index {
 	font-family: 'Noto Serif KR', serif;
 }
+
+#related_pd{
+	font-family: 'Poor Story', cursive;
+	font-weight: bolder;
+	font-size: 30px;
+	
+}
 </style>
 </head>
 <body>
@@ -61,12 +68,118 @@ p.list1 {
 	ArrayList<DTO_component> arr_comp = dao_comp.component_view(comp);
 	DAO dao_sup = new DAO();
 	ArrayList<DTO_SUPP> arr_supp = dao_sup.suppleimg_view(comp);
+	%>
+	<%
+	int age = Integer.parseInt(request.getParameter("age"));
+	String gender = request.getParameter("gender");
 	ArrayList<DTO_GEN_COMP> arr_gen_comp = dao_sup.gen_comp_view();
 	%>
 
 	<%
-	int age = Integer.parseInt(request.getParameter("age"));
-	String gender = request.getParameter("gender");
+	int i = 0;
+	if (gender.equals("남자")) {
+		if (age <= 8) {
+			i = 0;
+		} else if (age <= 11) {
+			i = 1;
+		} else if (age <= 14) {
+			i = 2;
+		} else if (age <= 18) {
+			i = 3;
+		} else if (age <= 29) {
+			i = 4;
+		} else if (age <= 49) {
+			i = 5;
+		} else if (age <= 64) {
+			i = 6;
+		} else if (age <= 74) {
+			i = 7;
+		} else if (age <= 1000) {
+			i = 8;
+		}
+
+	} else if (gender.equals("여자")) {
+		if (age <= 8) {
+			i = 9;
+		} else if (age <= 11) {
+			i = 10;
+		} else if (age <= 14) {
+			i = 11;
+		} else if (age <= 18) {
+			i = 12;
+		} else if (age <= 29) {
+			i = 13;
+		} else if (age <= 49) {
+			i = 14;
+		} else if (age <= 64) {
+			i = 15;
+		} else if (age <= 74) {
+			i = 16;
+		} else if (age <= 1000) {
+			i = 17;
+		}
+	}
+	%>
+	<%
+	String result = "";
+	if (comp.equals("단백질")) {
+		result= "권장섭취량(g) : "+arr_gen_comp.get(i).getDanbek();
+	}else if(comp.equals("식이섬유")){
+		result= "충분섭취량(g) : "+arr_gen_comp.get(i).getSigi();
+	}else if(comp.equals("수분")){
+		result= "충분섭취량(ml) : "+arr_gen_comp.get(i).getSubun();
+	}
+	else if(comp.equals("비타민C")){
+		result= "권장섭취량(mg) : "+arr_gen_comp.get(i).getBc();
+	}
+	else if(comp.equals("티아민")){
+		result= "권장섭취량(mg) : "+arr_gen_comp.get(i).getTiamin();
+	}
+	else if(comp.equals("리보플라민")){
+		result= "권장섭취량(mg) : "+arr_gen_comp.get(i).getLibopla();
+	}
+	else if(comp.equals("니아신")){
+		result= "권장섭취량(mg NE) : "+arr_gen_comp.get(i).getNiasin();
+	}
+	else if(comp.equals("비타민B6")){
+		result= "권장섭취량(mg) : "+arr_gen_comp.get(i).getB6();
+	}
+	else if(comp.equals("엽산")){
+		result= "권장섭취량(μg DFE) : "+arr_gen_comp.get(i).getYapsan();
+	}
+	else if(comp.equals("비타민B12")){
+		result= "권장섭취량(μg) : "+arr_gen_comp.get(i).getB12();
+	}
+	else if(comp.equals("판토텐산")){
+		result= "충분섭취량(mg) : "+arr_gen_comp.get(i).getPanto();
+	}
+	else if(comp.equals("비오틴")){
+		result= "충분섭취량(μg) : "+arr_gen_comp.get(i).getBiotin();
+		
+	}else if(comp.equals("비타민A")){
+		result= "권장섭취량(μg RAE) : " +arr_gen_comp.get(i).getBa();
+	}
+	else if(comp.equals("비타민D")){
+		result= "충분섭취량(μg) : "+arr_gen_comp.get(i).getBd();
+	}
+	else if(comp.equals("비타민E")){
+		result= "충분섭취량(mg α-TE) : "+arr_gen_comp.get(i).getBe();
+	}
+	else if(comp.equals("비타민K")){
+		result= "충분섭취량(μg) : "+arr_gen_comp.get(i).getBk();
+	}
+	else if(comp.equals("칼슘")){
+		result= "권장섭취량(mg) : "+arr_gen_comp.get(i).getCalsum();
+	}
+	else if(comp.equals("인")){
+		result= "권장섭취량(mg) : "+arr_gen_comp.get(i).getInin();
+	}
+	else if(comp.equals("나트륨")){
+		result= "충분섭취량(g) : "+arr_gen_comp.get(i).getNatrume();
+	}else{
+		result="섭취량 : - ";
+	}
+	
 	%>
 
 	<div class="site-wrap">
@@ -84,7 +197,15 @@ p.list1 {
 							<td width="150"><image src="images/list_logo.png"
 									width="40px" height="40px" style="float: left;"> <span"><p
 										class="list1">효능</p></span></td>
-							<td><p><%=arr_comp.get(0).getEffect()%></p></td>
+							<td><p>
+							<%
+							String[] effect_list = arr_comp.get(0).getEffect().split("\\.");
+							for(int j = 0; j<effect_list.length; j++){
+								//System.out.println(effect_list[j]);
+							%>
+							<%=effect_list[j] %><br>
+							<%} %>
+							</p></td>
 						</tr>
 						<tr>
 							<td width="150"><image src="images/list_logo.png"
@@ -98,6 +219,14 @@ p.list1 {
 										class="list1">함께 복용</p></span></td>
 							<td><p><%=arr_comp.get(0).getTogether_eat()%></p></td>
 						</tr>
+						<tr>
+							<td width="150"><image src="images/list_logo.png"
+									width="40px" height="40px" style="float: left;"> <span><p
+										class="list1">섭취량</p></span></td>
+							<td><p>나이 : <%=age%> <br>
+								   성별 : <%=gender%> <br>
+								   <%=result%></p></td>
+						</tr>
 						<!--<div class="step-number d-flex mb-4">  </div> -->
 						<!--<div class="step-number d-flex mb-4">  </div> -->
 						<!--<div class="step-number d-flex mb-4">  </div> -->
@@ -106,155 +235,11 @@ p.list1 {
 				</div>
 			</div>
 		</div>
-		<br> <br>
 
-		<div align="center">
-			<h3>하루 영양 섭취 기준</h3>
-			<h6>
-				나이 :
-				<%=age%></h6>
-			<h6>
-				성별 :
-				<%=gender%></h6>
-			<br>
 
-			<table>
-				<tr>
-					<td>단백질</td>
-					<td>식이섬유</td>
-					<td>수분</td>
-					<td>비타민C</td>
-					<td>티아민</td>
-					<td>리보플라민</td>
-					<td>니아신</td>
-					<td>비타민B6</td>
-					<td>엽산</td>
-					<td>비타민B12</td>
-				</tr>
-				<tr>
-					<br>
-				</tr>
-				<tr>
-					<td>권장섭취량(g)</td>
-					<td>충분섭취량(g)</td>
-					<td>충분섭취량(ml)</td>
-					<td>권장섭취량(mg)</td>
-					<td>권장섭취량(mg)</td>
-					<td>권장섭취량(mg)</td>
-					<td>권장섭취량(mg NE)</td>
-					<td>권장섭취량(mg)</td>
-					<td>권장섭취량(μg DFE)</td>
-					<td>권장섭취량(μg)</td>
-				</tr>
-
-				<%
-				int i = 0;
-				%>
-				<%
-				if (gender.equals("남자")) {
-					if (age <= 8) {
-						i = 0;
-					} else if (age <= 11) {
-						i = 1;
-					} else if (age <= 14) {
-						i = 2;
-					} else if (age <= 18) {
-						i = 3;
-					} else if (age <= 29) {
-						i = 4;
-					} else if (age <= 49) {
-						i = 5;
-					} else if (age <= 64) {
-						i = 6;
-					} else if (age <= 74) {
-						i = 7;
-					} else if (age <= 1000) {
-						i = 8;
-					}
-
-				} else if (gender.equals("여자")) {
-					if (age <= 8) {
-						i = 9;
-					} else if (age <= 11) {
-						i = 10;
-					} else if (age <= 14) {
-						i = 11;
-					} else if (age <= 18) {
-						i = 12;
-					} else if (age <= 29) {
-						i = 13;
-					} else if (age <= 49) {
-						i = 14;
-					} else if (age <= 64) {
-						i = 15;
-					} else if (age <= 74) {
-						i = 16;
-					} else if (age <= 1000) {
-						i = 17;
-					}
-				}
-				%>
-				<tr>
-					<br>
-				</tr>
-				<tr>
-					<td><%=arr_gen_comp.get(i).getDanbek()%></td>
-					<td><%=arr_gen_comp.get(i).getSubun()%></td>
-					<td><%=arr_gen_comp.get(i).getSigi()%></td>
-					<td><%=arr_gen_comp.get(i).getBc()%></td>
-					<td><%=arr_gen_comp.get(i).getTiamin()%></td>
-					<td><%=arr_gen_comp.get(i).getLibopla()%></td>
-					<td><%=arr_gen_comp.get(i).getNiasin()%></td>
-					<td><%=arr_gen_comp.get(i).getB6()%></td>
-					<td><%=arr_gen_comp.get(i).getYapsan()%></td>
-					<td><%=arr_gen_comp.get(i).getB12()%></td>
-				</tr>
-				<tr>
-					<td>판토텐산</td>
-					<td>비오틴</td>
-					<td>비타민A</td>
-					<td>비타민D</td>
-					<td>비타민E</td>
-					<td>비타민K</td>
-					<td>칼슘</td>
-					<td>인</td>
-					<td>나트륨</td>
-				</tr>
-				<tr>
-					<br>
-				</tr>
-				<tr>
-					<td>충분섭취량(mg)</td>
-					<td>충분섭취량(μg)</td>
-					<td>권장섭취량(μg RAE)</td>
-					<td>충분섭취량(μg)</td>
-					<td>충분섭취량(mg α-TE)</td>
-					<td>충분섭취량(μg)</td>
-					<td>권장섭취량(mg)</td>
-					<td>권장섭취량(mg)</td>
-					<td>충분섭취량(g)</td>
-				</tr>
-				<tr>
-					<br>
-				</tr>
-				<tr>
-					<td><%=arr_gen_comp.get(i).getPanto()%></td>
-					<td><%=arr_gen_comp.get(i).getBiotin()%></td>
-					<td><%=arr_gen_comp.get(i).getBa()%></td>
-					<td><%=arr_gen_comp.get(i).getBd()%></td>
-					<td><%=arr_gen_comp.get(i).getBe()%></td>
-					<td><%=arr_gen_comp.get(i).getBk()%></td>
-					<td><%=arr_gen_comp.get(i).getCalsum()%></td>
-					<td><%=arr_gen_comp.get(i).getInin()%></td>
-					<td><%=arr_gen_comp.get(i).getNatrume()%></td>
-				</tr>
-			</table>
-		</div>
-		
-		
-		<br> <br>
+		<br> <br><br><br>
 		<div id="supp" align="center" width="1500px">
-			<h4>관련 제품</h4>
+			<p id="related_pd" style="font-weight: bolder;">관련 제품</p>
 			<table>
 				<tr>
 					<%

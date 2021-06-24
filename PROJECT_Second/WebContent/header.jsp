@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<!-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-<head>
+<!--<head>
 <title>Insert title here</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
@@ -22,8 +22,15 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
-</head>
-<body> -->
+</head>-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+<style>
+	#head_title{
+		font-family: 'Poor Story', cursive;
+	}
+</style>
+<body> 
 
 	
 		<div class="site-navbar py-2">
@@ -44,7 +51,8 @@
 					<div class="logo">
 						<div class="site-logo">
 							<a href="page0.jsp" class="js-logo-clone">
-							<strong class="text-primary">💊운비는 피곤해 💊‍</strong></a>
+							<strong id= "head_title" class="text-primary"><image src="images/pill.png"
+									width="40px" height="40px" style="float: left;">운비는 피곤해</strong></a>
 						</div>
 					</div>
 					<div class="main-nav d-none d-lg-block">
@@ -86,5 +94,15 @@
 		</div>
 	
 
-<!-- </body>
-</html> -->
+</body>
+<script src='js/jquery-3.6.0.js'></script>
+<script src='js/jquery-ui.js'></script>
+<script>
+	$(function ccc(){
+	$('#head_title').css('font-size','1px').animate({'font-size':'25px'}
+	, 500)
+	//$('#head_title').css('font-size','25px').animate({'font-size':'1px'}, 500,ccc);
+	//});
+	});
+</script>
+</html> 

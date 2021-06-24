@@ -25,18 +25,19 @@ public class selectList extends HttpServlet {
 			throws ServletException, IOException {
 		RequestDispatcher rd;
 		request.setCharacterEncoding("utf-8");
-
 		// 나이(age)
 		// 10대 - 1
 		// 20~30대 - 2
 		// 40~50대 - 3
 		// 60~70대 - 4
-		if(request.getParameter("input_age").equals("") || request.getParameter("gender")==null) {
+		if(request.getParameter("input_age").equals("") || request.getParameter("gender")==null || 
+				request.getParameterValues("chk1")==null) {
+			System.out.println("여긴가??...");
 			response.sendRedirect("page1.jsp");
 		}else {
 			int age = Integer.parseInt(request.getParameter("input_age"));
 			String gender = request.getParameter("gender");
-			
+			System.out.println("asdasd"+request.getParameterValues("chk1")+"123123");
 	
 			String[] chk = request.getParameterValues("chk1");
 	
