@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+		<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +60,10 @@ font-size: 20px;
 		<form action="comment" method="post">
 
 			<div id="board" align="center">
-				<strong id="dat1">댓글</strong><strong id="dat2"> 작성하기</strong><br>
+				<strong id="dat1">댓글</strong><strong id="dat2"> 작성하기</strong>
+				<div style="position:absolute; width:200px; height:200px; top:295px; right:530px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>
+				<br>
 				<br> <br>
 				<table id="list" style="margin-left: auto; margin-right: auto;">
 					<tr>

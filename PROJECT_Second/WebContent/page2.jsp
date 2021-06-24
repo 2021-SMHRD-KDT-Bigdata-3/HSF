@@ -43,7 +43,7 @@ div#supp {
 
 p.list1 {
 	font-family: 'Poor Story', cursive;
-	font-size: 30px;
+	font-size: 25px;
 	color: orange;
 }
 
@@ -55,7 +55,11 @@ p.list1 {
 	font-family: 'Poor Story', cursive;
 	font-weight: bolder;
 	font-size: 30px;
-	
+}
+
+p.list2{
+	color: black;
+	font-family: 'Noto Serif KR', serif;
 }
 </style>
 </head>
@@ -184,20 +188,22 @@ p.list1 {
 
 	<div class="site-wrap">
 		<%@ include file="header.jsp"%>
-		<div id="index" align="center">
+		<div id="index" align="center" ">
 
-			<div class="col-lg-5">
+			<div class="col-lg-5" >
 				<div class="title-section">
 					<br> <br> <br>
 					<h2 class="mb-5">
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
-					<table width="500" style="margin-right: 70px;">
-						<tr>
-							<td width="150"><image src="images/list_logo.png"
-									width="40px" height="40px" style="float: left;"> <span"><p
+					<div style="position:absolute; width:200px; height:200px; top:-5px; right:400px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>
+					<table width="500" style="margin-right: 70px; border-bottom: solid 3px rgb(255, 127, 0, .3); border-top: solid 3px rgb(255, 127, 0, .3);">
+						<tr style="border-bottom: dashed 1px rgb(255, 127, 0, .3);">
+							<td width="150" ><image src="images/list_logo.png"
+									width="40px" height="40px" style="float: left;"> <span><p
 										class="list1">효능</p></span></td>
-							<td><p>
+							<td><p class="list2">
 							<%
 							String[] effect_list = arr_comp.get(0).getEffect().split("\\.");
 							for(int j = 0; j<effect_list.length; j++){
@@ -207,23 +213,23 @@ p.list1 {
 							<%} %>
 							</p></td>
 						</tr>
-						<tr>
+						<tr style="border-bottom: dashed 1px rgb(255, 127, 0, .3);">
 							<td width="150"><image src="images/list_logo.png"
 									width="40px" height="40px" style="float: left;"> <span><p
 										class="list1">부작용</p></span></td>
-							<td><p><%=arr_comp.get(0).getSide_effect()%></p></td>
+							<td><p class="list2"><%=arr_comp.get(0).getSide_effect()%></p></td>
 						</tr>
-						<tr>
+						<tr style="border-bottom: dashed 1px rgb(255, 127, 0, .3);">
 							<td width="150"><image src="images/list_logo.png"
 									width="40px" height="40px" style="float: left;"> <span><p
 										class="list1">함께 복용</p></span></td>
-							<td><p><%=arr_comp.get(0).getTogether_eat()%></p></td>
+							<td><p class="list2"><%=arr_comp.get(0).getTogether_eat()%></p></td>
 						</tr>
-						<tr>
+						<tr style="border-bottom: dashed 1px rgb(255, 127, 0, .3);">
 							<td width="150"><image src="images/list_logo.png"
 									width="40px" height="40px" style="float: left;"> <span><p
 										class="list1">섭취량</p></span></td>
-							<td><p>나이 : <%=age%> <br>
+							<td><p class="list2">나이 : <%=age%> <br>
 								   성별 : <%=gender%> <br>
 								   <%=result%></p></td>
 						</tr>
@@ -258,7 +264,7 @@ p.list1 {
 					%>
 					<td><a
 						href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
-							width="200px" height="200px"
+							width="200px" height="200px" style="object-fit: contain;"
 							src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
 					<%
 					}
