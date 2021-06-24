@@ -33,7 +33,9 @@ font-family: 'Noto Serif KR', serif;
 word-spacing: -10px;
 }
 
-
+.title-section{
+	 width: 420px;
+}
 </style>
 </head>
 
@@ -46,7 +48,7 @@ word-spacing: -10px;
 
 
 		<div class="site-section">
-			<div class="container" align="center" style="width:830px;">
+			<div class="container" align="center">
 
  
 					<div class="col-lg-5">
@@ -54,6 +56,7 @@ word-spacing: -10px;
 							<h2 id="title5"> 건강한 섭취 </h2><strong style="font-size:32px;">Guide</strong>
 							<br><br><br><br><br>
 							
+							<div style="background-image: url('images/purple4.jpg');"></div>
 							<h3 class="mb-5"><image src="images/guide2.png"
 									width="40px" height="40px" style="float: center;">
 								     건강기능식품이란<strong class="text-primary"> 뭘까요?</strong>

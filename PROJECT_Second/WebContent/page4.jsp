@@ -126,7 +126,7 @@
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
-				<div style="position:absolute; width:200px; height:200px; top:420px; left:540px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+				<div style="position:absolute; width:200px; height:200px; top:420px; left:920px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
               </div>
 			</div>
 		</div>
