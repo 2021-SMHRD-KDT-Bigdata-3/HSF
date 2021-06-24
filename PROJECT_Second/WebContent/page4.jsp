@@ -177,19 +177,19 @@
 					<th width = "650">댓글</th>
 				</tr>
 				<%
-				for (int i = 0; i < arr_comment.size(); i+=2) {
+				for (int i = 0; i < arr_comment.size(); i++) {
+					if(i%2 == 0){
 				%>
+				<tr class="even">
+				<%}else{ %>
+				
 				<tr class="odd">
+				<%}%>
 					<td width = "70"><%=i + 1%></td>
 					<td width = "100"><%=arr_comment.get(i).getMemb_id()%></td>
 					<td width = "650"><%=arr_comment.get(i).getComments()%></td>
 				</tr>
-				<tr class="even">
-					<td width = "70"><%=i + 2%></td>
-					<td width = "100"><%=arr_comment.get(i+1).getMemb_id()%></td>
-					<td width = "650"><%=arr_comment.get(i+1).getComments()%></td>
-				</tr>
-
+				
 				<%
 				}
 				%>
