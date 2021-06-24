@@ -50,6 +50,13 @@ p.list1 {
 #index {
 	font-family: 'Noto Serif KR', serif;
 }
+
+#related_pd{
+	font-family: 'Poor Story', cursive;
+	font-weight: bolder;
+	font-size: 30px;
+	
+}
 </style>
 </head>
 <body>
@@ -230,9 +237,9 @@ p.list1 {
 		</div>
 
 
-		<br> <br>
+		<br> <br><br><br>
 		<div id="supp" align="center" width="1500px">
-			<h4>관련 제품</h4>
+			<p id="related_pd" style="font-weight: bolder;">관련 제품</p>
 			<table>
 				<tr>
 					<%
