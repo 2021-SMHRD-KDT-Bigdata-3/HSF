@@ -84,41 +84,41 @@ img {
 							<td
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
+								href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>&model=<%=model%>"><img
 									src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 1).getSp_name()%>"><img
+								href="page4.jsp?sp_name=<%=arr_supp.get(i + 1).getSp_name()%>&model=<%=model%>"><img
 									src="img/<%=arr_supp.get(i + 1).getImg()%>.jpg"></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 2).getSp_name()%>"><img
+								href="page4.jsp?sp_name=<%=arr_supp.get(i + 2).getSp_name()%>&model=<%=model%>"><img
 									src="img/<%=arr_supp.get(i + 2).getImg()%>.jpg"></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 3).getSp_name()%>"><img
+								href="page4.jsp?sp_name=<%=arr_supp.get(i + 3).getSp_name()%>&model=<%=model%>"><img
 									src="img/<%=arr_supp.get(i + 3).getImg()%>.jpg"></a></td>
 						</tr>
 						<tr>
 							<td
 								style="border-top: none; border-left: none; border-right: none;"><a
 								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><%=arr_supp.get(i).getSp_name()%></a></td>
+								href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i).getSp_name()%></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none;"><a
 								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 1).getSp_name()%>"><%=arr_supp.get(i + 1).getSp_name()%></a></td>
+								href="page4.jsp?sp_name=<%=arr_supp.get(i + 1).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i + 1).getSp_name()%></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none;"><a
 								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 2).getSp_name()%>"><%=arr_supp.get(i + 2).getSp_name()%></a></td>
+								href="page4.jsp?sp_name=<%=arr_supp.get(i + 2).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i + 2).getSp_name()%></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none;"><a
 								id="pname"
-								href="page4.jsp?sp_name=<%=arr_supp.get(i + 3).getSp_name()%>"><%=arr_supp.get(i + 3).getSp_name()%></a></td>
+								href="page4.jsp?sp_name=<%=arr_supp.get(i + 3).getSp_name()%>&model=<%=model%>"><%=arr_supp.get(i + 3).getSp_name()%></a></td>
 						</tr>
 						<%
 						}
