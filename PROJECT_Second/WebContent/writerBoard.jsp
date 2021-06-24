@@ -36,16 +36,23 @@
 	color: orange;
 	font-size: 32px;
 	font-family: 'Noto Serif KR', serif;
+	
 }
 
 #dat2 {
 	color: black;
 	font-size: 30px;
+	font-family: 'Noto Serif KR', serif;
 }
 
 .index1 {
-color:black;
-font-size: 18px;
+	color:black;
+	font-size: 18px;
+}
+#btn1{
+	cursor: pointer;
+    border-radius: 0.25rem
+    
 }
 </style>
 </head>
@@ -95,7 +102,7 @@ font-size: 18px;
 					</tr>
 					<tr>
 						<td id="write" colspan="2" align="center"><input id="btn1"
-							style="border: 1px solid orange; color: white; font-size =18px; background-color: orange; width: 120px; height: 40px;"
+							style="border: 1px solid orange; color: white; font-size =18px; background-color: orange; "
 							type="submit" value="작성하기"></td>
 					</tr>
 				</table>
