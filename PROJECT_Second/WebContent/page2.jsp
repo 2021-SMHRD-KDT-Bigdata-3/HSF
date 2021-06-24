@@ -250,26 +250,26 @@ p.list2{
 				<tr>
 					<%
 					int cnt = 0;
+					int cnt_t=0;
 					for (i = 0; i < arr_supp.size(); i++) {
-					%>
-					<%
-					if (cnt == 5) {
-						cnt = 0;
-					%>
-				</tr>
-				<tr>
-					<%
-					}
-					cnt += 1;
-					%>
-					<td><a
-						href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
-							width="200px" height="200px" style="object-fit: contain;"
-							src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
-					<%
-					}
-					%>
-				</tr>
+						if (cnt == 5) {
+							cnt = 0;
+							if(cnt_t==0){cnt_t=1;}else{cnt_t=0;}%>
+						</tr>
+						<tr>
+						<%}
+						if(cnt_t==0){
+						cnt += 1;%>
+						<td><a
+							href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
+								width="200px" height="200px" style="object-fit: contain;"
+								src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td><%}
+						else if(cnt_t==1){
+						cnt += 1;%>
+						<td><a
+							href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>">test입</a></td><%} %>
+					<%}%>
+					</tr>
 			</table>
 		</div>
 
