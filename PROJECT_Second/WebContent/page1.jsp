@@ -94,7 +94,7 @@ table {
 				<h2>
 					Item <strong class="text-primary">Selection</strong>
 				</h2>
-				<div style="position:absolute; width:200px; height:200px; top:91px; left:510px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+				<div style="position:absolute; width:200px; height:200px; top:91px; right:980px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
               </div>
 
 				<br> <br> <br>

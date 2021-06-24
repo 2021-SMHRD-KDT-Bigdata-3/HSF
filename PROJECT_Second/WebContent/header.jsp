@@ -60,23 +60,13 @@
 							role="navigation">
 							<ul class="site-menu js-clone-nav d-none d-lg-block">
 								<li class="active"><a href="page0.jsp">Home</a></li>
-								<li><a href="shop.html">Store</a></li>
-								<li class="has-children"><a href="#">Products</a>
-									<ul class="dropdown">
-										<li><a href="#">Supplements</a></li>
-										<li class="has-children"><a href="#">Vitamins</a>
-											<ul class="dropdown">
-												<li><a href="#">Supplements</a></li>
-												<li><a href="#">Vitamins</a></li>
-												<li><a href="#">Diet &amp; Nutrition</a></li>
-												<li><a href="#">Tea &amp; Coffee</a></li>
-											</ul></li>
-										<li><a href="#">Diet &amp; Nutrition</a></li>
-										<li><a href="#">Tea &amp; Coffee</a></li>
-
-									</ul></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="shop.html">Item Selection</a></li>
+								
+								
+									
+									
+								<li><a href="about.html">Guide</a></li>
+								<li><a href="contact.html" >Member</a></li>
 							</ul>
 						</nav>
 					</div>
