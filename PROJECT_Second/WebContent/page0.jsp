@@ -5,9 +5,10 @@
 <head>
 <title>메인</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;700&family=Single+Day&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,8 +25,8 @@
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
 <style>
-.mb-0 {
-	font-family: 'Single Day', cursive;
+.mb-0,.text-primary {
+	font-family: 'Stylish', sans-serif;
 }
 
 .ment {

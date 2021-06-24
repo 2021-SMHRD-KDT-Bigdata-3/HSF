@@ -23,38 +23,40 @@ public class selectList extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		RequestDispatcher rd;
 		request.setCharacterEncoding("utf-8");
-
 		// 나이(age)
 		// 10대 - 1
 		// 20~30대 - 2
 		// 40~50대 - 3
 		// 60~70대 - 4
-		int age = Integer.parseInt(request.getParameter("input_age"));
-		String gender = request.getParameter("gender");
-
-		System.out.println("나이 :" + age);
-		System.out.println(gender);
-
-		String[] chk = request.getParameterValues("chk1");
-
-		DAO dao = new DAO();
-		DTO_COMP dto_comp = null;
-		ArrayList<DTO_COMP> arr_comp = new ArrayList<DTO_COMP>();
-		;
-		String comps = "";
-		for (int i = 0; i < chk.length; i++) {
-			arr_comp.add(i, dao.statecomp_view(chk[i]));
+		if(request.getParameter("input_age").equals("") || request.getParameter("gender")==null || 
+				request.getParameterValues("chk1")==null) {
+			System.out.println("여긴가??...");
+			response.sendRedirect("page1.jsp");
+		}else {
+			int age = Integer.parseInt(request.getParameter("input_age"));
+			String gender = request.getParameter("gender");
+			System.out.println("asdasd"+request.getParameterValues("chk1")+"123123");
+	
+			String[] chk = request.getParameterValues("chk1");
+	
+			DAO dao = new DAO();
+			DTO_COMP dto_comp = null;
+			ArrayList<DTO_COMP> arr_comp = new ArrayList<DTO_COMP>();
+			;
+			String comps = "";
+			for (int i = 0; i < chk.length; i++) {
+				arr_comp.add(i, dao.statecomp_view(chk[i]));
+			}
+	
+			request.setAttribute("age", age);
+			request.setAttribute("gender", gender);
+			request.setAttribute("arr", arr_comp);
+			rd = request.getRequestDispatcher("page1.jsp");
+			rd.forward(request, response);
 		}
-		// System.out.println(comps);
-
-		HttpSession session = request.getSession();
-		session.setAttribute("age", age);
-		session.setAttribute("gender", gender);
-		session.setAttribute("arr", arr_comp);
 		
-		response.sendRedirect("page1.jsp");
 
 	}
 

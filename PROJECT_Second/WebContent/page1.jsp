@@ -146,10 +146,9 @@ h4 {
 					<%
 					int age;
 					String gender;
-					if(!(session.getAttribute("age")==null)){
-						age = (Integer) session.getAttribute("age");
-						gender = (String) session.getAttribute("gender");
-						
+					if(!(request.getAttribute("age")==null)){
+						age = (Integer) request.getAttribute("age");
+						gender = (String) request.getAttribute("gender");
 					}
 					else{
 						age=-1;
@@ -157,8 +156,8 @@ h4 {
 					}
 					%>
 					<br> <br>
-					<a href="page2.jsp?age=<%=age%>&gender=<%=gender %>"> <input type="submit"
-						class="btn btn-primary btn_comp" value="성분조회"></a>
+					 <input type="submit" onclick="empty_dec()"
+						class="btn btn-primary btn_comp" value="성분조회">
 				</form>
 			</div>
 
@@ -172,7 +171,7 @@ h4 {
 			<br> <br> <br>
 
 			<%
-			ArrayList<DTO_COMP> arr = (ArrayList<DTO_COMP>) session.getAttribute("arr");
+			ArrayList<DTO_COMP> arr = (ArrayList<DTO_COMP>) request.getAttribute("arr");
 			%>
 
 			<%
@@ -217,7 +216,12 @@ h4 {
 		<script>
 			var maxChk = 3;
 			var cnt = 0;
-
+			function empty_dec() {
+				if($("input[name=input_age]").val() == "" || $("input[name=gender]:checked").is(':checked') == false
+			|| $('input:checkbox[name=chk1]').is(':checked') == false){
+					alert("입력한 정보를 확인하여 주십시오.");
+				}
+			}
 			function count_ck(field) {
 				if (field.checked) {
 					cnt++;
@@ -250,7 +254,6 @@ h4 {
 				 data : check_dic,
 				 dataType : 'json',
 				success : function(res) {
-				 alert('요청 성공!');
 				 window.location.href = "page3.jsp?model=" + res;
 				},
 				error : function() { alert('요청 실패쓰');}
