@@ -36,16 +36,28 @@
 	color: orange;
 	font-size: 32px;
 	font-family: 'Noto Serif KR', serif;
+	
 }
 
 #dat2 {
 	color: black;
 	font-size: 30px;
+	font-family: 'Noto Serif KR', serif;
 }
 
 .index1 {
-color:black;
-font-size: 18px;
+	color:black;
+	font-size: 18px;
+}
+#btn12{
+	cursor: pointer;
+    border-radius: 0.25rem;
+    background: orange;
+    color: white;
+}
+#btn12:hover{
+background:white;
+color:orange;
 }
 </style>
 </head>
@@ -61,7 +73,7 @@ font-size: 18px;
 
 			<div id="board" align="center">
 				<strong id="dat1">댓글</strong><strong id="dat2"> 작성하기</strong>
-				<div style="position:absolute; width:200px; height:200px; top:295px; right:300px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+				<div style="position:absolute; max-width:100%; height:auto; margin-top:64px; margin-left:450px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
               </div>
 				<br>
 				<br> <br>
@@ -94,11 +106,12 @@ font-size: 18px;
 								cols="70px" style="resize: none;"></textarea></td>
 					</tr>
 					<tr>
-						<td id="write" colspan="2" align="center"><input id="btn1"
-							style="border: 1px solid orange; color: white; font-size =18px; background-color: orange; width: 120px; height: 40px;"
+						<td id="write" colspan="2" align="center"><input id="btn12"
+							style="border: 3px solid orange;  font-size :18px; width:110px; height:40px;"
 							type="submit" value="작성하기"></td>
-					</tr>
+					</tr><br>
 				</table>
+				<br>
 			</div>
 		</form>
 		<%@ include file="footer.jsp"%>

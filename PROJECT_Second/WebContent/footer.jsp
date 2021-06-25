@@ -38,10 +38,10 @@
 				<div class="col-lg-3 mx-auto mb-5 mb-lg-0">
 					<h3 class="footer-heading mb-4">Navigation</h3>
 					<ul class="list-unstyled">
-						<li><a href="#">Supplements</a></li>
-						<li><a href="#">Vitamins</a></li>
-						<li><a href="#">Diet &amp; Nutrition</a></li>
-						<li><a href="#">Tea &amp; Coffee</a></li>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Item Selection</a></li>
+						<li><a href="#">Guide</a></li>
+						<li><a href="#">Member</a></li>
 					</ul>
 				</div>
 

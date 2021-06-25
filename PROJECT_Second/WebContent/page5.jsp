@@ -56,6 +56,9 @@ word-spacing: -10px;
 							<h2 id="title5"> 건강한 섭취 </h2><strong style="font-size:32px;">Guide</strong>
 							<br><br><br><br><br>
 							
+							<div style="position:absolute; max-width:100%; height:auto; margin-top:-250px; margin-left:320px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              				</div>
+							
 							<div style="background-image: url('images/purple4.jpg');"></div>
 							<h3 class="mb-5"><image src="images/guide2.png"
 									width="40px" height="40px" style="float: center;">
