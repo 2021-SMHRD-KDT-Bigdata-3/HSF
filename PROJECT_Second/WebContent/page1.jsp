@@ -45,7 +45,7 @@ div.fo {
 table {
 	border-collapse: separate;
 	border-spacing: 40px;
-	border: 3px solid orange;
+	border: 3px solid rgb(255, 127, 0, .4);
 	font-size: 16px;
 }
 
@@ -79,6 +79,12 @@ table {
 	font-family: 'GmarketSansLight';
 }
 
+.comp{
+	color: rgb(255, 127, 0, .6);
+}
+#comp_list24:hover{
+	color: purple;
+}
 </style>
 </head>
 <body>
@@ -178,14 +184,14 @@ table {
 					%>
 					<br> <br>
 					 <input type="submit" onclick="empty_dec()"
-						class="btn btn-primary btn_comp" value="성분조회">
+						class="btn btn-primary btn_comp" value="성분 조회" style="color: black; font-family: 'GmarketSansMedium';">
 				</form>
 			</div>
 
 
 			<form action="http://127.0.0.1:5000/" method="post">
 				<span> <input type="button"
-						value="제품 조회" class="btn btn-primary btn_comp btn_user"
+						value="제품 조회" class="btn btn-primary btn_comp btn_user" style="color: black; font-family: 'GmarketSansMedium';"
 						onclick="sum_chan()">
 				</span>
 			</form>
@@ -210,7 +216,7 @@ table {
 							String[] comp_list = arr.get(i).getComponent().split(",");
 							for (int j = 0; j < comp_list.length; j++) {
 							%>
-							<span class="comp"> <a
+							<span class="comp"> <a id="comp_list24" style="color: rgb(255, 127, 0, .6);"
 								href="page2.jsp?age=<%=age%>&gender=<%=gender %>&comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
 							</span><br>
 							<%}%>

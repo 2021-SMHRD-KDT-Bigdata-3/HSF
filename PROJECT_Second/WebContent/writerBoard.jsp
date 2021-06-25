@@ -24,6 +24,9 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <style>
 #board {
 	width: 530px;
@@ -52,8 +55,8 @@
 #btn12{
 	cursor: pointer;
     border-radius: 0.25rem;
-    background: orange;
-    color: white;
+    background: rgb(255, 127, 0, .4);
+    color: black;
 }
 #btn12:hover{
 background:white;
@@ -79,35 +82,35 @@ color:orange;
 				<br> <br>
 				<table id="list" style="margin-left: auto; margin-right: auto;">
 					<tr>
-						<td class="index1" width="30%" align="left"><image src="images/pill.png"
-									width="40px" height="40px" style="float: left; padding: 10px"> 제품명</td>
+						<td class="index1" width="30%" align="left" style="font-family: 'Nanum Gothic', sans-serif;"><image src="images/pill.png"
+									width="40px" height="40px" style="float: left; padding: 10px;"> 제품명</td>
 						<td width="70%" align="left"><input type="text"
-							name="title" style="width: 260px;" value="<%=sp_name%>"></td>
+							name="title" style="width: 260px;  font-family: 'Nanum Gothic', sans-serif;" value="<%=sp_name%>"></td>
 					</tr>
 					<tr>
-						<td class="index1" width="30%" align="left"><image src="images/pill.png"
+						<td class="index1" width="30%" align="left" style="font-family: 'Nanum Gothic', sans-serif;"><image src="images/pill.png"
 									width="40px" height="40px" style="float: left; padding: 10px"> 작성자</td>
-						<td width="70" align="left"><input type="text" style="width: 260px;" name="id"></td>
+						<td width="70" align="left"><input type="text" style="width: 260px; font-family: 'Nanum Gothic', sans-serif;" name="id"></td>
 					</tr>
 					<tr>
-						<td class="index1" width="30%" align="left"><image src="images/pill.png"
+						<td class="index1" width="30%" align="left" style="font-family: 'Nanum Gothic', sans-serif;"><image src="images/pill.png"
 									width="40px" height="40px" style="float: left; padding: 10px"> 비밀번호</td>
 						<td width="70%" align="left"><input type="password"
-							style="width: 260px;" name="pw"></td>
+							style="width: 260px; font-family: 'Nanum Gothic', sans-serif;" name="pw"></td>
 					</tr>
 					<tr>
 						<td><br></td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center">내용</td>
+						<td colspan="2" align="center" style="font-family:'Nanum Gothic' sans-serif;">내용</td>
 					</tr>
 					<tr>
 						<td colspan="2"><textarea name="content" rows="20"
-								cols="70px" style="resize: none;"></textarea></td>
+								cols="70px" style="resize: none;" style="font-family:'Nanum Gothic' sans-serif;"></textarea></td>
 					</tr>
 					<tr>
 						<td id="write" colspan="2" align="center"><input id="btn12"
-							style="border: 3px solid orange;  font-size :18px; width:110px; height:40px;"
+							style="border: 2px solid rgb(255, 127, 0, .1);  font-family: 'Poor Story', cursive; font-size :18px; width:110px; height:40px;"
 							type="submit" value="작성하기"></td>
 					</tr><br>
 				</table>
