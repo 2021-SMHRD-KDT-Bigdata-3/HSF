@@ -123,8 +123,8 @@ p.info {
    
 }
 #review1:hover, #review2:hover ,#review3:hover ,#review4:hover{
-	color:orange;
-	background:white;
+	color:white;
+	background:orange;
 	border: 3px solid orange;
 }
 
@@ -262,23 +262,23 @@ p.info {
 			<%
 			if (dto_supp.getSp_name().equals("프리미엄 루테인 오메가3 골드")) {
 			%>
-			<input type="button" id="review1" value="Reviews">
+			<input type="button" id="review1" value="Reviews" style="background-color: orange">
 			<div id="div_review1"></div>
 
 			<%
 			} else if (dto_supp.getSp_name().equals("알티지 오메가3 초임계 1000")) {
 			%>
-			<input type="button" id="review2" value="Reviews">
+			<input type="button" id="review2" value="Reviews" style="background-color: orange">
 			<div id="div_review2" ></div>
 			<%
 			} else if (dto_supp.getSp_name().equals("알티지 오메가3 솔루션")) {
 			%>
-			<input type="button" id="review3" value="Reviews">
+			<input type="button" id="review3" value="Reviews" style="background-color: orange">
 			<div id="div_review3" ></div>
 			<%
 			} else if (dto_supp.getSp_name().equals("기억력 알티지 오메가3 DHA")) {
 			%>
-			<input type="button" id="review4" value="Reviews">
+			<input type="button" id="review4" value="Reviews" style="background-color: orange">
 			<div id="div_review4" ></div>
 			
 			<%

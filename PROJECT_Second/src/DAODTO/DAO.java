@@ -246,7 +246,7 @@ public class DAO {
 		try {
 			conn();
 
-			String sql = "insert into memb_comment values (comment_seq.nextval,?,?,?,?)";
+			String sql = "insert into memb_comment values (?,?,?,?)";
 
 			psmt = conn.prepareStatement(sql);
 
