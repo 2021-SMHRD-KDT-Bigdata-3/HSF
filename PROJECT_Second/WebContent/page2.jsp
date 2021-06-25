@@ -196,8 +196,10 @@ p.list2{
 					<h2 class="mb-5">
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
-					<div style="position:absolute; width:200px; height:200px; top:-5px; right:550px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
-              </div>
+					<span style="position:absolute; max-width:100%;height:auto; margin-top:-85px; margin-left:10px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </span>
+					<!-- <div style="position: absolute; width:200px; height:200px; top:-5px; right:-80px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>-->
 					<table width="500" style="margin-right: 70px; border-bottom: solid 3px rgb(255, 127, 0, .3); border-top: solid 3px rgb(255, 127, 0, .3);">
 						<tr style="border-bottom: dashed 1px rgb(255, 127, 0, .3);">
 							<td width="150" ><image src="images/list_logo.png"
@@ -250,26 +252,26 @@ p.list2{
 				<tr>
 					<%
 					int cnt = 0;
+					int cnt_t=0;
 					for (i = 0; i < arr_supp.size(); i++) {
-					%>
-					<%
-					if (cnt == 5) {
-						cnt = 0;
-					%>
-				</tr>
-				<tr>
-					<%
-					}
-					cnt += 1;
-					%>
-					<td><a
-						href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
-							width="200px" height="200px" style="object-fit: contain;"
-							src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
-					<%
-					}
-					%>
-				</tr>
+						if (cnt == 5) {
+							cnt = 0;
+							if(cnt_t==0){cnt_t=1;}else{cnt_t=0;}%>
+						</tr>
+						<tr>
+						<%}
+						if(cnt_t==0){
+						cnt += 1;%>
+						<td><a
+							href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
+								width="200px" height="200px" style="object-fit: contain;"
+								src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td><%}
+						else if(cnt_t==1){
+						cnt += 1;%>
+						<td><a
+							href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>">test입</a></td><%} %>
+					<%}%>
+					</tr>
 			</table>
 		</div>
 
