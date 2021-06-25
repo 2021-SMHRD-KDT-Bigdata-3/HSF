@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import org.apache.catalina.connector.Request;
+
 public class DAO_component {
 	int cnt = 0;
 	Connection conn = null;
@@ -76,4 +78,70 @@ public class DAO_component {
 			}
 			return arr_comp;
 		}
+		
+		// ===============================================================	
+		// component 테이블 효능 조회 
+			public ArrayList<DTO_component> component_search(String comp) {
+
+				try {
+					conn();
+					arr_comp = new ArrayList<DTO_component>();
+					String sql = "select * from component where component like '%" +comp+ "%'";
+
+					psmt = conn.prepareStatement(sql);
+
+					rs = psmt.executeQuery();
+					
+					cnt=0;
+					
+					if(rs.next()){
+
+						String component = rs.getString("component");
+						String effect = rs.getString("effect");
+						String side_effect = rs.getString("side_effect");
+						String together_eat = rs.getString("together_eat");
+						dto_component = new DTO_component(component,effect,side_effect,together_eat);
+						arr_comp.add(cnt, dto_component);
+					}
+				} catch (Exception e) {
+					System.out.println("조회실패");
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				return arr_comp;
+			}
+		//============================================================================	
+		//	component 테이블 제품 조회
+			public ArrayList<DTO_SUPP> supp_search(String comp) {
+
+				try {
+					conn();
+					arr_supp = new ArrayList<DTO_SUPP>();
+					String sql = "select * from supplement where sp_name like '%" +comp+ "%'";
+
+					psmt = conn.prepareStatement(sql);
+
+					rs = psmt.executeQuery();
+					
+					cnt=0;
+					
+					if(rs.next()){
+
+						String sp_name = rs.getString("sp_name");
+						String model = rs.getString("model");
+						
+						dto_supp = new DTO_SUPP(sp_name, model);
+						arr_supp.add(cnt, dto_supp);
+					}
+				} catch (Exception e) {
+					System.out.println("조회실패");
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				return arr_supp;
+			
+			}
+			
 }

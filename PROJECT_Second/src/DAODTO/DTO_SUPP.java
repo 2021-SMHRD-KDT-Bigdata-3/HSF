@@ -32,7 +32,15 @@ public class DTO_SUPP {
 		this.img = img;
 	}
 
+	
 
+	public DTO_SUPP(String sp_name, int model) {
+		this.sp_name = sp_name;
+		this.model = model;
+	}
+
+	
+	
 	public String getSp_name() {
 		return sp_name;
 	}

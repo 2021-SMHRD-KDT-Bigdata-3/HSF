@@ -29,6 +29,12 @@
 	#head_title{
 		font-family: 'Poor Story', cursive;
 	}
+	.form-control{
+		display: inline;
+	}
+	#select_2 {
+		margin-top: 2%;
+	}
 </style>
 <body> 
 
@@ -39,9 +45,13 @@
 				<div class="container">
 					<a href="#" class="search-close js-search-close"><span
 						class="icon-close2"></span></a>
-					<form action="#" method="post">
-						<input type="text" class="form-control"
-							placeholder="Search keyword and hit enter...">
+					<form action="Search" method="post">
+						<select name="select" id="select_2">
+							<option value = "one" >성분</option>
+							<option value = "two" >제품명</option>
+						</select>
+						<input type="text" class="form-control" name="form"
+							placeholder="검색" width="500px">
 					</form>
 				</div>
 			</div>
