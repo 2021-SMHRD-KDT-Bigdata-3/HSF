@@ -33,9 +33,8 @@
 					<a href="#" class="search-close js-search-close"><span
 						class="icon-close2"></span></a>
 					<form action="Search" method="post">
-						<input type="text" class="form-control"
-							placeholder="성분명 검색">
-							<% %>
+						<input type="text" class="form-control" name="form"
+							placeholder="검색">
 					</form>
 				</div>
 			</div>
