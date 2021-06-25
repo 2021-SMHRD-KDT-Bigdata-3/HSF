@@ -122,7 +122,7 @@ p.info {
    border-radius: 0.25rem;
    
 }
-#review1,#review2,#review3,#review4:hover{
+#review1:hover, #review2:hover ,#review3:hover ,#review4:hover{
 	color:orange;
 	background:white;
 	border: 3px solid orange;
@@ -152,7 +152,7 @@ p.info {
 	}
 	DAO dao = new DAO();
 	DTO_SUPP dto_supp = dao.supp_view_one(sp_name);
-	%>
+	%>`
 
 
 	<div class="site-wrap">
@@ -167,8 +167,10 @@ p.info {
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
+				<!-- <div style="position:absolute; width:200px; height:200px; top:420px; left: 1120p<img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">x;">
+              </div>-->
 				
-				<span style="position:absolute; max-width:100%;height:auto; margin-top:220px; margin-left:110px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; ;">
+				<span style="position:absolute; max-width:100%;height:auto; margin-top:210px; margin-left:110px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
               </span>
 				
 			</div>
@@ -278,6 +280,7 @@ p.info {
 			%>
 			<input type="button" id="review4" value="Reviews">
 			<div id="div_review4" ></div>
+			
 			<%
 			}
 			%>
@@ -300,7 +303,7 @@ p.info {
 			if (review1 != null) {
 				review1.onclick = function() {
 					if (cnt == 0) {
-						div_review1.innerHTML = '<img src="imgreview/review_1.png" style="width:300px; height:300px">'
+						div_review1.innerHTML = '<img src="imgreview/review_1.png" style="width:300px; height:300px; object-fit: contain;">'
 						cnt = 1
 					} else {
 						cnt = 0
@@ -312,7 +315,7 @@ p.info {
 			if (review2 != null) {
 				review2.onclick = function() {
 					if (cnt == 0) {
-						div_review2.innerHTML = '<img src="imgreview/review_2.png" style="width:300px; height:300px">'
+						div_review2.innerHTML = '<img src="imgreview/review_2.png" style="width:300px; height:300px; object-fit: contain;">'
 						cnt = 1
 					} else {
 						cnt = 0
@@ -324,7 +327,7 @@ p.info {
 			if (review3 != null) {
 				review3.onclick = function() {
 					if (cnt == 0) {
-						div_review3.innerHTML = '<img src="imgreview/review_3.png" style="width:300px; height:300px">'
+						div_review3.innerHTML = '<img src="imgreview/review_3.png" style="width:300px; height:300px; object-fit: contain;">'
 						cnt = 1
 					} else {
 						cnt = 0

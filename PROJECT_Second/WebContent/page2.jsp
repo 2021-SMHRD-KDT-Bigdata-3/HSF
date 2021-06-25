@@ -43,8 +43,8 @@ div#supp {
 
 p.list1 {
 	font-family: 'Poor Story', cursive;
-	font-size: 25px;
-	color: orange;
+	font-size: 20px;
+	color: rgb(255, 127, 0, .8);
 }
 
 #index {
@@ -52,9 +52,10 @@ p.list1 {
 }
 
 #related_pd{
-	font-family: 'Poor Story', cursive;
+	font-family: 'Noto Serif KR', serif;
 	font-weight: bolder;
 	font-size: 30px;
+	color: orange;
 }
 
 p.list2{
@@ -196,8 +197,10 @@ p.list2{
 					<h2 class="mb-5">
 						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
-					<div style="position:absolute; width:200px; height:200px; top:-5px; right:550px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
-              </div>
+					<span style="position:absolute; max-width:100%;height:auto; margin-top:-85px; margin-left:10px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </span>
+					<!-- <div style="position: absolute; width:200px; height:200px; top:-5px; right:-80px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>-->
 					<table width="500" style="margin-right: 70px; border-bottom: solid 3px rgb(255, 127, 0, .3); border-top: solid 3px rgb(255, 127, 0, .3);">
 						<tr style="border-bottom: dashed 1px rgb(255, 127, 0, .3);">
 							<td width="150" ><image src="images/list_logo.png"
@@ -245,31 +248,30 @@ p.list2{
 
 		<br> <br><br><br>
 		<div id="supp" align="center" width="1500px">
-			<p id="related_pd" style="font-weight: bolder;">관련 제품</p>
+			<p id="related_pd" style="font-weight: bolder;">관련<strong class="text-primary">제품</strong></p>
 			<table>
 				<tr>
 					<%
 					int cnt = 0;
 					for (i = 0; i < arr_supp.size(); i++) {
-					%>
-					<%
-					if (cnt == 5) {
-						cnt = 0;
-					%>
-				</tr>
-				<tr>
-					<%
-					}
-					cnt += 1;
-					%>
-					<td><a
-						href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
-							width="200px" height="200px" style="object-fit: contain;"
-							src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
-					<%
-					}
-					%>
-				</tr>
+						if (cnt == 4) {
+							cnt = 0;%>
+						</tr>
+						<tr height=50px style="border-bottom: dashed 1px rgb(255, 127, 0, .4)">
+							<%for(int j=i-4;j<i;j++){%>
+							<td width=225px><a style="color: black; font-family: 'Noto Serif KR', serif;"
+							href="page4.jsp?sp_name=<%=arr_supp.get(j).getSp_name()%>"><%=arr_supp.get(j).getSp_name()%></a></td><%} %>
+						</tr>
+						<tr>
+						<%}
+						cnt += 1;%>
+						<td width=225px><a
+							href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>"><img
+								width="150px" height="150px" style="object-fit: contain;"
+								src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
+						
+					<%}%>
+					</tr>
 			</table>
 		</div>
 
