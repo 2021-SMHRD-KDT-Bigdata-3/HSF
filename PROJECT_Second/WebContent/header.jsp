@@ -60,13 +60,9 @@
 							role="navigation">
 							<ul class="site-menu js-clone-nav d-none d-lg-block">
 								<li class="active"><a href="page0.jsp">Home</a></li>
-								<li><a href="shop.html">Item Selection</a></li>
-								
-								
-									
-									
-								<li><a href="about.html">Guide</a></li>
-								<li><a href="contact.html" >Member</a></li>
+								<li><a href="page1.jsp">Item Selection</a></li>
+								<li><a href="page5.jsp">Guide</a></li>
+								<li><a href="#" >Member</a></li>
 							</ul>
 						</nav>
 					</div>
