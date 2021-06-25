@@ -184,14 +184,14 @@ table {
 					%>
 					<br> <br>
 					 <input type="submit" onclick="empty_dec()"
-						class="btn btn-primary btn_comp" value="성분 조회" style="color: black; font-family: 'GmarketSansMedium';">
+						class="btn btn-primary btn_comp" value="성분 조회" style="color: black; font-family: 'GmarketSansMedium'; background-color: rgb(255, 127, 0, .4); border-color: rgb(255, 127, 0, .2);">
 				</form>
 			</div>
 
 
 			<form action="http://127.0.0.1:5000/" method="post">
 				<span> <input type="button"
-						value="제품 조회" class="btn btn-primary btn_comp btn_user" style="color: black; font-family: 'GmarketSansMedium';"
+						value="제품 조회" class="btn btn-primary btn_comp btn_user" style="color: black; font-family: 'GmarketSansMedium'; background-color: rgb(255, 127, 0, .4); border-color: rgb(255, 127, 0, .2);"
 						onclick="sum_chan()">
 				</span>
 			</form>
