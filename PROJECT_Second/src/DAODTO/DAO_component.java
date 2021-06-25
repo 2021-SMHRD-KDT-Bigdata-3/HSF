@@ -111,4 +111,37 @@ public class DAO_component {
 				}
 				return arr_comp;
 			}
+		//============================================================================	
+		//	component 테이블 제품 조회
+			public ArrayList<DTO_SUPP> supp_search(String comp) {
+
+				try {
+					conn();
+					arr_supp = new ArrayList<DTO_SUPP>();
+					String sql = "select * from supplement where sp_name like '%" +comp+ "%'";
+
+					psmt = conn.prepareStatement(sql);
+
+					rs = psmt.executeQuery();
+					
+					cnt=0;
+					
+					if(rs.next()){
+
+						String sp_name = rs.getString("sp_name");
+						String model = rs.getString("model");
+						
+						dto_supp = new DTO_SUPP(sp_name, model);
+						arr_supp.add(cnt, dto_supp);
+					}
+				} catch (Exception e) {
+					System.out.println("조회실패");
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				return arr_supp;
+			
+			}
+			
 }

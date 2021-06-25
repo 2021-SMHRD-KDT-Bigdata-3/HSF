@@ -30,7 +30,9 @@ h5 {
 p.info {
 	 : 830px;
 }
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
@@ -45,20 +47,12 @@ p.info {
 	rel="stylesheet">
 <style>
 
-.pg4 {
-		font-family: 'Poor Story', cursive;
-		font-size: 18px;
-		color: orange;
-	}
-.pg4_data {
-	font-family: 'Noto Serif KR', serif;
-	color: #BDBDBD;
-}
-	#buy:hover{
+
+#buy:hover{
 		color: orange;
 	}
 	
-	#product_img{
+#product_img{
 		width: 300px;
 		height: 300px;
 		object-fit: contain;
@@ -133,6 +127,18 @@ p.info {
 	background:white;
 	border: 3px solid orange;
 }
+
+.pg4_data{
+	font-family: 'Noto Serif KR', serif;
+	color: #BDBDBD;
+}
+
+.pg4{
+	font-family: 'Poor Story', cursive;
+	font-size: 18px;
+	color: orange !important;
+	}
+
 </style>
 </head>
 <body>
