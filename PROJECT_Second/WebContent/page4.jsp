@@ -154,7 +154,7 @@
 				<!-- <div style="position:absolute; width:200px; height:200px; top:420px; left: 1120p<img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">x;">
               </div>-->
 				
-				<span style="position:absolute; max-width:100%;height:auto; margin-top:220px; margin-left:110px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+				<span style="position:absolute; max-width:100%;height:auto; margin-top:210px; margin-left:110px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
               </span>
 				
 			</div>

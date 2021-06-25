@@ -140,7 +140,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: orange;
+  color: rgb(255, 127, 0, .6);
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
@@ -1995,8 +1995,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: orange;
-  border-color: orange; }
+  background-color: rgb(255, 127, 0, .4);
+  border-color:  rgb(255, 127, 0, .1); }
   .btn-primary:hover {
     color: #fff;
     background-color:orange;

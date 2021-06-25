@@ -932,7 +932,7 @@ a {
     bottom: 0;
     width: 70px;
     height: 4px;
-    background:orange;
+    background: rgb(255, 127, 0, .4);
     content: ""; }
 
 .title-section.text-center h2:before {
