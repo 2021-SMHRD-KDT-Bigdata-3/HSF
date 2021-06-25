@@ -23,6 +23,16 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
+<style>
+h5 {
+   color: black;
+}
+p.info {
+	 : 830px;
+}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
@@ -37,15 +47,16 @@
 	rel="stylesheet">
 <style>
 
-	.pg4 {
-		font-family: 'Poor Story', cursive;
-		font-size: 18px;
+
+#buy:hover{
 		color: orange;
 	}
-.pg4_data {
-	font-family: 'Noto Serif KR', serif;
-	color: #BDBDBD;
-}
+	
+#product_img{
+		width: 300px;
+		height: 300px;
+		object-fit: contain;
+	}
 
 #buy {
 	color: black;
@@ -54,15 +65,7 @@
 	font-weight: bold;
 }
 
-#buy:hover {
-	color: orange;
-}
 
-#product_img {
-	width: 300px;
-	height: 300px;
-	object-fit: contain;
-}
 
 #back_button {
 	color: black;
@@ -124,10 +127,23 @@
 	background:white;
 	border: 3px solid orange;
 }
+
+.pg4_data{
+	font-family: 'Noto Serif KR', serif;
+	color: #BDBDBD;
+}
+
+.pg4{
+	font-family: 'Poor Story', cursive;
+	font-size: 18px;
+	color: orange !important;
+	}
+
 </style>
 </head>
 <body>
 	<%
+	request.setCharacterEncoding("UTF-8");
 	String sp_name = request.getParameter("sp_name");
 	String model = request.getParameter("model");
 	System.out.println("test입니다 ::::::::::::" + model);

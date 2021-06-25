@@ -30,7 +30,9 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+	rel="stylesheet">
 <style>
 .btn_comp {
 	width: 100px;
@@ -51,39 +53,46 @@ table {
 
 #complist {
 	font-family: 'GmarketSansMedium';
-	font-size: 30px;}
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-size: 30px;
 }
 
 @font-face {
-    font-family: 'GmarketSansLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
-.gmarket_font{
-	font-size: 30px; 
+@font-face {
+	font-family: 'GmarketSansLight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.gmarket_font {
+	font-size: 30px;
 	font-family: 'GmarketSansMedium';
 }
 
-.gmarket_font_l{
+.gmarket_font_l {
 	font-family: 'GmarketSansLight';
 }
 
-.btn btn-primary btn_comp{
+.btn btn-primary btn_comp {
 	font-family: 'GmarketSansLight';
 }
 
-.comp{
+.comp {
 	color: rgb(255, 127, 0, .6);
 }
-#comp_list24:hover{
-	color: purple;
+
+#comp_list24:hover {
+	color: #A9F5F2 !important;
 }
 </style>
 </head>
@@ -100,8 +109,10 @@ table {
 				<h2>
 					Item <strong class="text-primary">Selection</strong>
 				</h2>
-				<span style="position:absolute; max-width:100%;height:auto; margin-top:-70px; margin-left:110px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
-              </span>
+				<span
+					style="position: absolute; max-width: 100%; height: auto; margin-top: -70px; margin-left: 110px;"><img
+					src="images/unbi_image_white.jpg"
+					style="width: 200px; height: 200px; object-fit: contain;"> </span>
 				<!--<div style="position:absolute; width:200px; height:200px; top:91px; right:1180px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
               </div>-->
 
@@ -111,11 +122,13 @@ table {
 
 			<div>
 				<form action="selectList" method="post" name="testform">
-					<table align="center" id="table1" style = "background-image: url('images/r1.png');  border-left: none; border-right: none;">
+					<table align="center" id="table1"
+						style="background-image: url('images/r1.png'); border-left: none; border-right: none;">
 						<tr>
-							<td class = "gmarket_font" align="right"><h4>나이</h4></td>
-							<td class = "gmarket_font_l" colspan="5"><input type="text" name="input_age"
-								placeholder="나이 입력" autofocus="autofocus"> <!--  <select name="age"
+							<td class="gmarket_font" align="right"><h4>나이</h4></td>
+							<td class="gmarket_font_l" colspan="5"><input type="text"
+								name="input_age" placeholder="나이 입력" autofocus="autofocus">
+								<!--  <select name="age"
 								style="width: 300px; height: 60px;">
 									<option value="1">10대</option>
 									<option value="2">20~30대</option>
@@ -124,78 +137,87 @@ table {
 							</select>--></td>
 						</tr>
 						<tr>
-							<td class = "gmarket_font" align="right"><h4>성별</h4></td>
-							<td class = "gmarket_font_l"><input type="radio" name="gender" value="남자">남자</td>
-							<td class = "gmarket_font_l"><input type="radio" name="gender" value="여자">여자</td>
+							<td class="gmarket_font" align="right"><h4>성별</h4></td>
+							<td class="gmarket_font_l"><input type="radio" name="gender"
+								value="남자">남자</td>
+							<td class="gmarket_font_l"><input type="radio" name="gender"
+								value="여자">여자</td>
 						</tr>
 
 
 						<tr>
-							<td class = "gmarket_font" rowspan="3" align="right"><h4>효능</h4></td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="피로회복"> 피로회복</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="관절/뼈"> 관절/뼈</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="불면증"> 불면증</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="피부건강"> 피부건강</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="혈액순환개선"> 혈액순환개선</td>
+							<td class="gmarket_font" rowspan="3" align="right"><h4>효능</h4></td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="피로회복"> 피로회복</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="관절/뼈"> 관절/뼈</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="불면증"> 불면증</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="피부건강"> 피부건강</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="혈액순환개선">
+								혈액순환개선</td>
 						</tr>
 						<tr>
 
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="간건강"> 간건강</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="눈건강"> 눈건강</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="긴장완화"> 긴장완화</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="치아건강"> 치아건강</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="근력개선"> 근력개선</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="간건강"> 간건강</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="눈건강"> 눈건강</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="긴장완화"> 긴장완화</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="치아건강"> 치아건강</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="근력개선"> 근력개선</td>
 						</tr>
 						<tr>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="갱년기여성"> 갱년기여성</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="갱년기남성"> 갱년기남성</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="위건강/소화기능"> 위건강/소화기능</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="남성 성기능"> 남성 성기능</td>
-							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
-								onclick="count_ck(this)" value="여성 컨디션"> 여성 컨디션</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="갱년기여성">
+								갱년기여성</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="갱년기남성">
+								갱년기남성</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="위건강/소화기능">
+								위건강/소화기능</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="남성 성기능"> 남성
+								성기능</td>
+							<td class="gmarket_font_l"><input type="checkbox"
+								name="chk1" onclick="count_ck(this)" value="여성 컨디션"> 여성
+								컨디션</td>
 						</tr>
 					</table>
 
 					<%
 					int age;
 					String gender;
-					if(!(request.getAttribute("age")==null)){
+					if (!(request.getAttribute("age") == null)) {
 						age = (Integer) request.getAttribute("age");
 						gender = (String) request.getAttribute("gender");
-					}
-					else{
-						age=-1;
-						gender="gender";
+					} else {
+						age = -1;
+						gender = "gender";
 					}
 					%>
-					<br> <br>
-					 <input type="submit" onclick="empty_dec()"
-						class="btn btn-primary btn_comp" value="성분 조회" style="color: black; font-family: 'GmarketSansMedium'; background-color: rgb(255, 127, 0, .4); border-color: rgb(255, 127, 0, .2);">
+					<br> <br> <input type="submit" onclick="empty_dec()"
+						class="btn btn-primary btn_comp" value="성분 조회"
+						style="color: black; font-family: 'GmarketSansMedium'; background-color: rgb(255, 127, 0, .4); border-color: rgb(255, 127, 0, .1);">
 				</form>
 			</div>
 
 
 			<form action="http://127.0.0.1:5000/" method="post">
-				<span> <input type="button"
-						value="제품 조회" class="btn btn-primary btn_comp btn_user" style="color: black; font-family: 'GmarketSansMedium'; background-color: rgb(255, 127, 0, .4); border-color: rgb(255, 127, 0, .2);"
-						onclick="sum_chan()">
+				<span> <input type="button" value="제품 조회"
+					class="btn btn-primary btn_comp btn_user"
+					style="color: black; font-family: 'GmarketSansMedium'; background-color: rgb(255, 127, 0, .4); border-color: rgb(255, 127, 0, .1);"
+					onclick="sum_chan()">
 				</span>
 			</form>
 			<br> <br> <br>
+
 
 			<%
 			ArrayList<DTO_COMP> arr = (ArrayList<DTO_COMP>) request.getAttribute("arr");
@@ -206,46 +228,55 @@ table {
 			%>
 
 			<div align="center" id="complist">
-				<table style = "border-left: none; border-right: none;">
+				<table style="border-left: none; border-right: none;">
 					<%
 					for (int i = 0; i < arr.size(); i++) {
 					%>
 					<td style="vertical-align: top"><div align="center">
-							<span><h3 style = "border-bottom:solid #666666;"><%=arr.get(i).getState()%></h3></span>
+							<span><h3 style="border-bottom: solid #666666;"><%=arr.get(i).getState()%></h3></span>
 							<%
 							String[] comp_list = arr.get(i).getComponent().split(",");
 							for (int j = 0; j < comp_list.length; j++) {
 							%>
-							<span class="comp"> <a id="comp_list24" style="color: rgb(255, 127, 0, .6);"
-								href="page2.jsp?age=<%=age%>&gender=<%=gender %>&comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
+							<span class="comp"> <a id="comp_list24"
+								style="color: rgb(255, 127, 0, .6);"
+								href="page2.jsp?age=<%=age%>&gender=<%=gender%>&comp=<%=comp_list[j]%>"><%=comp_list[j]%></a>
 							</span><br>
-							<%}%>
+							<%
+							}
+							%>
 						</div></td>
-					<%}%>
-				</table></div>
-			<%}%>
+					<%
+					}
+					%>
+				</table>
+			</div>
+			<%
+			}
+			%>
 
 			<%@ include file="footer.jsp"%>
 		</div>
 		<%
-			int age_t = age;
-			if(age_t<=19){
-				age_t=1;
-			}else if(age_t<40){
-				age_t=2;
-			}else if(age_t<60){
-				age_t=3;
-			}else{
-				age_t=4;
-			}
+		int age_t = age;
+		if (age_t <= 19) {
+			age_t = 1;
+		} else if (age_t < 40) {
+			age_t = 2;
+		} else if (age_t < 60) {
+			age_t = 3;
+		} else {
+			age_t = 4;
+		}
 		%>
 		<script src='js/jquery-3.6.0.js'></script>
 		<script>
 			var maxChk = 3;
 			var cnt = 0;
 			function empty_dec() {
-				if($("input[name=input_age]").val() == "" || $("input[name=gender]:checked").is(':checked') == false
-			|| $('input:checkbox[name=chk1]').is(':checked') == false){
+				if ($("input[name=input_age]").val() == ""
+						|| $("input[name=gender]:checked").is(':checked') == false
+						|| $('input:checkbox[name=chk1]').is(':checked') == false) {
 					alert("입력한 정보를 확인하여 주십시오.");
 				}
 			}
@@ -267,27 +298,32 @@ table {
 
 			function sum_chan() {
 				var val_test = $('input:checkbox[name=chk1]');
-				let check_dic = { "나이" : <%=age_t%>}; 
-				for (let i = 0; i< val_test.length; i++) {
+				let check_dic = {
+					"나이" :
+		<%=age_t%>
+			};
+				for (let i = 0; i < val_test.length; i++) {
 					if ($(val_test[i]).is(':checked')) {
 						check_dic[$(val_test[i]).val()] = '1';
 					} else {
 						check_dic[$(val_test[i]).val()] = '0';
 					}
 				}
-	
-				$.ajax({ type : 'post',
-				 url : 'http://127.0.0.1:5000/',
-				 data : check_dic,
-				 dataType : 'json',
-				success : function(res) {
-				 window.location.href = "page3.jsp?model=" + res;
-				},
-				error : function() { alert('요청 실패쓰');}
-	
+
+				$.ajax({
+					type : 'post',
+					url : 'http://127.0.0.1:5000/',
+					data : check_dic,
+					dataType : 'json',
+					success : function(res) {
+						window.location.href = "page3.jsp?model=" + res;
+					},
+					error : function() {
+						alert('요청 실패쓰');
+					}
+
 				})
 			}
-
 		</script>
 </body>
 </html>

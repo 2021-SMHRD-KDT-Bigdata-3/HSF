@@ -249,7 +249,7 @@ p.list2{
 		<br> <br><br><br>
 		<div id="supp" align="center" width="1500px">
 			<p id="related_pd" style="font-weight: bolder;">관련<strong class="text-primary">제품</strong></p>
-			<table>
+			<table style="border-top: solid 3px rgb(255, 127, 0, .4); border-bottom: solid 3px rgb(255, 127, 0, .4)">
 				<tr>
 					<%
 					int cnt = 0;
