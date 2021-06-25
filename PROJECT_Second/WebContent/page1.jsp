@@ -94,8 +94,10 @@ table {
 				<h2>
 					Item <strong class="text-primary">Selection</strong>
 				</h2>
-				<div style="position:absolute; width:200px; height:200px; top:91px; right:980px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
-              </div>
+				<span style="position:absolute; max-width:100%;height:auto; margin-top:-70px; margin-left:110px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </span>
+				<!--<div style="position:absolute; width:200px; height:200px; top:91px; right:1180px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>-->
 
 				<br> <br> <br>
 			</div>
@@ -145,7 +147,7 @@ table {
 								onclick="count_ck(this)" value="긴장완화"> 긴장완화</td>
 							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="치아건강"> 치아건강</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="근력개선"> 근력개선</td>
 						</tr>
 						<tr>

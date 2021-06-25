@@ -22,48 +22,47 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body> -->
-	<footer class="site-footer bg-light">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+<footer class="site-footer bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
 
-					<div class="block-7">
-						<h3 class="footer-heading mb-4">
-							About <strong class="text-primary">도연이는 못말려~😉</strong>
-						</h3>
-						<p>This project was produced as the 2nd core convergence project course of the Big Data Analysis Service Developer Course (ncs).</p>
-					</div>
-
-				</div>
-				<div class="col-lg-3 mx-auto mb-5 mb-lg-0">
-					
+				<div class="block-7">
+					<h3 class="footer-heading mb-4">
+						About <strong class="text-primary">도연이는 못말려~😉</strong>
+					</h3>
+					<p>This project was produced as the 2nd core convergence
+						project course of the Big Data Analysis Service Developer Course
+						(ncs).</p>
 				</div>
 
-				<div class="col-md-6 col-lg-3">
-					<div class="block-5 mb-5">
-						<strong><h3 class="footer-heading mb-4">Members Info</h3></strong>
-						<ul class="list-unstyled">
-							<li class="address">Unbi_class
-								</li>
-							<li class="phone"><a href="tel://23923929210">+2 392
-									3929 210</a></li>
-							<li class="email">emailaddress@domain.com</li>
-						</ul>
-					</div>
+			</div>
+			<div class="col-lg-3 mx-auto mb-5 mb-lg-0"></div>
 
-
+			<div class="col-md-6 col-lg-3">
+				<div class="block-5 mb-5">
+					<strong><h3 class="footer-heading mb-4">Members Info</h3></strong>
+					<ul class="list-unstyled">
+						<li class="address">Unbi_class</li>
+						<li class="phone"><a href="tel://23923929210">+2 392 3929
+								210</a></li>
+						<li class="email">emailaddress@domain.com</li>
+					</ul>
 				</div>
+
+
 			</div>
 		</div>
-	</footer>
+	</div>
+</footer>
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/main.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/main.js"></script>
 <!-- </body>
 </html> -->
