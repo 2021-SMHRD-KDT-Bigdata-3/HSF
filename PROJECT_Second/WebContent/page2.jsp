@@ -194,8 +194,10 @@ p.list2{
 				<div class="title-section">
 					<br> <br> <br>
 					<h2 class="mb-5">
-						추천성분 <strong class="text-primary"><%=comp%></strong><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+						추천성분 <strong class="text-primary"><%=comp%></strong>
 					</h2>
+					<span style="position:absolute; max-width:100%;height:auto; margin-top:-85px; margin-left:10px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </span>
 					<!-- <div style="position: absolute; width:200px; height:200px; top:-5px; right:-80px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
               </div>-->
 					<table width="500" style="margin-right: 70px; border-bottom: solid 3px rgb(255, 127, 0, .3); border-top: solid 3px rgb(255, 127, 0, .3);">
