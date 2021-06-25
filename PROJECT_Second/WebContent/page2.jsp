@@ -52,9 +52,10 @@ p.list1 {
 }
 
 #related_pd{
-	font-family: 'Poor Story', cursive;
+	font-family: 'Noto Serif KR', serif;
 	font-weight: bolder;
 	font-size: 30px;
+	color: orange;
 }
 
 p.list2{
@@ -247,8 +248,8 @@ p.list2{
 
 		<br> <br><br><br>
 		<div id="supp" align="center" width="1500px">
-			<p id="related_pd" style="font-weight: bolder;">관련 제품</p>
-			<table width=900px style="border-top: solid 3px rgb(255, 127, 0, .4); border-bottom: solid 3px rgb(255, 127, 0, .4);">
+			<p id="related_pd" style="font-weight: bolder;">관련<strong class="text-primary">제품</strong></p>
+			<table>
 				<tr>
 					<%
 					int cnt = 0;
