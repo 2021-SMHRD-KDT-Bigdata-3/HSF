@@ -122,6 +122,17 @@ p.info {
 #list .even {
 	background-color: rgb(255, 127, 0, .2);
 }
+
+#review1,#review2,#review3,#review4{
+   cursor: pointer;
+   border-radius: 0.25rem;
+   
+}
+#review1,#review2,#review3,#review4:hover{
+	color:orange;
+	background:white;
+	border: 3px solid orange;
+}
 </style>
 </head>
 <body>
@@ -150,14 +161,16 @@ p.info {
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
-				<div style="position:absolute; width:200px; height:200px; top:420px; left:920px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
-              </div>
+				
+				<span style="position:absolute; max-width:100%;height:auto; margin-top:220px; margin-left:110px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; ;">
+              </span>
+				
 			</div>
 		</div>
 
 		<br>
-		<div class="step-number" align="center">
-			<p>
+		<div class="step-number" align="center" >
+			<p >
 				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
 			</p>
 			<table width=800 style="border-bottom: solid 3px rgb(255, 127, 0, .3); border-top: solid 3px rgb(255, 127, 0, .3);">
@@ -236,7 +249,7 @@ p.info {
 		</div>
 		<br> <br> <br>
 
-		<div align="center">
+		<div align="center" >
 
 			<%
 			if (dto_supp.getSp_name().equals("프리미엄 루테인 오메가3 골드")) {
@@ -248,17 +261,17 @@ p.info {
 			} else if (dto_supp.getSp_name().equals("알티지 오메가3 초임계 1000")) {
 			%>
 			<input type="button" id="review2" value="Reviews">
-			<div id="div_review2"></div>
+			<div id="div_review2" ></div>
 			<%
 			} else if (dto_supp.getSp_name().equals("알티지 오메가3 솔루션")) {
 			%>
 			<input type="button" id="review3" value="Reviews">
-			<div id="div_review3"></div>
+			<div id="div_review3" ></div>
 			<%
 			} else if (dto_supp.getSp_name().equals("기억력 알티지 오메가3 DHA")) {
 			%>
 			<input type="button" id="review4" value="Reviews">
-			<div id="div_review4"></div>
+			<div id="div_review4" ></div>
 			<%
 			}
 			%>
@@ -317,7 +330,7 @@ p.info {
 			if (review4 != null) {
 				review4.onclick = function() {
 					if (cnt == 0) {
-						div_review4.innerHTML = '<img src="imgreview/review_4.png" style="width:300px; height:300px">'
+						div_review4.innerHTML = '<img src="imgreview/review_4.png" style="width:300px; height:300px; object-fit: contain;">'
 						cnt = 1
 					} else {
 						cnt = 0

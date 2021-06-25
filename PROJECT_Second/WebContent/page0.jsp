@@ -51,7 +51,7 @@ font-size:20px;
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto align-self-center">
-            <br><br>
+            <br><br><br>
               <div style="position:absolute; width:200px; height:200px; top:-175px; left:470px;"><img src="images/unbi_image.jpg" style= "width: '200px'; height: '200px'; object-fit: contain;">
               </div>
               <div class="site-block-cover-content text-center">
