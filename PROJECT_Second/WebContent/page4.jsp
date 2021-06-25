@@ -113,7 +113,7 @@
 	}
 	DAO dao = new DAO();
 	DTO_SUPP dto_supp = dao.supp_view_one(sp_name);
-	%>
+	%>`
 
 
 	<div class="site-wrap">
@@ -126,15 +126,15 @@
 				<h2>
 					Product <strong class="text-primary">Details</strong>
 				</h2>
-				<div style="position:absolute; width:200px; height:200px; top:420px; left:920px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
-              </div>
+				<!-- <div style="position:absolute; width:200px; height:200px; top:420px; left: 1120p<img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">x;">
+              </div>-->
 			</div>
 		</div>
 
 		<br>
 		<div class="step-number" align="center">
 			<p>
-				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg">
+				<img id="product_img" src="img/<%=dto_supp.getImg()%>.jpg"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
 			</p>
 			<table width=800 style="border-bottom: solid 3px rgb(255, 127, 0, .3); border-top: solid 3px rgb(255, 127, 0, .3);">
 				<tr>

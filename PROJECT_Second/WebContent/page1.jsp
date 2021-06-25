@@ -92,10 +92,10 @@ table {
 			<div class="title-section" align="center">
 				<br> <br> <br>
 				<h2>
-					Item <strong class="text-primary">Selection</strong>
+					Item <strong class="text-primary">Selection<img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;"></strong>
 				</h2>
-				<div style="position:absolute; width:200px; height:200px; top:91px; right:980px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
-              </div>
+				<!--<div style="position:absolute; width:200px; height:200px; top:91px; right:1180px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>-->
 
 				<br> <br> <br>
 			</div>
