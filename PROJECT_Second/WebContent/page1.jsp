@@ -28,6 +28,9 @@
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <style>
 .btn_comp {
 	width: 100px;
@@ -43,25 +46,39 @@ table {
 	border-collapse: separate;
 	border-spacing: 40px;
 	border: 3px solid orange;
-	font-family: 'Noto Serif KR', serif;
 	font-size: 16px;
 }
 
 #complist {
-	font-family: 'Single Day', cursive;
-	font-size: 30px;
-	#
-	table1
-	{
-	background-image
-	:
-	url("images/r1.png");
+	font-family: 'GmarketSansMedium';
+	font-size: 30px;}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-h4 {
-	font-size: 30px; h4 { font-size : 30px;
-	color: orange;
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+.gmarket_font{
+	font-size: 30px; 
+	font-family: 'GmarketSansMedium';
+}
+
+.gmarket_font_l{
+	font-family: 'GmarketSansLight';
+}
+
+.btn btn-primary btn_comp{
+	font-family: 'GmarketSansLight';
+}
+
 </style>
 </head>
 <body>
@@ -77,6 +94,8 @@ h4 {
 				<h2>
 					Item <strong class="text-primary">Selection</strong>
 				</h2>
+				<div style="position:absolute; width:200px; height:200px; top:91px; right:980px;"><img src="images/unbi_image_white.jpg" style= "width: 200px; height: 200px; object-fit: contain;">
+              </div>
 
 				<br> <br> <br>
 			</div>
@@ -84,10 +103,10 @@ h4 {
 
 			<div>
 				<form action="selectList" method="post" name="testform">
-					<table align="center" id="table1" style = "background-image: url('images/r1.png');">
+					<table align="center" id="table1" style = "background-image: url('images/r1.png');  border-left: none; border-right: none;">
 						<tr>
-							<td align="right"><h4>나이</h4></td>
-							<td colspan="5"><input type="text" name="input_age"
+							<td class = "gmarket_font" align="right"><h4>나이</h4></td>
+							<td class = "gmarket_font_l" colspan="5"><input type="text" name="input_age"
 								placeholder="나이 입력" autofocus="autofocus"> <!--  <select name="age"
 								style="width: 300px; height: 60px;">
 									<option value="1">10대</option>
@@ -97,48 +116,48 @@ h4 {
 							</select>--></td>
 						</tr>
 						<tr>
-							<td align="right"><h4>성별</h4></td>
-							<td><input type="radio" name="gender" value="남자">남자</td>
-							<td><input type="radio" name="gender" value="여자">여자</td>
+							<td class = "gmarket_font" align="right"><h4>성별</h4></td>
+							<td class = "gmarket_font_l"><input type="radio" name="gender" value="남자">남자</td>
+							<td class = "gmarket_font_l"><input type="radio" name="gender" value="여자">여자</td>
 						</tr>
 
 
 						<tr>
-							<td rowspan="3" align="right"><h4>효능</h4></td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font" rowspan="3" align="right"><h4>효능</h4></td>
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="피로회복"> 피로회복</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="관절/뼈"> 관절/뼈</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="불면증"> 불면증</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="피부건강"> 피부건강</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="혈액순환개선"> 혈액순환개선</td>
 						</tr>
 						<tr>
 
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="간건강"> 간건강</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="눈건강"> 눈건강</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="긴장완화"> 긴장완화</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="치아건강"> 치아건강</td>
 							<td><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="근력개선"> 근력개선</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="갱년기여성"> 갱년기여성</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="갱년기남성"> 갱년기남성</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="위건강/소화기능"> 위건강/소화기능</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="남성 성기능"> 남성 성기능</td>
-							<td><input type="checkbox" name="chk1"
+							<td class = "gmarket_font_l"><input type="checkbox" name="chk1"
 								onclick="count_ck(this)" value="여성 컨디션"> 여성 컨디션</td>
 						</tr>
 					</table>
@@ -179,7 +198,7 @@ h4 {
 			%>
 
 			<div align="center" id="complist">
-				<table>
+				<table style = "border-left: none; border-right: none;">
 					<%
 					for (int i = 0; i < arr.size(); i++) {
 					%>

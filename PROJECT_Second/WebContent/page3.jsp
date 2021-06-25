@@ -36,7 +36,7 @@
 	color: black;
 }
 
-img {
+#pd_img {
 	width: 200px;
 	height: 200px;
 	object-fit: contain;
@@ -55,8 +55,8 @@ img {
 	ArrayList<DTO_SUPP> arr_supp = dao.supplement_view(model);
 	%>
 
-	<div>
-		class="site-wrap"
+	<div class="site-wrap">
+		
 		<%@ include file="header.jsp"%>
 
 
@@ -85,22 +85,22 @@ img {
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
 								href="page4.jsp?sp_name=<%=arr_supp.get(i).getSp_name()%>&model=<%=model%>"><img
-									src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
+									id="pd_img" src="img/<%=arr_supp.get(i).getImg()%>.jpg"></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
 								href="page4.jsp?sp_name=<%=arr_supp.get(i + 1).getSp_name()%>&model=<%=model%>"><img
-									src="img/<%=arr_supp.get(i + 1).getImg()%>.jpg"></a></td>
+									id="pd_img" src="img/<%=arr_supp.get(i + 1).getImg()%>.jpg"></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
 								href="page4.jsp?sp_name=<%=arr_supp.get(i + 2).getSp_name()%>&model=<%=model%>"><img
-									src="img/<%=arr_supp.get(i + 2).getImg()%>.jpg"></a></td>
+									id="pd_img" src="img/<%=arr_supp.get(i + 2).getImg()%>.jpg"></a></td>
 							<td
 								style="border-top: none; border-left: none; border-right: none; border-bottom: none;"
 								width=285px height=203><a
 								href="page4.jsp?sp_name=<%=arr_supp.get(i + 3).getSp_name()%>&model=<%=model%>"><img
-									src="img/<%=arr_supp.get(i + 3).getImg()%>.jpg"></a></td>
+									id="pd_img" src="img/<%=arr_supp.get(i + 3).getImg()%>.jpg"></a></td>
 						</tr>
 						<tr>
 							<td
