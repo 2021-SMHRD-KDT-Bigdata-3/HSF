@@ -62,15 +62,13 @@
 								<li class="active"><a href="page0.jsp">Home</a></li>
 								<li><a href="page1.jsp">Item Selection</a></li>
 								<li><a href="page5.jsp">Guide</a></li>
-								<li><a href="#" >Member</a></li>
 							</ul>
 						</nav>
 					</div>
 					<div class="icons">
 						<a href="#" class="icons-btn d-inline-block js-search-open"><span
-							class="icon-search"></span></a> <a href="cart.html"
-							class="icons-btn d-inline-block bag"> <span
-							class="icon-shopping-bag"></span> <span class="number">2</span>
+							class="icon-search"></span></a> <a href="#"
+							class="icons-btn d-inline-block bag"> 
 						</a> <a href="#"
 							class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
 							class="icon-menu"></span></a>
